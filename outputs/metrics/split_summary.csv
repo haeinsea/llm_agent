@@ -1,0 +1,5 @@
+split,n_rows,positive_ratio,n_normal,n_transition,n_post_shift,n_fault_ids,n_runs
+train,100000,0.5,50000,5115,42997,21,329
+val,4000,0.7,1200,800,2000,21,108
+test_main,4000,0.7,1200,800,2000,21,110
+test_cost,500,0.7,150,175,175,21,106

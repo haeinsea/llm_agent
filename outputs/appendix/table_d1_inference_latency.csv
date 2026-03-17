@@ -1,0 +1,4 @@
+Model,Total Inference Time (s),Avg Latency per Sample (ms),LLM Call Rate
+Base Model (No-LLM),0.0000 ± 0.0000,0.0000 ± 0.0000,0.0000 ± 0.0000
+Full-LLM,450.0000 ± 0.0000,900.0000 ± 0.0000,1.0000 ± 0.0000
+Proposed UTAR,123.4800 ± 7.2112,246.9600 ± 14.4225,0.2744 ± 0.0160

@@ -1,0 +1,5 @@
+Artifact,Path
+KDE plot,/Users/cordie/Desktop/무제폴더/논문/utar/outputs/shift_analysis_test_main/kde_normal_vs_shift.png
+PCA scatter,/Users/cordie/Desktop/무제폴더/논문/utar/outputs/shift_analysis_test_main/pca_phase_scatter.png
+t-SNE scatter,/Users/cordie/Desktop/무제폴더/논문/utar/outputs/shift_analysis_test_main/tsne_phase_scatter.png
+Feature shift summary,/Users/cordie/Desktop/무제폴더/논문/utar/outputs/shift_analysis_test_main/feature_shift_normal_vs_shift.csv

@@ -1,0 +1,25 @@
+{
+  "selection_rule": "best threshold on validation by maximum F1",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "models": [
+    "RF",
+    "XGB",
+    "TCN"
+  ],
+  "files_written": [
+    "best_thresholds_by_seed.json",
+    "val_best_threshold_metrics.csv",
+    "test_main_seed_metrics_thresholded.csv",
+    "test_cost_seed_metrics_thresholded.csv",
+    "all_seed_metrics_thresholded.csv",
+    "all_seed_summary_thresholded.csv",
+    "all_mean_std_table_thresholded.csv",
+    "all_avgprob_metrics_thresholded.csv"
+  ]
+}

@@ -1,0 +1,9 @@
+.env
+*.docx
+.DS_Store
+data/raw/
+data/raw2/
+data/미확인*
+*.crdownload
+data/processed/*windows*.csv
+outputs/models/

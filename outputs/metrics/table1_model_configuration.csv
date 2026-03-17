@@ -1,0 +1,15 @@
+Component,Parameter,Value
+RF,n_estimators,300
+RF,max_depth,
+RF,min_samples_leaf,1
+XGB,n_estimators,400
+XGB,max_depth,6
+XGB,learning_rate,0.05
+XGB,subsample,0.9
+TCN,window_size,50
+TCN,channels,"64,64,64"
+TCN,kernel_size,3
+TCN,dropout,0.1
+UTAR,q_grid,"0.60,0.65,0.70,0.75,0.80,0.85,0.90"
+UTAR,xgb_shortcut_low,0.1
+UTAR,xgb_shortcut_high,0.9

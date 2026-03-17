@@ -1,0 +1,5 @@
+Stage (Module),Input Samples,Filtered / Decided,Remaining (To Next),Efficiency (Reduction)
+Total Test Samples,500.0000 ± 0.0000,-,500.0000 ± 0.0000,-
+Confident Zone,500.0000 ± 0.0000,79.4000 ± 103.2148,420.6000 ± 103.2148,0.1588 ± 0.2064
+XGB-Shortcut in Gray-Zone,420.6000 ± 103.2148,283.4000 ± 95.2749,137.2000 ± 8.0125,0.6545 ± 0.0982
+Final LLM Calls,500.0000 ± 0.0000,137.2000 ± 8.0125,137.2000 ± 8.0125,0.2744 ± 0.0160
