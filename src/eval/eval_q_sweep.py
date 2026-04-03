@@ -1,11 +1,12 @@
 from __future__ import annotations
 
+import argparse
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
-from src.utils.io import read_csv, write_csv
+from src.utils.io import read_csv, read_json, write_csv, write_json
 from src.utils.metrics import binary_metrics
 
 
@@ -14,6 +15,7 @@ OUTPUT_DIR = PROJECT_ROOT / "outputs"
 PRED_DIR = OUTPUT_DIR / "predictions"
 METRIC_DIR = OUTPUT_DIR / "metrics"
 DEFAULT_Q = 0.80
+SELECTED_Q_PATH = METRIC_DIR / "selected_q.json"
 
 
 def fmt(mean: float, std: float) -> str:
@@ -25,18 +27,71 @@ def pick_std(row: pd.Series, prefix: str) -> float:
     return float(row[std_col]) if std_col in row.index else 0.0
 
 
+def _per_seed_stage_counts(df: pd.DataFrame) -> pd.DataFrame:
+    rows = []
+    shortcut_col = "shortcut_filter" if "shortcut_filter" in df.columns else "xgb_shortcut"
+    for seed, group in df.groupby("seed", dropna=False):
+        n_total = len(group)
+        n_gray = int(group["gray_zone"].sum())
+        n_shortcut = int(((group["gray_zone"] == 1) & (group[shortcut_col] == 1)).sum())
+        n_llm = int(group["llm_called"].sum())
+        n_confident = int((group["gray_zone"] == 0).sum())
+        rows.append(
+            {
+                "seed": seed,
+                "n_total": n_total,
+                "n_gray": n_gray,
+                "n_shortcut": n_shortcut,
+                "n_llm": n_llm,
+                "n_confident": n_confident,
+                "confident_ratio": n_confident / n_total if n_total else 0.0,
+                "shortcut_ratio": n_shortcut / n_gray if n_gray else 0.0,
+                "llm_ratio": n_llm / n_total if n_total else 0.0,
+            }
+        )
+    return pd.DataFrame(rows)
+
+
+def _gray_zone_seed_metrics(df: pd.DataFrame) -> pd.DataFrame:
+    rows = []
+    for seed, group in df.groupby("seed", dropna=False):
+        gray = group[group["gray_zone"] == 1].copy()
+        if len(gray) == 0:
+            rows.append({"seed": seed, "gray_ratio": float((group["gray_zone"] == 1).mean()), "acc": 0.0, "prec": 0.0, "rec": 0.0, "f1": 0.0, "auc": np.nan})
+            continue
+        m = binary_metrics(gray["y_true"], gray["p_final"], tau=0.5)
+        y_hat = (gray["p_final"] >= 0.5).astype(int)
+        rows.append(
+            {
+                "seed": seed,
+                "gray_ratio": float((group["gray_zone"] == 1).mean()),
+                "acc": float(np.mean(y_hat == gray["y_true"])),
+                "prec": m["precision"],
+                "rec": m["recall"],
+                "f1": m["f1"],
+                "auc": m["roc_auc"],
+            }
+        )
+    return pd.DataFrame(rows)
+
+
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--keep-selected-q",
+        action="store_true",
+        help="Preserve the existing selected_q.json choice if it is still present in the regenerated q-sweep table.",
+    )
+    args = parser.parse_args()
+
     summary = read_csv(METRIC_DIR / "selective_llm_summary.csv")
     q_sweep_pred = read_csv(PRED_DIR / "utar_q_sweep.csv")
     q_sweep_no_llm = read_csv(PRED_DIR / "utar_q_sweep_no_llm.csv")
 
-    sel_cost = summary[(summary["dataset"] == "cost") & (summary["mode"] == "selective")].copy()
-    full_cost = summary[(summary["dataset"] == "cost") & (summary["mode"] == "full_llm")].copy()
-    full_cost_map = dict(zip(full_cost["q"], full_cost["cost_usd_mean"]))
+    sel_main = summary[(summary["dataset"] == "main") & (summary["mode"] == "selective")].copy()
 
     table3_rows = []
-    for _, row in sel_cost.sort_values("q").iterrows():
-        saving_mean = 100.0 * (1.0 - row["cost_usd_mean"] / full_cost_map[row["q"]]) if full_cost_map.get(row["q"], 0.0) > 0 else np.nan
+    for _, row in sel_main.sort_values("q").iterrows():
         table3_rows.append(
             {
                 "Strategy": f"Routing (q={row['q']:.2f})",
@@ -45,28 +100,64 @@ def main() -> None:
                 "F1-Score": fmt(row["f1_mean"], pick_std(row, "f1")),
                 "Recall": fmt(row["recall_mean"], pick_std(row, "recall")),
                 "PRR": fmt(row["prr_mean"], pick_std(row, "prr")),
-                "Worst-Case Recall": fmt(row["worst_case_recall_mean"], pick_std(row, "worst_case_recall")),
+                "Worst-Case Recall (P5)": fmt(row["worst_case_recall_mean"], pick_std(row, "worst_case_recall")),
                 "Gray Ratio": fmt(row["gray_ratio_mean"], pick_std(row, "gray_ratio")),
-                "Cost Saving (%)": f"{saving_mean:.4f}",
+                "Cost (USD)": fmt(row["cost_usd_mean"], pick_std(row, "cost_usd")),
+                "Base Time (s)": fmt(row["base_latency_ms_mean"] / 1000.0, pick_std(row, "base_latency_ms") / 1000.0),
+                "Routing Time (s)": fmt((row["routing_feature_latency_ms_mean"] + row["routing_overhead_ms_mean"]) / 1000.0, ((pick_std(row, "routing_feature_latency_ms") ** 2 + pick_std(row, "routing_overhead_ms") ** 2) ** 0.5) / 1000.0),
+                "LLM Time (s)": fmt(row["llm_only_latency_ms_mean"] / 1000.0, pick_std(row, "llm_only_latency_ms") / 1000.0),
                 "Inference Time (s)": fmt(row["total_latency_ms_mean"] / 1000.0, pick_std(row, "total_latency_ms") / 1000.0),
                 "LLM Calls": fmt(row["llm_calls_mean"], pick_std(row, "llm_calls")),
             }
         )
     table3 = pd.DataFrame(table3_rows)
+    selected_row = (
+        sel_main.sort_values(
+            ["f1_mean", "recall_mean", "worst_case_recall_mean", "llm_call_rate_mean", "cost_usd_mean"],
+            ascending=[False, False, False, True, True],
+        )
+        .iloc[0]
+    )
+    selected_q = float(selected_row["q"])
+    if args.keep_selected_q and SELECTED_Q_PATH.exists():
+        existing_q = float(read_json(SELECTED_Q_PATH).get("selected_q", selected_q))
+        if np.isclose(table3["q"].to_numpy(dtype=float), existing_q).any():
+            selected_q = existing_q
     write_csv(METRIC_DIR / "table3_q_sweep.csv", table3)
+    write_json(
+        SELECTED_Q_PATH,
+        {
+            "selected_q": selected_q,
+            "selection_rule": "max_f1_then_recall_then_worst_case_recall_then_min_call_rate_then_min_cost",
+            "source_dataset": "main",
+            "n_samples": 4000,
+        },
+    )
 
-    default_df = q_sweep_pred[np.isclose(q_sweep_pred["q"], DEFAULT_Q)].copy()
-    n_total = len(default_df)
-    n_gray = int(default_df["gray_zone"].sum())
-    n_shortcut = int(((default_df["gray_zone"] == 1) & (default_df["xgb_shortcut"] == 1)).sum())
-    n_llm = int(default_df["llm_called"].sum())
-    n_confident = int((default_df["gray_zone"] == 0).sum())
+    default_df = q_sweep_pred[np.isclose(q_sweep_pred["q"], selected_q)].copy()
+    stage_df = _per_seed_stage_counts(default_df)
+    n_total_mean = float(stage_df["n_total"].mean()) if not stage_df.empty else 0.0
+    n_total_std = float(stage_df["n_total"].std(ddof=1)) if len(stage_df) > 1 else 0.0
+    n_gray_mean = float(stage_df["n_gray"].mean()) if not stage_df.empty else 0.0
+    n_gray_std = float(stage_df["n_gray"].std(ddof=1)) if len(stage_df) > 1 else 0.0
+    n_shortcut_mean = float(stage_df["n_shortcut"].mean()) if not stage_df.empty else 0.0
+    n_shortcut_std = float(stage_df["n_shortcut"].std(ddof=1)) if len(stage_df) > 1 else 0.0
+    n_llm_mean = float(stage_df["n_llm"].mean()) if not stage_df.empty else 0.0
+    n_llm_std = float(stage_df["n_llm"].std(ddof=1)) if len(stage_df) > 1 else 0.0
+    n_confident_mean = float(stage_df["n_confident"].mean()) if not stage_df.empty else 0.0
+    n_confident_std = float(stage_df["n_confident"].std(ddof=1)) if len(stage_df) > 1 else 0.0
+    confident_ratio_mean = float(stage_df["confident_ratio"].mean()) if not stage_df.empty else 0.0
+    confident_ratio_std = float(stage_df["confident_ratio"].std(ddof=1)) if len(stage_df) > 1 else 0.0
+    shortcut_ratio_mean = float(stage_df["shortcut_ratio"].mean()) if not stage_df.empty else 0.0
+    shortcut_ratio_std = float(stage_df["shortcut_ratio"].std(ddof=1)) if len(stage_df) > 1 else 0.0
+    llm_ratio_mean = float(stage_df["llm_ratio"].mean()) if not stage_df.empty else 0.0
+    llm_ratio_std = float(stage_df["llm_ratio"].std(ddof=1)) if len(stage_df) > 1 else 0.0
     table6 = pd.DataFrame(
         [
-            {"Stage (Module)": "Total Test Samples", "Input Samples": fmt(n_total, 0.0), "Filtered / Decided": "-", "Remaining (To Next)": fmt(n_total, 0.0), "Efficiency (Reduction)": "-"},
-            {"Stage (Module)": "Confident Zone", "Input Samples": fmt(n_total, 0.0), "Filtered / Decided": fmt(n_confident, 0.0), "Remaining (To Next)": fmt(n_gray, 0.0), "Efficiency (Reduction)": fmt(n_confident / n_total if n_total else 0.0, 0.0)},
-            {"Stage (Module)": "XGB-Shortcut in Gray-Zone", "Input Samples": fmt(n_gray, 0.0), "Filtered / Decided": fmt(n_shortcut, 0.0), "Remaining (To Next)": fmt(n_llm, 0.0), "Efficiency (Reduction)": fmt(n_shortcut / n_gray if n_gray else 0.0, 0.0)},
-            {"Stage (Module)": "Final LLM Calls", "Input Samples": fmt(n_total, 0.0), "Filtered / Decided": fmt(n_llm, 0.0), "Remaining (To Next)": fmt(n_llm, 0.0), "Efficiency (Reduction)": fmt(n_llm / n_total if n_total else 0.0, 0.0)},
+            {"Stage (Module)": "Total Test Samples", "Input Samples": fmt(n_total_mean, n_total_std), "Filtered / Decided": "-", "Remaining (To Next)": fmt(n_total_mean, n_total_std), "Efficiency (Reduction)": "-"},
+            {"Stage (Module)": "Confident Zone", "Input Samples": fmt(n_total_mean, n_total_std), "Filtered / Decided": fmt(n_confident_mean, n_confident_std), "Remaining (To Next)": fmt(n_gray_mean, n_gray_std), "Efficiency (Reduction)": fmt(confident_ratio_mean, confident_ratio_std)},
+            {"Stage (Module)": "Entropy Shortcut in Gray-Zone", "Input Samples": fmt(n_gray_mean, n_gray_std), "Filtered / Decided": fmt(n_shortcut_mean, n_shortcut_std), "Remaining (To Next)": fmt(n_llm_mean, n_llm_std), "Efficiency (Reduction)": fmt(shortcut_ratio_mean, shortcut_ratio_std)},
+            {"Stage (Module)": "Final LLM Calls", "Input Samples": fmt(n_total_mean, n_total_std), "Filtered / Decided": fmt(n_llm_mean, n_llm_std), "Remaining (To Next)": fmt(n_llm_mean, n_llm_std), "Efficiency (Reduction)": fmt(llm_ratio_mean, llm_ratio_std)},
         ]
     )
     write_csv(METRIC_DIR / "table6_flow_efficiency.csv", table6)
@@ -75,24 +166,7 @@ def main() -> None:
     for q in sorted(q_sweep_pred["q"].unique()):
         for method_name, source_df in [("UTAR (No-LLM)", q_sweep_no_llm), ("Selective Routing", q_sweep_pred)]:
             g = source_df[np.isclose(source_df["q"], q)].copy()
-            gray = g[g["gray_zone"] == 1].copy()
-            if len(gray) == 0:
-                md = pd.DataFrame([{"gray_ratio": float((g["gray_zone"] == 1).mean()), "acc": 0.0, "prec": 0.0, "rec": 0.0, "f1": 0.0, "auc": np.nan}])
-            else:
-                m = binary_metrics(gray["y_true"], gray["p_final"], tau=0.5)
-                y_hat = (gray["p_final"] >= 0.5).astype(int)
-                md = pd.DataFrame(
-                    [
-                        {
-                            "gray_ratio": float((g["gray_zone"] == 1).mean()),
-                            "acc": float(np.mean(y_hat == gray["y_true"])),
-                            "prec": m["precision"],
-                            "rec": m["recall"],
-                            "f1": m["f1"],
-                            "auc": m["roc_auc"],
-                        }
-                    ]
-                )
+            md = _gray_zone_seed_metrics(g)
             gray_rows.append(
                 {
                     "q": float(q),

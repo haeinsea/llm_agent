@@ -1,0 +1,9 @@
+normal_only: true
+corr_threshold: 0.7
+alpha: 0.3
+top_k: 5
+lambda_z: 0.4
+lambda_tr: 0.3
+lambda_fl: 0.3
+score_clip: 12.0
+eps: 1.0e-6

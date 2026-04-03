@@ -1,0 +1,4 @@
+Strategy,Invocation Structure,Call Volume Summary,Inference Time (s),Operational Significance
+No-LLM baseline,All samples decided by UTAR base routing only,Call rate 0.0000,0.3485,"Lowest cost and latency baseline, but no ambiguity escalation."
+Selective Routing (q=0.40),Gray-zone routing with entropy filter and selective LLM escalation,"Call rate 0.0825, cost $0.0088",42.7108,"Selected q from the 4,000-sample routing set, then fixed for the final 400-sample comparison."
+Full-LLM upper bound,Every gray-zone candidate is handled through the LLM path,"Call rate 1.0000, cost $0.1073",385.7163,Upper-bound quality/cost reference for practical deployment trade-offs.

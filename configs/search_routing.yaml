@@ -1,0 +1,11 @@
+selection_metric: balanced_score
+llm_mode: stub
+q_values: [0.70, 0.80, 0.90]
+sigmoid_gain: [4.0, 5.0, 6.0]
+entropy_shortcut_quantile: [0.80, 0.90]
+discrepancy_shortcut_quantile: [0.80, 0.90]
+score_weights:
+  f1: 1.0
+  recall: 0.35
+  llm_call_rate: -0.20
+  instability: -0.10

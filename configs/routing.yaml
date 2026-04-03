@@ -2,11 +2,12 @@ tau_metric: f1
 threshold_grid_min: 0.05
 threshold_grid_max: 0.95
 threshold_grid_step: 0.01
-tcn_weight: 1.0
+sigmoid_gain: 5.0
+temporal_weight_eps: 1.0e-8
 
-q_grid: [0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90]
-xgb_shortcut_low: 0.20
-xgb_shortcut_high: 0.80
+q_grid: [0.20, 0.40, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90]
+entropy_shortcut_quantile: 0.80
+discrepancy_shortcut_quantile: 0.80
 
 llm:
   enabled: true
@@ -17,11 +18,11 @@ llm:
   temperature: 0.0
   timeout_sec: 60
   max_retries: 4
-  retry_backoff_sec: 2.0
-  request_pause_sec: 0.0
+  retry_backoff_sec: 5.0
+  request_pause_sec: 0.5
   allow_stub_fallback: false
   input_cost_per_1m: 0.15
   output_cost_per_1m: 0.60
-  avg_prompt_tokens: 700
+  avg_prompt_tokens: 950
   avg_completion_tokens: 120
   latency_ms_per_call: 900

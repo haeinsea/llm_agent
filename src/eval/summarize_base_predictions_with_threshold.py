@@ -14,13 +14,14 @@ from sklearn.metrics import (
     roc_auc_score,
 )
 
+from src.utils.experiment import get_seed_list
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 OUTPUT_DIR = PROJECT_ROOT / "outputs"
 PRED_DIR = OUTPUT_DIR / "predictions"
 EVAL_DIR = OUTPUT_DIR / "evaluation"
 
-SEEDS = [0, 1, 2, 3, 4]
+SEEDS = get_seed_list()
 MODEL_PREFIXES = ["rf", "xgb", "tcn"]
 
 

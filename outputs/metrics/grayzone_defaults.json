@@ -1,189 +1,656 @@
 {
   "default_q": 0.8,
+  "entropy_shortcut_quantile": 0.8,
+  "discrepancy_shortcut_quantile": 0.8,
   "per_seed": {
     "seed0": {
       "0.60": {
-        "tau": 0.5300000000000001,
-        "gray_margin": 0.3300000000000001,
-        "gray_ratio_val": 0.2939499524865379
+        "tau": 0.44000000000000006,
+        "gray_margin": 0.26985275738140113,
+        "gray_ratio_val": 0.3093918276845106,
+        "entropy_threshold": 0.7242475678176276,
+        "discrepancy_threshold": 1.0
       },
       "0.65": {
-        "tau": 0.5300000000000001,
-        "gray_margin": 0.3359504030000002,
-        "gray_ratio_val": 0.30947101678808997
+        "tau": 0.44000000000000006,
+        "gray_margin": 0.27562146829756634,
+        "gray_ratio_val": 0.32863477985429207,
+        "entropy_threshold": 0.7196071730444754,
+        "discrepancy_threshold": 1.0
       },
       "0.70": {
-        "tau": 0.5300000000000001,
-        "gray_margin": 0.3416337640000002,
-        "gray_ratio_val": 0.3271301868862844
+        "tau": 0.44000000000000006,
+        "gray_margin": 0.2810327024706699,
+        "gray_ratio_val": 0.3460563826417485,
+        "entropy_threshold": 0.7146453633346594,
+        "discrepancy_threshold": 1.0
       },
       "0.75": {
-        "tau": 0.5300000000000001,
-        "gray_margin": 0.3471719500000002,
-        "gray_ratio_val": 0.3447101678808996
+        "tau": 0.44000000000000006,
+        "gray_margin": 0.2872293585270876,
+        "gray_ratio_val": 0.3647450110864745,
+        "entropy_threshold": 0.7113753170517363,
+        "discrepancy_threshold": 1.0
       },
       "0.80": {
-        "tau": 0.5300000000000001,
-        "gray_margin": 0.35358603000000016,
-        "gray_ratio_val": 0.36197339246119736
+        "tau": 0.44000000000000006,
+        "gray_margin": 0.295368205684715,
+        "gray_ratio_val": 0.3818498574596136,
+        "entropy_threshold": 0.7082310439322554,
+        "discrepancy_threshold": 1.0
       },
       "0.85": {
-        "tau": 0.5300000000000001,
-        "gray_margin": 0.3597875960000001,
-        "gray_ratio_val": 0.3778904022806462
+        "tau": 0.44000000000000006,
+        "gray_margin": 0.30849985812809694,
+        "gray_ratio_val": 0.39752929996832437,
+        "entropy_threshold": 0.7067516076350409,
+        "discrepancy_threshold": 1.0
       },
       "0.90": {
-        "tau": 0.5300000000000001,
-        "gray_margin": 0.36796053700000014,
-        "gray_ratio_val": 0.39452011403230913
+        "tau": 0.44000000000000006,
+        "gray_margin": 0.3614949618917823,
+        "gray_ratio_val": 0.4203357617991764,
+        "entropy_threshold": 0.7124725145167601,
+        "discrepancy_threshold": 1.0
+      },
+      "0.20": {
+        "tau": 0.44000000000000006,
+        "gray_margin": 0.18600181402042648,
+        "gray_ratio_val": 0.10943934114665822,
+        "entropy_threshold": 0.830675799550928,
+        "discrepancy_threshold": 1.0
+      },
+      "0.40": {
+        "tau": 0.44000000000000006,
+        "gray_margin": 0.241235084893641,
+        "gray_ratio_val": 0.2243427304402914,
+        "entropy_threshold": 0.7569915059291992,
+        "discrepancy_threshold": 1.0
       }
     },
     "seed1": {
       "0.60": {
-        "tau": 0.9000000000000002,
-        "gray_margin": 0.6956537460000003,
-        "gray_ratio_val": 0.8679917643332278
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.2519909026140574,
+        "gray_ratio_val": 0.3098669623059867,
+        "entropy_threshold": 0.7192300686879677,
+        "discrepancy_threshold": 1.0
       },
       "0.65": {
-        "tau": 0.9000000000000002,
-        "gray_margin": 0.7047946425000002,
-        "gray_ratio_val": 0.8902439024390244
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.25743156062482375,
+        "gray_ratio_val": 0.32633829585049096,
+        "entropy_threshold": 0.7143965341392102,
+        "discrepancy_threshold": 1.0
       },
       "0.70": {
-        "tau": 0.9000000000000002,
-        "gray_margin": 0.7112451420000002,
-        "gray_ratio_val": 0.9105163129553373
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.2637507109553059,
+        "gray_ratio_val": 0.34518530250237567,
+        "entropy_threshold": 0.709584659189328,
+        "discrepancy_threshold": 1.0
       },
       "0.75": {
-        "tau": 0.9000000000000002,
-        "gray_margin": 0.7185494050000003,
-        "gray_ratio_val": 0.9294425087108014
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.2693454802166409,
+        "gray_ratio_val": 0.36197339246119736,
+        "entropy_threshold": 0.705426786204265,
+        "discrepancy_threshold": 1.0
       },
       "0.80": {
-        "tau": 0.9000000000000002,
-        "gray_margin": 0.7237162900000003,
-        "gray_ratio_val": 0.9438549255622426
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.27715857056815335,
+        "gray_ratio_val": 0.37931580614507443,
+        "entropy_threshold": 0.7018150654011139,
+        "discrepancy_threshold": 1.0
       },
       "0.85": {
-        "tau": 0.9000000000000002,
-        "gray_margin": 0.7301725910000002,
-        "gray_ratio_val": 0.9596135571745328
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.28767047431440784,
+        "gray_ratio_val": 0.3934114665821983,
+        "entropy_threshold": 0.7003700990121636,
+        "discrepancy_threshold": 1.0
       },
       "0.90": {
-        "tau": 0.9000000000000002,
-        "gray_margin": 0.7380508520000003,
-        "gray_ratio_val": 0.9754513778904023
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.3180157930999029,
+        "gray_ratio_val": 0.40758631612290147,
+        "entropy_threshold": 0.6992672312905637,
+        "discrepancy_threshold": 1.0
+      },
+      "0.20": {
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.1702522334891174,
+        "gray_ratio_val": 0.1115774469433006,
+        "entropy_threshold": 0.8246353011585789,
+        "discrepancy_threshold": 1.0
+      },
+      "0.40": {
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.22576299048721568,
+        "gray_ratio_val": 0.22608489071903706,
+        "entropy_threshold": 0.7493459808533804,
+        "discrepancy_threshold": 1.0
       }
     },
     "seed2": {
       "0.60": {
-        "tau": 0.7500000000000002,
-        "gray_margin": 0.5480659720000002,
-        "gray_ratio_val": 0.8708425720620843
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.24755653657167076,
+        "gray_ratio_val": 0.2990180551156161,
+        "entropy_threshold": 0.7167022069662318,
+        "discrepancy_threshold": 1.0
       },
       "0.65": {
-        "tau": 0.7500000000000002,
-        "gray_margin": 0.5541666666666669,
-        "gray_ratio_val": 0.8888976876781755
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.25189767633510135,
+        "gray_ratio_val": 0.31509344314222365,
+        "entropy_threshold": 0.7126428147922613,
+        "discrepancy_threshold": 1.0
       },
       "0.70": {
-        "tau": 0.7500000000000002,
-        "gray_margin": 0.5600812970000002,
-        "gray_ratio_val": 0.9062401013620526
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.25804038450703914,
+        "gray_ratio_val": 0.334098828001267,
+        "entropy_threshold": 0.7071192456848063,
+        "discrepancy_threshold": 1.0
       },
       "0.75": {
-        "tau": 0.7500000000000002,
-        "gray_margin": 0.5658290375000002,
-        "gray_ratio_val": 0.9212860310421286
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.2646592945019993,
+        "gray_ratio_val": 0.35286664554957237,
+        "entropy_threshold": 0.7020484891405178,
+        "discrepancy_threshold": 1.0
       },
       "0.80": {
-        "tau": 0.7500000000000002,
-        "gray_margin": 0.5718471260000002,
-        "gray_ratio_val": 0.9382324992081089
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.2698420967103909,
+        "gray_ratio_val": 0.36767500791891033,
+        "entropy_threshold": 0.6985625508706962,
+        "discrepancy_threshold": 1.0
       },
       "0.85": {
-        "tau": 0.7500000000000002,
-        "gray_margin": 0.5790486820000003,
-        "gray_ratio_val": 0.9550205891669307
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.27725781483373435,
+        "gray_ratio_val": 0.38430471967057334,
+        "entropy_threshold": 0.6951316371098796,
+        "discrepancy_threshold": 1.0
       },
       "0.90": {
-        "tau": 0.7500000000000002,
-        "gray_margin": 0.5861200350000002,
-        "gray_ratio_val": 0.9707792207792207
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.2898621518021693,
+        "gray_ratio_val": 0.3987963256255939,
+        "entropy_threshold": 0.6936367697787618,
+        "discrepancy_threshold": 1.0
+      },
+      "0.20": {
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.16336964698087547,
+        "gray_ratio_val": 0.10286664554957238,
+        "entropy_threshold": 0.8222620845009118,
+        "discrepancy_threshold": 1.0
+      },
+      "0.40": {
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.21897218681404726,
+        "gray_ratio_val": 0.21293949952486538,
+        "entropy_threshold": 0.7475042315918604,
+        "discrepancy_threshold": 1.0
       }
     },
     "seed3": {
       "0.60": {
-        "tau": 0.7800000000000001,
-        "gray_margin": 0.5759306600000001,
-        "gray_ratio_val": 0.8665663604687995
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.2481104415463669,
+        "gray_ratio_val": 0.29846373139056065,
+        "entropy_threshold": 0.710427382759839,
+        "discrepancy_threshold": 1.0
       },
       "0.65": {
-        "tau": 0.7800000000000001,
-        "gray_margin": 0.5833412636666668,
-        "gray_ratio_val": 0.8869179600886918
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.2531587808425652,
+        "gray_ratio_val": 0.315172632245803,
+        "entropy_threshold": 0.7064047633574724,
+        "discrepancy_threshold": 1.0
       },
       "0.70": {
-        "tau": 0.7800000000000001,
-        "gray_margin": 0.5904192820000002,
-        "gray_ratio_val": 0.9047355083940449
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.25904025705359585,
+        "gray_ratio_val": 0.3350490972442192,
+        "entropy_threshold": 0.6999456407541418,
+        "discrepancy_threshold": 1.0
       },
       "0.75": {
-        "tau": 0.7800000000000001,
-        "gray_margin": 0.5956042550000001,
-        "gray_ratio_val": 0.9203357617991764
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.2644034886756971,
+        "gray_ratio_val": 0.3508869179600887,
+        "entropy_threshold": 0.6968698957530686,
+        "discrepancy_threshold": 1.0
       },
       "0.80": {
-        "tau": 0.7800000000000001,
-        "gray_margin": 0.6023294020000001,
-        "gray_ratio_val": 0.9388660120367437
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.27227372255619736,
+        "gray_ratio_val": 0.3707633829585049,
+        "entropy_threshold": 0.6930518378393788,
+        "discrepancy_threshold": 1.0
       },
       "0.85": {
-        "tau": 0.7800000000000001,
-        "gray_margin": 0.6083774768333334,
-        "gray_ratio_val": 0.9549414000633513
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.28221309448847226,
+        "gray_ratio_val": 0.38739309471016786,
+        "entropy_threshold": 0.6906917298726577,
+        "discrepancy_threshold": 1.0
       },
       "0.90": {
-        "tau": 0.7800000000000001,
-        "gray_margin": 0.6165901170000001,
-        "gray_ratio_val": 0.9729173265758632
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.2957412304040945,
+        "gray_ratio_val": 0.39966740576496673,
+        "entropy_threshold": 0.6903225437775258,
+        "discrepancy_threshold": 1.0
+      },
+      "0.20": {
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.1674021434211688,
+        "gray_ratio_val": 0.10801393728222997,
+        "entropy_threshold": 0.8045503878784305,
+        "discrepancy_threshold": 1.0
+      },
+      "0.40": {
+        "tau": 0.4200000000000001,
+        "gray_margin": 0.2208915809891127,
+        "gray_ratio_val": 0.21689895470383275,
+        "entropy_threshold": 0.7391430897124733,
+        "discrepancy_threshold": 1.0
       }
     },
     "seed4": {
       "0.60": {
-        "tau": 0.8700000000000002,
-        "gray_margin": 0.6670954660000002,
-        "gray_ratio_val": 0.8691004117833386
+        "tau": 0.39000000000000007,
+        "gray_margin": 0.21846553252458692,
+        "gray_ratio_val": 0.2965631929046563,
+        "entropy_threshold": 0.7106872275828523,
+        "discrepancy_threshold": 1.0
       },
       "0.65": {
-        "tau": 0.8700000000000002,
-        "gray_margin": 0.6752417200000003,
-        "gray_ratio_val": 0.8888184985745962
+        "tau": 0.39000000000000007,
+        "gray_margin": 0.2234051416196547,
+        "gray_ratio_val": 0.3144599303135889,
+        "entropy_threshold": 0.7049665287880295,
+        "discrepancy_threshold": 1.0
       },
       "0.70": {
-        "tau": 0.8700000000000002,
-        "gray_margin": 0.6816213760000002,
-        "gray_ratio_val": 0.9073487488121634
+        "tau": 0.39000000000000007,
+        "gray_margin": 0.22897226224759612,
+        "gray_ratio_val": 0.332277478618942,
+        "entropy_threshold": 0.7012305610083255,
+        "discrepancy_threshold": 1.0
       },
       "0.75": {
-        "tau": 0.8700000000000002,
-        "gray_margin": 0.6877173300000001,
-        "gray_ratio_val": 0.9261165663604688
+        "tau": 0.39000000000000007,
+        "gray_margin": 0.2341084605654781,
+        "gray_ratio_val": 0.35033259423503327,
+        "entropy_threshold": 0.6978650646645858,
+        "discrepancy_threshold": 1.0
       },
       "0.80": {
-        "tau": 0.8700000000000002,
-        "gray_margin": 0.6935088680000002,
-        "gray_ratio_val": 0.9414792524548622
+        "tau": 0.39000000000000007,
+        "gray_margin": 0.2404173659431179,
+        "gray_ratio_val": 0.3679917643332277,
+        "entropy_threshold": 0.6924463649383175,
+        "discrepancy_threshold": 1.0
       },
       "0.85": {
-        "tau": 0.8700000000000002,
-        "gray_margin": 0.6988845030000002,
-        "gray_ratio_val": 0.9556541019955654
+        "tau": 0.39000000000000007,
+        "gray_margin": 0.25169780026915267,
+        "gray_ratio_val": 0.3870763382958505,
+        "entropy_threshold": 0.6882689294582699,
+        "discrepancy_threshold": 1.0
       },
       "0.90": {
-        "tau": 0.8700000000000002,
-        "gray_margin": 0.7066804866666668,
-        "gray_ratio_val": 0.9731548938866013
+        "tau": 0.39000000000000007,
+        "gray_margin": 0.2880853701319143,
+        "gray_ratio_val": 0.40402280646183086,
+        "entropy_threshold": 0.6884338966822864,
+        "discrepancy_threshold": 1.0
+      },
+      "0.20": {
+        "tau": 0.39000000000000007,
+        "gray_margin": 0.1385312768100812,
+        "gray_ratio_val": 0.10643015521064302,
+        "entropy_threshold": 0.7990088616349428,
+        "discrepancy_threshold": 1.0
+      },
+      "0.40": {
+        "tau": 0.39000000000000007,
+        "gray_margin": 0.192053120575505,
+        "gray_ratio_val": 0.21388976876781754,
+        "entropy_threshold": 0.7384347466049694,
+        "discrepancy_threshold": 1.0
+      }
+    },
+    "seed5": {
+      "0.60": {
+        "tau": 0.4700000000000001,
+        "gray_margin": 0.3023138937479597,
+        "gray_ratio_val": 0.29980994615140955,
+        "entropy_threshold": 0.7795133101716372,
+        "discrepancy_threshold": 1.0
+      },
+      "0.65": {
+        "tau": 0.4700000000000001,
+        "gray_margin": 0.30927936349377483,
+        "gray_ratio_val": 0.3197656002534051,
+        "entropy_threshold": 0.7695727520362391,
+        "discrepancy_threshold": 1.0
+      },
+      "0.70": {
+        "tau": 0.4700000000000001,
+        "gray_margin": 0.3145360378336864,
+        "gray_ratio_val": 0.33679125752296485,
+        "entropy_threshold": 0.7637459134000999,
+        "discrepancy_threshold": 1.0
+      },
+      "0.75": {
+        "tau": 0.4700000000000001,
+        "gray_margin": 0.3230069745388145,
+        "gray_ratio_val": 0.3558758314855876,
+        "entropy_threshold": 0.7594746078150558,
+        "discrepancy_threshold": 1.0
+      },
+      "0.80": {
+        "tau": 0.4700000000000001,
+        "gray_margin": 0.3310033538837934,
+        "gray_ratio_val": 0.3702090592334495,
+        "entropy_threshold": 0.7561111832889695,
+        "discrepancy_threshold": 1.0
+      },
+      "0.85": {
+        "tau": 0.4700000000000001,
+        "gray_margin": 0.3472385621947904,
+        "gray_ratio_val": 0.3864428254672157,
+        "entropy_threshold": 0.7551209584998876,
+        "discrepancy_threshold": 1.0
+      },
+      "0.90": {
+        "tau": 0.4700000000000001,
+        "gray_margin": 0.39234453239779576,
+        "gray_ratio_val": 0.40655685777636996,
+        "entropy_threshold": 0.7633073726029226,
+        "discrepancy_threshold": 1.0
+      },
+      "0.20": {
+        "tau": 0.4700000000000001,
+        "gray_margin": 0.21432114959577767,
+        "gray_ratio_val": 0.10658853341780171,
+        "entropy_threshold": 0.9103938380286576,
+        "discrepancy_threshold": 1.0
+      },
+      "0.40": {
+        "tau": 0.4700000000000001,
+        "gray_margin": 0.27065797542703535,
+        "gray_ratio_val": 0.21222679759265126,
+        "entropy_threshold": 0.8364969637013374,
+        "discrepancy_threshold": 1.0
+      }
+    },
+    "seed6": {
+      "0.60": {
+        "tau": 0.4600000000000001,
+        "gray_margin": 0.28307916288433915,
+        "gray_ratio_val": 0.3018688628444726,
+        "entropy_threshold": 0.7377086247118894,
+        "discrepancy_threshold": 1.0
+      },
+      "0.65": {
+        "tau": 0.4600000000000001,
+        "gray_margin": 0.28835060461499157,
+        "gray_ratio_val": 0.31834019638897687,
+        "entropy_threshold": 0.7326414761069461,
+        "discrepancy_threshold": 1.0
+      },
+      "0.70": {
+        "tau": 0.4600000000000001,
+        "gray_margin": 0.2935051927502443,
+        "gray_ratio_val": 0.33496990814063987,
+        "entropy_threshold": 0.7268619111760998,
+        "discrepancy_threshold": 1.0
+      },
+      "0.75": {
+        "tau": 0.4600000000000001,
+        "gray_margin": 0.2992377663496536,
+        "gray_ratio_val": 0.354608805828318,
+        "entropy_threshold": 0.7213449062825855,
+        "discrepancy_threshold": 1.0
+      },
+      "0.80": {
+        "tau": 0.4600000000000001,
+        "gray_margin": 0.3047519910396944,
+        "gray_ratio_val": 0.37084257206208426,
+        "entropy_threshold": 0.7152253418341019,
+        "discrepancy_threshold": 1.0
+      },
+      "0.85": {
+        "tau": 0.4600000000000001,
+        "gray_margin": 0.31111237380069445,
+        "gray_ratio_val": 0.3890560658853342,
+        "entropy_threshold": 0.709549457193647,
+        "discrepancy_threshold": 1.0
+      },
+      "0.90": {
+        "tau": 0.4600000000000001,
+        "gray_margin": 0.31804841256163924,
+        "gray_ratio_val": 0.40465631929046564,
+        "entropy_threshold": 0.7064498466440448,
+        "discrepancy_threshold": 1.0
+      },
+      "0.20": {
+        "tau": 0.4600000000000001,
+        "gray_margin": 0.19508123421766368,
+        "gray_ratio_val": 0.10286664554957238,
+        "entropy_threshold": 0.8555346698470289,
+        "discrepancy_threshold": 1.0
+      },
+      "0.40": {
+        "tau": 0.4600000000000001,
+        "gray_margin": 0.25176780820457983,
+        "gray_ratio_val": 0.20969274627811213,
+        "entropy_threshold": 0.7720579945000207,
+        "discrepancy_threshold": 1.0
+      }
+    },
+    "seed7": {
+      "0.60": {
+        "tau": 0.4100000000000001,
+        "gray_margin": 0.23711332325828885,
+        "gray_ratio_val": 0.2992556224263541,
+        "entropy_threshold": 0.7102087901910173,
+        "discrepancy_threshold": 1.0
+      },
+      "0.65": {
+        "tau": 0.4100000000000001,
+        "gray_margin": 0.24143693392328594,
+        "gray_ratio_val": 0.31596452328159647,
+        "entropy_threshold": 0.7062550071877897,
+        "discrepancy_threshold": 1.0
+      },
+      "0.70": {
+        "tau": 0.4100000000000001,
+        "gray_margin": 0.24675196801739327,
+        "gray_ratio_val": 0.334098828001267,
+        "entropy_threshold": 0.6989115759549924,
+        "discrepancy_threshold": 1.0
+      },
+      "0.75": {
+        "tau": 0.4100000000000001,
+        "gray_margin": 0.25229298915985005,
+        "gray_ratio_val": 0.3515996198923028,
+        "entropy_threshold": 0.6938629632455318,
+        "discrepancy_threshold": 1.0
+      },
+      "0.80": {
+        "tau": 0.4100000000000001,
+        "gray_margin": 0.2576765760303366,
+        "gray_ratio_val": 0.36846689895470386,
+        "entropy_threshold": 0.6897276486130819,
+        "discrepancy_threshold": 1.0
+      },
+      "0.85": {
+        "tau": 0.4100000000000001,
+        "gray_margin": 0.2636469408216676,
+        "gray_ratio_val": 0.3827209375989864,
+        "entropy_threshold": 0.6864437616563247,
+        "discrepancy_threshold": 1.0
+      },
+      "0.90": {
+        "tau": 0.4100000000000001,
+        "gray_margin": 0.27497022331686266,
+        "gray_ratio_val": 0.3994298384542287,
+        "entropy_threshold": 0.6838325364151011,
+        "discrepancy_threshold": 1.0
+      },
+      "0.20": {
+        "tau": 0.4100000000000001,
+        "gray_margin": 0.15713777738345802,
+        "gray_ratio_val": 0.10516312955337345,
+        "entropy_threshold": 0.8050046153234993,
+        "discrepancy_threshold": 1.0
+      },
+      "0.40": {
+        "tau": 0.4100000000000001,
+        "gray_margin": 0.2097344848280539,
+        "gray_ratio_val": 0.21634463097877732,
+        "entropy_threshold": 0.7380666244270808,
+        "discrepancy_threshold": 1.0
+      }
+    },
+    "seed8": {
+      "0.60": {
+        "tau": 0.44000000000000006,
+        "gray_margin": 0.26443365109080713,
+        "gray_ratio_val": 0.2992556224263541,
+        "entropy_threshold": 0.7147265796806508,
+        "discrepancy_threshold": 1.0
+      },
+      "0.65": {
+        "tau": 0.44000000000000006,
+        "gray_margin": 0.27023670530338306,
+        "gray_ratio_val": 0.31897370921761165,
+        "entropy_threshold": 0.7094920100767536,
+        "discrepancy_threshold": 1.0
+      },
+      "0.70": {
+        "tau": 0.44000000000000006,
+        "gray_margin": 0.2749373266194837,
+        "gray_ratio_val": 0.3362369337979094,
+        "entropy_threshold": 0.7047497519388255,
+        "discrepancy_threshold": 1.0
+      },
+      "0.75": {
+        "tau": 0.44000000000000006,
+        "gray_margin": 0.2803032931180843,
+        "gray_ratio_val": 0.35405448210326257,
+        "entropy_threshold": 0.7014587794072922,
+        "discrepancy_threshold": 1.0
+      },
+      "0.80": {
+        "tau": 0.44000000000000006,
+        "gray_margin": 0.28576828072851806,
+        "gray_ratio_val": 0.3697339246119734,
+        "entropy_threshold": 0.6994774940846199,
+        "discrepancy_threshold": 1.0
+      },
+      "0.85": {
+        "tau": 0.44000000000000006,
+        "gray_margin": 0.29271981708491746,
+        "gray_ratio_val": 0.3887393094710168,
+        "entropy_threshold": 0.6951700144026235,
+        "discrepancy_threshold": 1.0
+      },
+      "0.90": {
+        "tau": 0.44000000000000006,
+        "gray_margin": 0.30272415033610384,
+        "gray_ratio_val": 0.4072695597085841,
+        "entropy_threshold": 0.6922271726144213,
+        "discrepancy_threshold": 1.0
+      },
+      "0.20": {
+        "tau": 0.44000000000000006,
+        "gray_margin": 0.18137201889019702,
+        "gray_ratio_val": 0.10579664238200824,
+        "entropy_threshold": 0.82522162034952,
+        "discrepancy_threshold": 1.0
+      },
+      "0.40": {
+        "tau": 0.44000000000000006,
+        "gray_margin": 0.23670155254961603,
+        "gray_ratio_val": 0.21721571111815013,
+        "entropy_threshold": 0.7477693475433065,
+        "discrepancy_threshold": 1.0
+      }
+    },
+    "seed9": {
+      "0.60": {
+        "tau": 0.4100000000000001,
+        "gray_margin": 0.24140590399244644,
+        "gray_ratio_val": 0.3059075071270193,
+        "entropy_threshold": 0.7052257078531126,
+        "discrepancy_threshold": 1.0
+      },
+      "0.65": {
+        "tau": 0.4100000000000001,
+        "gray_margin": 0.2468306000038207,
+        "gray_ratio_val": 0.3245961355717453,
+        "entropy_threshold": 0.7004543796861507,
+        "discrepancy_threshold": 1.0
+      },
+      "0.70": {
+        "tau": 0.4100000000000001,
+        "gray_margin": 0.2528324507241525,
+        "gray_ratio_val": 0.34360152043078873,
+        "entropy_threshold": 0.6954311650756188,
+        "discrepancy_threshold": 1.0
+      },
+      "0.75": {
+        "tau": 0.4100000000000001,
+        "gray_margin": 0.25788104112044596,
+        "gray_ratio_val": 0.35936015204307886,
+        "entropy_threshold": 0.6915099623433623,
+        "discrepancy_threshold": 1.0
+      },
+      "0.80": {
+        "tau": 0.4100000000000001,
+        "gray_margin": 0.2643092429539712,
+        "gray_ratio_val": 0.3746436490338929,
+        "entropy_threshold": 0.6881248807896729,
+        "discrepancy_threshold": 1.0
+      },
+      "0.85": {
+        "tau": 0.4100000000000001,
+        "gray_margin": 0.2760477128855799,
+        "gray_ratio_val": 0.39151092809629395,
+        "entropy_threshold": 0.6852641093028818,
+        "discrepancy_threshold": 1.0
+      },
+      "0.90": {
+        "tau": 0.4100000000000001,
+        "gray_margin": 0.30170928004487413,
+        "gray_ratio_val": 0.4063192904656319,
+        "entropy_threshold": 0.6850034377632153,
+        "discrepancy_threshold": 1.0
+      },
+      "0.20": {
+        "tau": 0.4100000000000001,
+        "gray_margin": 0.1623750153803632,
+        "gray_ratio_val": 0.11252771618625278,
+        "entropy_threshold": 0.8044288426918041,
+        "discrepancy_threshold": 1.0
+      },
+      "0.40": {
+        "tau": 0.4100000000000001,
+        "gray_margin": 0.214045454793048,
+        "gray_ratio_val": 0.22133354450427623,
+        "entropy_threshold": 0.7384445167128284,
+        "discrepancy_threshold": 1.0
       }
     }
   }

@@ -1,0 +1,176 @@
+[System Role]
+You are an expert Tennessee Eastman process engineer.
+Your task is to make the final routing-time decision for one ambiguous sample escalated near the UTAR decision boundary.
+[Output Rule]
+Return JSON only with:
+{"decision": "normal"}
+or
+{"decision": "anomaly"}
+
+Do not output any explanation, reasoning, confidence, or extra keys.
+[Task Context]
+This sample was escalated because it is near the UTAR boundary and is not a straightforward case.
+Your job is to resolve this ambiguity using base detector evidence and GraphAD+ structural evidence.
+[Decision Objective]
+At this routing stage, missing a true anomaly is more costly than flagging a borderline anomaly.
+Do not default to "normal" for boundary samples.
+Use base detectors as the primary signal and GraphAD+ as supporting structural evidence.
+[Decision Policy]
+Output {"decision": "anomaly"} when one strong anomaly signal or multiple moderate anomaly signals are present.
+
+Treat the following as strong anomaly evidence:
+- utar_side is near_tau or above_tau and detector_anomaly_votes >= 1
+- entropy_level is high
+- discrepancy_level is high
+- graphad_support is strong
+- graphad_concentration is concentrated
+- sensor_coherence is strong
+
+Output {"decision": "anomaly"} if ANY of the following holds:
+1. One strong anomaly signal is present and the rest of the evidence is not clearly normal.
+2. Two or more moderate anomaly signals appear together.
+3. Detector-side evidence is mixed, but GraphAD+ structural evidence is clearly anomaly-oriented.
+4. GraphAD+ evidence is moderate or strong and coherent on top sensors for a boundary sample.
+5. The overall evidence is ambiguous but leans toward anomaly rather than normal.
+
+Output {"decision": "normal"} only when the combined evidence is more convincingly normal than anomaly.
+[Guardrails]
+- Do not require perfect detector agreement for "anomaly".
+- Do not require both detector disagreement and GraphAD+ evidence if one side is already strongly anomaly-oriented.
+- For near-boundary cases, plausible anomaly evidence is sufficient for "anomaly".
+- Choose "normal" only when anomaly evidence is weak overall and GraphAD+ support is not meaningful.
+[Few-shot Example 1]
+Case:
+utar_side=below_tau
+detector_anomaly_votes=0
+max_detector=xgb(0.1660)
+entropy_level=medium
+discrepancy_level=medium
+graphad_support=low
+graphad_concentration=moderate
+sensor_coherence=weak
+rf=0.164167
+xgb=0.166010
+ModernTCN=0.000011
+utar_base=0.013110
+ensemble_mean=0.110063
+temporal_weight=0.921029
+ensemble_entropy=0.500105
+model_discrepancy=0.077822
+graphad_score=1.710653
+top1_sensor=xmv_4
+top1_score=1.710653
+top1_z=1.335661
+top1_trend=1.637722
+top1_fluct=2.283574
+top1_neighbors=n/a
+top2_sensor=xmeas_21
+top2_score=1.343123
+top1_gap=0.367530
+topk_mean=1.278936
+candidate_sensors=["xmv_4","xmeas_21","xmeas_14","xmeas_22","xmeas_27"]
+candidate_scores=[1.710653,1.343123,1.157961,1.114214,1.06873]
+candidate_topology=none
+Output:
+{"decision": "normal"}
+[Few-shot Example 2]
+Case:
+utar_side=near_tau
+detector_anomaly_votes=1
+max_detector=ModernTCN(0.7742)
+entropy_level=high
+discrepancy_level=high
+graphad_support=medium
+graphad_concentration=concentrated
+sensor_coherence=weak
+rf=0.296667
+xgb=0.440090
+ModernTCN=0.774197
+utar_base=0.362098
+ensemble_mean=0.503652
+temporal_weight=0.177219
+ensemble_entropy=0.999962
+model_discrepancy=0.200065
+graphad_score=3.250736
+top1_sensor=xmeas_5
+top1_score=3.250736
+top1_z=2.400257
+top1_trend=2.727720
+top1_fluct=4.907723
+top1_neighbors=n/a
+top2_sensor=xmv_10
+top2_score=2.302481
+top1_gap=0.948255
+topk_mean=2.310730
+candidate_sensors=["xmeas_5","xmv_10","xmeas_8","xmeas_9","xmeas_40"]
+candidate_scores=[3.250736,2.302481,2.184547,1.989748,1.826139]
+candidate_topology=none
+Output:
+{"decision": "anomaly"}
+[Few-shot Example 3]
+Case:
+utar_side=near_tau
+detector_anomaly_votes=3
+max_detector=xgb(0.9947)
+entropy_level=medium
+discrepancy_level=high
+graphad_support=high
+graphad_concentration=diffuse
+sensor_coherence=moderate
+rf=0.983333
+xgb=0.994713
+ModernTCN=0.632501
+utar_base=0.400604
+ensemble_mean=0.870183
+temporal_weight=0.633364
+ensemble_entropy=0.556937
+model_discrepancy=0.168130
+graphad_score=5.148418
+top1_sensor=xmeas_10
+top1_score=5.148418
+top1_z=12.000000
+top1_trend=0.311966
+top1_fluct=0.886172
+top1_neighbors=xmv_6
+top2_sensor=xmv_6
+top2_score=5.133720
+top1_gap=0.014698
+topk_mean=4.049362
+candidate_sensors=["xmeas_10","xmv_6","xmeas_30","xmeas_24","xmeas_4"]
+candidate_scores=[5.148418,5.13372,4.311615,3.154051,2.499006]
+candidate_topology=xmeas_10->xmv_6; xmv_6->xmeas_10
+Output:
+{"decision": "anomaly"}
+[Derived Context]
+utar_side=near_tau
+detector_anomaly_votes=1
+max_detector=ModernTCN(0.9796)
+entropy_level=high
+discrepancy_level=high
+graphad_support=medium
+graphad_concentration=concentrated
+sensor_coherence=weak
+[Input Context / Detection]
+rf=0.302222
+xgb=0.323493
+ModernTCN=0.979578
+utar_base=0.298954
+ensemble_mean=0.535098
+temporal_weight=0.075858
+ensemble_entropy=0.996443
+model_discrepancy=0.314415
+[Input Context / GraphAD+]
+graphad_score=2.461050
+top1_sensor=xmeas_6
+top1_score=2.461050
+top1_z=2.850848
+top1_trend=3.109081
+top1_fluct=1.293290
+top1_neighbors=n/a
+top2_sensor=xmeas_5
+top2_score=1.659731
+top1_gap=0.801319
+topk_mean=1.513096
+candidate_sensors=["xmeas_6","xmeas_5","xmeas_26","xmeas_37","xmeas_14"]
+candidate_scores=[2.46105,1.659731,1.183889,1.156595,1.104216]
+candidate_topology=none

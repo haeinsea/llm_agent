@@ -1,0 +1,6 @@
+{
+  "selected_q": 0.4,
+  "selection_rule": "max_f1_then_recall_then_worst_case_recall_then_min_call_rate_then_min_cost",
+  "source_dataset": "main",
+  "n_samples": 4000
+}

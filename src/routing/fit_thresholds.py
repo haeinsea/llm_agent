@@ -5,6 +5,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from src.utils.experiment import get_seed_list
 from src.utils.io import read_csv, read_yaml, write_csv, write_json
 from src.utils.metrics import binary_metrics
 from src.utils.routing import compute_base_routing_score
@@ -15,7 +16,7 @@ CONFIG_DIR = PROJECT_ROOT / "configs"
 OUTPUT_DIR = PROJECT_ROOT / "outputs"
 PRED_DIR = OUTPUT_DIR / "predictions"
 METRIC_DIR = OUTPUT_DIR / "metrics"
-SEEDS = [0, 1, 2, 3, 4]
+SEEDS = get_seed_list()
 
 
 def best_tau_for_score(y_true: np.ndarray, p: np.ndarray, grid: np.ndarray, metric_name: str) -> tuple[float, dict]:

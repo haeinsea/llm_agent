@@ -11,6 +11,7 @@ from src.routing.selective_llm_eval import (
     DEFAULT_Q,
     METRIC_DIR,
     PRED_DIR,
+    _gray_row_for_q,
     build_base_view,
     build_llm_runner,
     run_mode,
@@ -18,18 +19,21 @@ from src.routing.selective_llm_eval import (
 )
 from src.utils.io import read_csv, read_json, read_yaml, write_csv
 from src.utils.metrics import binary_metrics, prr
+from src.utils.runtime import get_base_runtime_stat, load_base_runtime_summary
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 CONFIG_DIR = PROJECT_ROOT / "configs"
 INTERMEDIATE_DIR = METRIC_DIR / "main_only_progress"
 STATUS_PATH = INTERMEDIATE_DIR / "status.json"
+BASE_RUNTIME_SUMMARY_PATH = METRIC_DIR / "base_inference_runtime_summary.json"
+BASE_STACK_COMPONENT = "UTAR Base Stack"
 
 
 def _build_quick_table(summary: pd.DataFrame) -> pd.DataFrame:
     sub = summary[(summary["dataset"] == "main") & (summary["mode"].isin(["no_llm", "selective"]))].copy()
     label_map = {
-        "no_llm": "w/o Gray-Zone",
+        "no_llm": "w/o Selective LLM",
         "selective": "Selective UTAR",
     }
     sub["Method"] = sub["mode"].map(label_map)
@@ -63,11 +67,12 @@ def _update_status(**payload: object) -> None:
 def _pick_first_selective_candidate(base_df: pd.DataFrame, cfg: dict, tau: float, margin: float) -> pd.Series:
     cand = base_df.copy()
     cand["gray_zone"] = (cand["p_utar_base"].sub(tau).abs() <= margin).astype(int)
-    cand["xgb_shortcut"] = (
-        (cand["p_xgb"] <= float(cfg.get("xgb_shortcut_low", 0.20)))
-        | (cand["p_xgb"] >= float(cfg.get("xgb_shortcut_high", 0.80)))
+    entropy_threshold = float(cfg.get("entropy_threshold", 1.0))
+    cand["shortcut_filter"] = (
+        (cand["gray_zone"] == 1)
+        & (cand["ensemble_entropy"] <= entropy_threshold)
     ).astype(int)
-    out = cand[(cand["gray_zone"] == 1) & (cand["xgb_shortcut"] == 0)].head(1).copy()
+    out = cand[(cand["gray_zone"] == 1) & (cand["shortcut_filter"] == 0)].head(1).copy()
     if out.empty:
         raise RuntimeError("No selective candidate row found for warmup.")
     return out.iloc[0]
@@ -112,12 +117,20 @@ def main() -> None:
     main_base = build_base_view(pred_main, cfg)
 
     tau = float(tau_info["tau"])
-    margin = float(gray_grid.loc[(gray_grid["q"] - DEFAULT_Q).abs().idxmin(), "gray_margin_mean"])
+    gray_row = _gray_row_for_q(gray_grid, DEFAULT_Q)
+    margin = float(gray_row["gray_margin_mean"])
+    cfg = {
+        **cfg,
+        "entropy_threshold": float(gray_row.get("entropy_threshold_mean", 1.0)),
+        "discrepancy_threshold": float(gray_row.get("discrepancy_threshold_mean", 1.0)),
+    }
 
     llm_runner_live = build_llm_runner(cfg)
     llm_runner_live.timeout_sec = min(llm_runner_live.timeout_sec, 20)
     llm_runner_live.max_retries = min(llm_runner_live.max_retries, 1)
     llm_runner_live.retry_backoff_sec = min(llm_runner_live.retry_backoff_sec, 1.0)
+    runtime_summary = load_base_runtime_summary(BASE_RUNTIME_SUMMARY_PATH)
+    main_base_latency_ms = get_base_runtime_stat(runtime_summary, split="main", component=BASE_STACK_COMPONENT, field="total_latency_ms", default=0.0)
 
     print("[main_only] starting selective_llm_eval_main_only", flush=True)
     print(f"[main_only] DEFAULT_Q={DEFAULT_Q:.2f}, modes={args.modes}", flush=True)
@@ -126,15 +139,29 @@ def main() -> None:
     if "selective" in args.modes:
         _warmup_openai_runner(main_base, cfg, tau, margin, llm_runner_live)
 
-    ref_recall = binary_metrics(val_base["y_true"], val_base["p_utar_base"], tau=tau)["recall"]
     rows: list[dict] = []
     mode_outputs: dict[str, pd.DataFrame] = {}
     started_all = time.perf_counter()
 
     for mode in args.modes:
         runner = llm_runner_live if mode == "selective" else build_llm_runner(cfg, force_stub=True)
-        out, metrics = run_mode(main_base, tau, margin, cfg, mode, runner, progress_label=f"main mode={mode}")
-        metrics["prr"] = prr(ref_recall, metrics["recall"])
+        ref_recall = binary_metrics(val_base["y_true"], val_base["p_utar_base"], tau=tau)["recall"] if mode == "no_llm" else None
+        out, metrics = run_mode(
+            main_base,
+            tau=tau,
+            margin=margin,
+            entropy_threshold=float(cfg["entropy_threshold"]),
+            discrepancy_threshold=float(cfg["discrepancy_threshold"]),
+            cfg=cfg,
+            mode=mode,
+            llm_runner=runner,
+            ref_recall=ref_recall,
+            base_latency_ms=main_base_latency_ms,
+            routing_feature_latency_ms=0.0,
+            progress_label=f"main mode={mode}",
+        )
+        if ref_recall is not None:
+            metrics["prr"] = prr(ref_recall, metrics["recall"])
         rows.append({"dataset": "main", "q": float(DEFAULT_Q), "seed": -1, **metrics})
         mode_outputs[mode] = out
         _update_status(

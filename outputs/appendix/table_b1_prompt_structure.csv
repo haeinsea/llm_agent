@@ -1,0 +1,12 @@
+Section,Purpose,Source
+System Role,Assign a routing-time final decision role for one ambiguous TEP sample near the UTAR boundary.,Prompt prefix
+Output Rule,"Constrain the response to JSON only with decision in {normal, anomaly}.",Prompt prefix
+Task Context,Explain that the sample was escalated because it lies near the UTAR boundary and requires additional review.,Prompt prefix
+Decision Objective,State that missing an anomaly is costlier than flagging a borderline anomaly.,Prompt prefix
+Decision Policy,List strong and moderate anomaly cues and the conditions that trigger anomaly output.,Prompt prefix
+Guardrails,Prevent over-reliance on perfect detector agreement and discourage default-normal behavior near the boundary.,Prompt prefix
+Few-shot Examples,Provide compact normal/anomaly routing examples in the same serialized feature format.,Prompt body
+Derived Context,"Provide categorical cues such as utar_side, detector votes, entropy level, discrepancy level, and graph concentration.",Derived prompt features
+Input Context / Detection,"Provide RF, XGB, ModernTCN, UTAR-base, entropy, discrepancy, and temporal weighting signals.",Prediction columns incl. ModernTCN
+Input Context / GraphAD+,"Provide top sensors, structural score, z/trend/fluctuation, gap, and candidate topology evidence.",GraphAD+ columns
+Evaluation Policy,"Appendix B prompt example is drawn from the representative routing path used for cost, latency, and prompt accounting.",utar_test_cost_selective.csv

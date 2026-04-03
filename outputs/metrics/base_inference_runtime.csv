@@ -1,0 +1,165 @@
+split,component,n_samples,total_latency_ms,avg_latency_ms_per_sample,device,measured_on_split,notes,seed
+cost,Avg. Ensemble Stack,400,502.1424852589445,1.2553562131473612,cpu+mps,cost,rf+xgb+temporal,0.0
+cost,Avg. Ensemble Stack,400,374.8266287710694,0.9370665719276735,cpu+mps,cost,rf+xgb+temporal,1.0
+cost,Avg. Ensemble Stack,400,375.4521293510767,0.9386303233776917,cpu+mps,cost,rf+xgb+temporal,2.0
+cost,Avg. Ensemble Stack,400,298.0112373438004,0.745028093359501,cpu+mps,cost,rf+xgb+temporal,3.0
+cost,Avg. Ensemble Stack,400,323.2519153753346,0.8081297884383365,cpu+mps,cost,rf+xgb+temporal,4.0
+cost,Avg. Ensemble Stack,400,315.0861296480455,0.7877153241201138,cpu+mps,cost,rf+xgb+temporal,5.0
+cost,Avg. Ensemble Stack,400,278.1256789265343,0.6953141973163358,cpu+mps,cost,rf+xgb+temporal,6.0
+cost,Avg. Ensemble Stack,400,255.51668807814863,0.6387917201953716,cpu+mps,cost,rf+xgb+temporal,7.0
+cost,Avg. Ensemble Stack,400,255.71874633265608,0.6392968658316402,cpu+mps,cost,rf+xgb+temporal,8.0
+cost,Avg. Ensemble Stack,400,284.30604846278715,0.7107651211569679,cpu+mps,cost,rf+xgb+temporal,9.0
+cost,GraphAD+,400,16.52949652776038,0.04132374131940095,cpu,test_full,allocated from test_full per-sample average,
+cost,ModernTCN Ensemble (10 seeds),400,29.33552628250992,0.0733388157062748,mps,test_full,allocated from test_full per-sample average,0.0
+cost,ModernTCN Ensemble (10 seeds),400,26.517171760014214,0.06629292940003553,mps,test_full,allocated from test_full per-sample average,1.0
+cost,ModernTCN Ensemble (10 seeds),400,27.42946334798731,0.06857365836996827,mps,test_full,allocated from test_full per-sample average,2.0
+cost,ModernTCN Ensemble (10 seeds),400,27.746196337304248,0.06936549084326062,mps,test_full,allocated from test_full per-sample average,3.0
+cost,ModernTCN Ensemble (10 seeds),400,27.267081350186263,0.06816770337546565,mps,test_full,allocated from test_full per-sample average,4.0
+cost,ModernTCN Ensemble (10 seeds),400,23.59754665209249,0.05899386663023123,mps,test_full,allocated from test_full per-sample average,5.0
+cost,ModernTCN Ensemble (10 seeds),400,23.718428924274924,0.059296072310687314,mps,test_full,allocated from test_full per-sample average,6.0
+cost,ModernTCN Ensemble (10 seeds),400,24.13652106837403,0.06034130267093508,mps,test_full,allocated from test_full per-sample average,7.0
+cost,ModernTCN Ensemble (10 seeds),400,24.527412338153876,0.06131853084538469,mps,test_full,allocated from test_full per-sample average,8.0
+cost,ModernTCN Ensemble (10 seeds),400,27.106631448879355,0.06776657862219838,mps,test_full,allocated from test_full per-sample average,9.0
+cost,RF Ensemble (10 seeds),400,466.23224997892976,1.1655806249473244,cpu,cost,,0.0
+cost,RF Ensemble (10 seeds),400,341.0055410058703,0.8525138525146758,cpu,cost,,1.0
+cost,RF Ensemble (10 seeds),400,341.234457999235,0.8530861449980875,cpu,cost,,2.0
+cost,RF Ensemble (10 seeds),400,262.9784159944393,0.6574460399860982,cpu,cost,,3.0
+cost,RF Ensemble (10 seeds),400,289.0258750121575,0.7225646875303937,cpu,cost,,4.0
+cost,RF Ensemble (10 seeds),400,284.74866700707935,0.7118716675176984,cpu,cost,,5.0
+cost,RF Ensemble (10 seeds),400,247.4263749900274,0.6185659374750685,cpu,cost,,6.0
+cost,RF Ensemble (10 seeds),400,225.13633401831612,0.5628408350457903,cpu,cost,,7.0
+cost,RF Ensemble (10 seeds),400,224.58758400171064,0.5614689600042766,cpu,cost,,8.0
+cost,RF Ensemble (10 seeds),400,250.09116699220613,0.6252279174805153,cpu,cost,,9.0
+cost,UTAR Base Stack,400,518.6719817867048,1.296679954466762,cpu+mps,cost,rf+xgb+temporal+graphad,0.0
+cost,UTAR Base Stack,400,391.3561252988298,0.9783903132470745,cpu+mps,cost,rf+xgb+temporal+graphad,1.0
+cost,UTAR Base Stack,400,391.98162587883706,0.9799540646970927,cpu+mps,cost,rf+xgb+temporal+graphad,2.0
+cost,UTAR Base Stack,400,314.5407338715608,0.786351834678902,cpu+mps,cost,rf+xgb+temporal+graphad,3.0
+cost,UTAR Base Stack,400,339.7814119030949,0.8494535297577372,cpu+mps,cost,rf+xgb+temporal+graphad,4.0
+cost,UTAR Base Stack,400,331.6156261758059,0.8290390654395148,cpu+mps,cost,rf+xgb+temporal+graphad,5.0
+cost,UTAR Base Stack,400,294.6551754542947,0.7366379386357367,cpu+mps,cost,rf+xgb+temporal+graphad,6.0
+cost,UTAR Base Stack,400,272.046184605909,0.6801154615147724,cpu+mps,cost,rf+xgb+temporal+graphad,7.0
+cost,UTAR Base Stack,400,272.24824286041644,0.6806206071510411,cpu+mps,cost,rf+xgb+temporal+graphad,8.0
+cost,UTAR Base Stack,400,300.83554499054753,0.7520888624763689,cpu+mps,cost,rf+xgb+temporal+graphad,9.0
+cost,XGB Ensemble (10 seeds),400,6.574708997504786,0.016436772493761964,cpu,cost,,0.0
+cost,XGB Ensemble (10 seeds),400,7.303916005184874,0.018259790012962185,cpu,cost,,1.0
+cost,XGB Ensemble (10 seeds),400,6.788208003854379,0.016970520009635948,cpu,cost,,2.0
+cost,XGB Ensemble (10 seeds),400,7.286625012056902,0.018216562530142255,cpu,cost,,3.0
+cost,XGB Ensemble (10 seeds),400,6.958959012990817,0.017397397532477044,cpu,cost,,4.0
+cost,XGB Ensemble (10 seeds),400,6.73991598887369,0.016849789972184226,cpu,cost,,5.0
+cost,XGB Ensemble (10 seeds),400,6.980875012231991,0.017452187530579977,cpu,cost,,6.0
+cost,XGB Ensemble (10 seeds),400,6.243832991458476,0.015609582478646189,cpu,cost,,7.0
+cost,XGB Ensemble (10 seeds),400,6.603749992791563,0.016509374981978908,cpu,cost,,8.0
+cost,XGB Ensemble (10 seeds),400,7.108250021701679,0.017770625054254197,cpu,cost,,9.0
+main,Avg. Ensemble Stack,4000,692.5877218468314,0.17314693046170784,cpu+mps,main,rf+xgb+temporal,0.0
+main,Avg. Ensemble Stack,4000,819.9488426132029,0.20498721065330072,cpu+mps,main,rf+xgb+temporal,1.0
+main,Avg. Ensemble Stack,4000,580.1761325016528,0.1450440331254132,cpu+mps,main,rf+xgb+temporal,2.0
+main,Avg. Ensemble Stack,4000,562.8735043739823,0.14071837609349558,cpu+mps,main,rf+xgb+temporal,3.0
+main,Avg. Ensemble Stack,4000,571.3723545054008,0.1428430886263502,cpu+mps,main,rf+xgb+temporal,4.0
+main,Avg. Ensemble Stack,4000,534.1183835095063,0.1335295958773766,cpu+mps,main,rf+xgb+temporal,5.0
+main,Avg. Ensemble Stack,4000,599.8883302201546,0.14997208255503863,cpu+mps,main,rf+xgb+temporal,6.0
+main,Avg. Ensemble Stack,4000,583.4570446817238,0.14586426117043094,cpu+mps,main,rf+xgb+temporal,7.0
+main,Avg. Ensemble Stack,4000,557.1042903998815,0.13927607259997038,cpu+mps,main,rf+xgb+temporal,8.0
+main,Avg. Ensemble Stack,4000,590.1971474584702,0.14754928686461755,cpu+mps,main,rf+xgb+temporal,9.0
+main,GraphAD+,4000,165.29496527760378,0.04132374131940095,cpu,test_full,allocated from test_full per-sample average,
+main,ModernTCN Ensemble (10 seeds),4000,293.3552628250992,0.0733388157062748,mps,test_full,allocated from test_full per-sample average,0.0
+main,ModernTCN Ensemble (10 seeds),4000,265.17171760014213,0.06629292940003553,mps,test_full,allocated from test_full per-sample average,1.0
+main,ModernTCN Ensemble (10 seeds),4000,274.2946334798731,0.06857365836996827,mps,test_full,allocated from test_full per-sample average,2.0
+main,ModernTCN Ensemble (10 seeds),4000,277.46196337304247,0.06936549084326062,mps,test_full,allocated from test_full per-sample average,3.0
+main,ModernTCN Ensemble (10 seeds),4000,272.6708135018626,0.06816770337546565,mps,test_full,allocated from test_full per-sample average,4.0
+main,ModernTCN Ensemble (10 seeds),4000,235.9754665209249,0.05899386663023123,mps,test_full,allocated from test_full per-sample average,5.0
+main,ModernTCN Ensemble (10 seeds),4000,237.18428924274923,0.05929607231068731,mps,test_full,allocated from test_full per-sample average,6.0
+main,ModernTCN Ensemble (10 seeds),4000,241.36521068374032,0.06034130267093508,mps,test_full,allocated from test_full per-sample average,7.0
+main,ModernTCN Ensemble (10 seeds),4000,245.27412338153874,0.06131853084538469,mps,test_full,allocated from test_full per-sample average,8.0
+main,ModernTCN Ensemble (10 seeds),4000,271.0663144887935,0.06776657862219838,mps,test_full,allocated from test_full per-sample average,9.0
+main,RF Ensemble (10 seeds),4000,378.0380840180442,0.09450952100451104,cpu,main,,0.0
+main,RF Ensemble (10 seeds),4000,544.1946250211913,0.13604865625529783,cpu,main,,1.0
+main,RF Ensemble (10 seeds),4000,294.80041601345874,0.07370010400336469,cpu,main,,2.0
+main,RF Ensemble (10 seeds),4000,275.2373749972321,0.06880934374930803,cpu,main,,3.0
+main,RF Ensemble (10 seeds),4000,287.52454099594615,0.07188113524898654,cpu,main,,4.0
+main,RF Ensemble (10 seeds),4000,286.57120899879374,0.07164280224969843,cpu,main,,5.0
+main,RF Ensemble (10 seeds),4000,320.1337499776855,0.08003343749442138,cpu,main,,6.0
+main,RF Ensemble (10 seeds),4000,326.8566250044387,0.08171415625110967,cpu,main,,7.0
+main,RF Ensemble (10 seeds),4000,300.5719590000808,0.0751429897500202,cpu,main,,8.0
+main,RF Ensemble (10 seeds),4000,308.1248329835944,0.0770312082458986,cpu,main,,9.0
+main,UTAR Base Stack,4000,857.8826871244352,0.2144706717811088,cpu+mps,main,rf+xgb+temporal+graphad,0.0
+main,UTAR Base Stack,4000,985.2438078908068,0.2463109519727017,cpu+mps,main,rf+xgb+temporal+graphad,1.0
+main,UTAR Base Stack,4000,745.4710977792566,0.18636777444481417,cpu+mps,main,rf+xgb+temporal+graphad,2.0
+main,UTAR Base Stack,4000,728.1684696515862,0.18204211741289655,cpu+mps,main,rf+xgb+temporal+graphad,3.0
+main,UTAR Base Stack,4000,736.6673197830047,0.18416682994575118,cpu+mps,main,rf+xgb+temporal+graphad,4.0
+main,UTAR Base Stack,4000,699.4133487871101,0.1748533371967775,cpu+mps,main,rf+xgb+temporal+graphad,5.0
+main,UTAR Base Stack,4000,765.1832954977584,0.1912958238744396,cpu+mps,main,rf+xgb+temporal+graphad,6.0
+main,UTAR Base Stack,4000,748.7520099593276,0.1871880024898319,cpu+mps,main,rf+xgb+temporal+graphad,7.0
+main,UTAR Base Stack,4000,722.3992556774853,0.18059981391937133,cpu+mps,main,rf+xgb+temporal+graphad,8.0
+main,UTAR Base Stack,4000,755.492112736074,0.1888730281840185,cpu+mps,main,rf+xgb+temporal+graphad,9.0
+main,XGB Ensemble (10 seeds),4000,21.194375003688037,0.005298593750922009,cpu,main,,0.0
+main,XGB Ensemble (10 seeds),4000,10.582499991869554,0.0026456249979673885,cpu,main,,1.0
+main,XGB Ensemble (10 seeds),4000,11.081083008321002,0.0027702707520802505,cpu,main,,2.0
+main,XGB Ensemble (10 seeds),4000,10.174166003707796,0.002543541500926949,cpu,main,,3.0
+main,XGB Ensemble (10 seeds),4000,11.177000007592142,0.0027942500018980354,cpu,main,,4.0
+main,XGB Ensemble (10 seeds),4000,11.571707989787683,0.0028929269974469207,cpu,main,,5.0
+main,XGB Ensemble (10 seeds),4000,42.57029099971987,0.010642572749929968,cpu,main,,6.0
+main,XGB Ensemble (10 seeds),4000,15.235208993544802,0.0038088022483862005,cpu,main,,7.0
+main,XGB Ensemble (10 seeds),4000,11.25820801826194,0.002814552004565485,cpu,main,,8.0
+main,XGB Ensemble (10 seeds),4000,11.005999986082315,0.002751499996520579,cpu,main,,9.0
+test_full,GraphAD+,115200,4760.4949999949895,0.04132374131940095,cpu,test_full,,
+test_full,ModernTCN Ensemble (10 seeds),109320,8017.399333009962,0.0733388157062748,mps,test_full,,0.0
+test_full,ModernTCN Ensemble (10 seeds),109320,7247.143042011885,0.06629292940003553,mps,test_full,,1.0
+test_full,ModernTCN Ensemble (10 seeds),109320,7496.472333004931,0.06857365836996827,mps,test_full,,2.0
+test_full,ModernTCN Ensemble (10 seeds),109320,7583.03545898525,0.06936549084326062,mps,test_full,,3.0
+test_full,ModernTCN Ensemble (10 seeds),109320,7452.093333005905,0.06816770337546565,mps,test_full,,4.0
+test_full,ModernTCN Ensemble (10 seeds),109320,6449.209500016877,0.05899386663023123,mps,test_full,,5.0
+test_full,ModernTCN Ensemble (10 seeds),109320,6482.246625004336,0.05929607231068731,mps,test_full,,6.0
+test_full,ModernTCN Ensemble (10 seeds),109320,6596.511207986623,0.06034130267093508,mps,test_full,,7.0
+test_full,ModernTCN Ensemble (10 seeds),109320,6703.341792017454,0.06131853084538469,mps,test_full,,8.0
+test_full,ModernTCN Ensemble (10 seeds),109320,7408.242374978727,0.06776657862219838,mps,test_full,,9.0
+val,Avg. Ensemble Stack,12628,3275.551875005476,0.25938801670933453,cpu+mps,val,rf+xgb+temporal,0.0
+val,Avg. Ensemble Stack,12628,1326.6439579892904,0.10505574580212942,cpu+mps,val,rf+xgb+temporal,1.0
+val,Avg. Ensemble Stack,12628,1102.4370410013944,0.08730100102956877,cpu+mps,val,rf+xgb+temporal,2.0
+val,Avg. Ensemble Stack,12628,1132.388625992462,0.08967284019579205,cpu+mps,val,rf+xgb+temporal,3.0
+val,Avg. Ensemble Stack,12628,1227.2782919753809,0.0971870677839231,cpu+mps,val,rf+xgb+temporal,4.0
+val,Avg. Ensemble Stack,12628,1249.6679169707932,0.09896008211678754,cpu+mps,val,rf+xgb+temporal,5.0
+val,Avg. Ensemble Stack,12628,1243.6807489721105,0.0984859636499929,cpu+mps,val,rf+xgb+temporal,6.0
+val,Avg. Ensemble Stack,12628,1161.9567080051638,0.09201431010493853,cpu+mps,val,rf+xgb+temporal,7.0
+val,Avg. Ensemble Stack,12628,1166.1925830121618,0.09234974524961687,cpu+mps,val,rf+xgb+temporal,8.0
+val,Avg. Ensemble Stack,12628,1223.587001033593,0.09689475776319235,cpu+mps,val,rf+xgb+temporal,9.0
+val,GraphAD+,14000,1178.445041005034,0.08417464578607385,cpu,val,,
+val,ModernTCN Ensemble (10 seeds),12628,1026.8704170011915,0.0813169478144751,mps,val,,0.0
+val,ModernTCN Ensemble (10 seeds),12628,766.7635830002837,0.060719320795081064,mps,val,,1.0
+val,ModernTCN Ensemble (10 seeds),12628,665.4757079959381,0.05269842477002994,mps,val,,2.0
+val,ModernTCN Ensemble (10 seeds),12628,734.0114590188023,0.0581257094566679,mps,val,,3.0
+val,ModernTCN Ensemble (10 seeds),12628,769.8917500092648,0.06096703753636877,mps,val,,4.0
+val,ModernTCN Ensemble (10 seeds),12628,784.3310839962214,0.062110475451078666,mps,val,,5.0
+val,ModernTCN Ensemble (10 seeds),12628,814.1206659784075,0.06446948574425146,mps,val,,6.0
+val,ModernTCN Ensemble (10 seeds),12628,756.2783340108581,0.05988900332680219,mps,val,,7.0
+val,ModernTCN Ensemble (10 seeds),12628,791.3297089980915,0.06266469029126477,mps,val,,8.0
+val,ModernTCN Ensemble (10 seeds),12628,787.4019170121755,0.062353651964853936,mps,val,,9.0
+val,RF Ensemble (10 seeds),14000,2187.1137080015615,0.15622240771439724,cpu,val,,0.0
+val,RF Ensemble (10 seeds),14000,529.5294169918634,0.0378235297851331,cpu,val,,1.0
+val,RF Ensemble (10 seeds),14000,407.98675001133233,0.029141910715095167,cpu,val,,2.0
+val,RF Ensemble (10 seeds),14000,369.94870798662305,0.02642490771333022,cpu,val,,3.0
+val,RF Ensemble (10 seeds),14000,429.00416697375476,0.030643154783839627,cpu,val,,4.0
+val,RF Ensemble (10 seeds),14000,437.1468329918571,0.031224773785132647,cpu,val,,5.0
+val,RF Ensemble (10 seeds),14000,397.06449999357574,0.028361749999541126,cpu,val,,6.0
+val,RF Ensemble (10 seeds),14000,373.99195798207074,0.026713711284433624,cpu,val,,7.0
+val,RF Ensemble (10 seeds),14000,347.30316599598154,0.02480736899971297,cpu,val,,8.0
+val,RF Ensemble (10 seeds),14000,409.9453340168111,0.029281809572629363,cpu,val,,9.0
+val,UTAR Base Stack,12628,4453.99691601051,0.35270802312405053,cpu+mps,val,rf+xgb+temporal+graphad,0.0
+val,UTAR Base Stack,12628,2505.0889989943244,0.19837575221684545,cpu+mps,val,rf+xgb+temporal+graphad,1.0
+val,UTAR Base Stack,12628,2280.8820820064284,0.1806210074442848,cpu+mps,val,rf+xgb+temporal+graphad,2.0
+val,UTAR Base Stack,12628,2310.833666997496,0.18299284661050808,cpu+mps,val,rf+xgb+temporal+graphad,3.0
+val,UTAR Base Stack,12628,2405.723332980415,0.19050707419863913,cpu+mps,val,rf+xgb+temporal+graphad,4.0
+val,UTAR Base Stack,12628,2428.112957975827,0.19228008853150358,cpu+mps,val,rf+xgb+temporal+graphad,5.0
+val,UTAR Base Stack,12628,2422.1257899771444,0.19180597006470892,cpu+mps,val,rf+xgb+temporal+graphad,6.0
+val,UTAR Base Stack,12628,2340.401749010198,0.18533431651965457,cpu+mps,val,rf+xgb+temporal+graphad,7.0
+val,UTAR Base Stack,12628,2344.637624017196,0.1856697516643329,cpu+mps,val,rf+xgb+temporal+graphad,8.0
+val,UTAR Base Stack,12628,2402.032042038627,0.19021476417790836,cpu+mps,val,rf+xgb+temporal+graphad,9.0
+val,XGB Ensemble (10 seeds),14000,61.56775000272319,0.004397696428765942,cpu,val,,0.0
+val,XGB Ensemble (10 seeds),14000,30.35095799714327,0.0021679255712245193,cpu,val,,1.0
+val,XGB Ensemble (10 seeds),14000,28.97458299412392,0.0020696130710088517,cpu,val,,2.0
+val,XGB Ensemble (10 seeds),14000,28.42845898703672,0.0020306042133597657,cpu,val,,3.0
+val,XGB Ensemble (10 seeds),14000,28.382374992361292,0.002027312499454378,cpu,val,,4.0
+val,XGB Ensemble (10 seeds),14000,28.189999982714653,0.002013571427336761,cpu,val,,5.0
+val,XGB Ensemble (10 seeds),14000,32.495583000127226,0.002321113071437659,cpu,val,,6.0
+val,XGB Ensemble (10 seeds),14000,31.686416012234986,0.002263315429445356,cpu,val,,7.0
+val,XGB Ensemble (10 seeds),14000,27.559708018088713,0.0019685505727206226,cpu,val,,8.0
+val,XGB Ensemble (10 seeds),14000,26.23975000460632,0.0018742678574718802,cpu,val,,9.0

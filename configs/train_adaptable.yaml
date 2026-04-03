@@ -1,0 +1,17 @@
+seed: 42
+architecture: modern_tcn
+window_size: 50
+stride: 1
+channels: [64, 64, 64]
+dilations: [1, 2, 4]
+kernel_size: 3
+dropout: 0.1
+expansion_ratio: 2
+pool: avg
+batch_size: 128
+inference_batch_size: 512
+epochs: 15
+lr: 0.001
+weight_decay: 0.0001
+adaptation_lr: 0.0001
+adaptation_steps: 1

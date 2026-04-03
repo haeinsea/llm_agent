@@ -1,0 +1,26 @@
+Component,Parameter,Selected Value,Candidate Space,Evidence Source,Objective Score,Rationale
+RF,n_estimators,300,"[200, 300]",current_config,,Validation-optimized tree count for stable ensemble variance reduction.
+RF,min_samples_split,2,"[2, 4]",current_config,,Prevents brittle splits under temporal shift.
+RF,min_samples_leaf,1,"[1, 2]",current_config,,Smooths leaf-level probability estimates.
+XGB,n_estimators,400,"[200, 300]",current_config,,Balances boosting strength and overfitting under shifted test conditions.
+XGB,max_depth,6,"[4, 6]",current_config,,Controls nonlinear boundary complexity.
+XGB,learning_rate,0.05,[0.05],current_config,,Stabilizes residual fitting across operating regimes.
+XGB,subsample,0.9,"[0.8, 0.9]",current_config,,Improves robustness to covariate shift through stochastic boosting.
+ModernTCN,channels,"[64, 96, 128]",,current_config,,Sets temporal capacity for industrial sensor dynamics.
+ModernTCN,dilations,"[1, 2, 4]",,current_config,,Controls receptive field width for onset-to-post-shift evolution.
+ModernTCN,kernel_size,3,,current_config,,Trades local sensitivity against smoothing.
+ModernTCN,dropout,0.1,,current_config,,Regularizes temporal representation under shift.
+ModernTCN,expansion_ratio,2,,current_config,,Controls ModernTCN block expressiveness.
+ModernTCN,batch_size,64,,current_config,,Balances gradient stability and throughput.
+ModernTCN,epochs,25,,current_config,,Chosen to maximize validation utility before temporal overfitting.
+GraphAD+,corr_threshold,0.7,"[0.6, 0.7, 0.8]",current_config,,Defines data-driven topology edges used for structure-aware smoothing.
+GraphAD+,alpha,0.3,"[0.2, 0.3]",current_config,,Balances local anomaly evidence with neighborhood support.
+GraphAD+,top_k,5,[5],current_config,,Sets the number of GraphAD+ candidate sensors exposed to the downstream prompt.
+GraphAD+,lambda_z,0.4,"[0.4, 0.6]",current_config,,Prioritizes instantaneous deviation.
+GraphAD+,lambda_tr,0.3,"[0.2, 0.3]",current_config,,Captures monotonic directional change.
+GraphAD+,lambda_fl,0.3,"[0.1, 0.2]",current_config,,Captures fluctuation and non-monotonic turbulence.
+UTAR,default_q,0.4,,current_config,,Selected as the operational elbow between stability gain and call-rate growth.
+UTAR,q_grid,"[0.2, 0.4, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9]",,current_config,,Search candidates for gray-zone width control.
+UTAR,sigmoid_gain,5.0,"[4.0, 5.0, 6.0]",current_config,,Sharpens temporal weight transition around ambiguous regions.
+UTAR,entropy_shortcut_quantile,0.8,"[0.8, 0.9]",current_config,,Controls confidence-based shortcut aggressiveness.
+UTAR,discrepancy_shortcut_quantile,0.8,"[0.8, 0.9]",current_config,,Controls disagreement-aware shortcut aggressiveness.

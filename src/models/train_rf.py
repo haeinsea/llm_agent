@@ -68,13 +68,16 @@ def main():
             "random_state": 42,
             "n_estimators": 300,
             "max_depth": None,
+            "min_samples_split": 2,
             "min_samples_leaf": 1,
             "n_jobs": -1,
         },
     )
     seed = int(args.seed) if args.seed is not None else int(cfg["random_state"])
-
-    
+    print("\n" + "=" * 80, flush=True)
+    print(f"[START] train_rf seed={seed}", flush=True)
+    print("  config    : configs/train_rf.yaml", flush=True)
+    print("=" * 80, flush=True)
 
     feature_cols = load_feature_cols()
     train_df = read_rows("te_train_rows.csv")
@@ -93,6 +96,7 @@ def main():
     model = RandomForestClassifier(
         n_estimators=int(cfg["n_estimators"]),
         max_depth=cfg["max_depth"],
+        min_samples_split=int(cfg.get("min_samples_split", 2)),
         min_samples_leaf=int(cfg["min_samples_leaf"]),
         random_state=seed,
         n_jobs=int(cfg["n_jobs"]),
@@ -109,7 +113,7 @@ def main():
     with open(METRIC_DIR / f"rf_val_metrics_seed{seed}.json", "w", encoding="utf-8") as f:
         json.dump(metrics, f, indent=2, ensure_ascii=False)
 
-    print("RF training completed.")
+    print(f"[DONE] train_rf seed={seed}", flush=True)
     print(json.dumps(metrics, indent=2, ensure_ascii=False))
 
 

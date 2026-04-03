@@ -4,6 +4,7 @@ from pathlib import Path
 import time
 
 from src.routing.selective_llm_eval import DEFAULT_Q, build_llm_runner, get_seed_view
+from src.utils.experiment import get_representative_seed
 from src.utils.io import read_csv, read_json, read_yaml
 
 
@@ -20,14 +21,19 @@ def main() -> None:
     gray_info = read_json(METRIC_DIR / "grayzone_defaults.json")
     pred_main = read_csv(PRED_DIR / "base_test_main_predictions.csv")
 
-    seed = 0
+    seed = get_representative_seed()
     seed_key = f"seed{seed}"
     tau = float(tau_info["per_seed"][seed_key]["tau"])
-    margin = float(gray_info["per_seed"][seed_key][f"{float(DEFAULT_Q):.2f}"]["gray_margin"])
+    gray_row = gray_info["per_seed"][seed_key][f"{float(DEFAULT_Q):.2f}"]
+    margin = float(gray_row["gray_margin"])
+    entropy_threshold = float(gray_row.get("entropy_threshold", 1.0))
     seed_df = get_seed_view(pred_main, seed, cfg)
     seed_df["gray_zone"] = (seed_df["p_utar_base"].sub(tau).abs() <= margin).astype(int)
-    seed_df["xgb_shortcut"] = ((seed_df["p_xgb"] <= float(cfg.get("xgb_shortcut_low", 0.20))) | (seed_df["p_xgb"] >= float(cfg.get("xgb_shortcut_high", 0.80)))).astype(int)
-    cand = seed_df[(seed_df["gray_zone"] == 1) & (seed_df["xgb_shortcut"] == 0)].head(1).copy()
+    seed_df["shortcut_filter"] = (
+        (seed_df["gray_zone"] == 1)
+        & (seed_df["ensemble_entropy"] <= entropy_threshold)
+    ).astype(int)
+    cand = seed_df[(seed_df["gray_zone"] == 1) & (seed_df["shortcut_filter"] == 0)].head(1).copy()
 
     if cand.empty:
         raise RuntimeError("No candidate row found for a single-call test.")

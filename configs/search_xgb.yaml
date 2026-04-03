@@ -1,0 +1,11 @@
+search_seeds: [0]
+selection_metric: f1
+score_weights:
+  f1: 1.0
+  recall: 0.2
+n_estimators: [200, 300]
+max_depth: [4, 6]
+learning_rate: [0.05]
+subsample: [0.8, 0.9]
+colsample_bytree: [0.8, 0.9]
+reg_lambda: [1.0, 2.0]

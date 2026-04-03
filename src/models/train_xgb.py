@@ -81,8 +81,10 @@ def main():
         },
     )
     seed = int(args.seed) if args.seed is not None else int(cfg["random_state"])
-
-    
+    print("\n" + "=" * 80, flush=True)
+    print(f"[START] train_xgb seed={seed}", flush=True)
+    print("  config    : configs/train_xgb.yaml", flush=True)
+    print("=" * 80, flush=True)
 
     feature_cols = load_feature_cols()
     train_df = read_rows("te_train_rows.csv")
@@ -126,7 +128,7 @@ def main():
     with open(METRIC_DIR / f"xgb_val_metrics_seed{seed}.json", "w", encoding="utf-8") as f:
         json.dump(metrics, f, indent=2, ensure_ascii=False)
         
-    print("XGB training completed.")
+    print(f"[DONE] train_xgb seed={seed}", flush=True)
     print(json.dumps(metrics, indent=2, ensure_ascii=False))
 
 

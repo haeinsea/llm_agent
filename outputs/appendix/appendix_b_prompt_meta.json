@@ -1,0 +1,15 @@
+{
+  "llm_enabled": true,
+  "llm_mode": "openai",
+  "configured_model": "gpt-4o-mini",
+  "temperature": 0.0,
+  "prompt_policy": "representative_single_seed_for_entropy_gated_final_decision",
+  "prompt_source_file": "utar_test_cost_selective.csv",
+  "representative_row": {
+    "source_file": "TEP_Faulty_Testing.csv",
+    "fault_id": 17,
+    "run_id": 191,
+    "sample_idx": 186,
+    "phase": "transition"
+  }
+}

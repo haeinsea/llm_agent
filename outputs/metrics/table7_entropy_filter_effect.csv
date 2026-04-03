@@ -1,0 +1,3 @@
+Dataset,Selective UTAR Call Rate,w/o Entropy Filter Call Rate,Call Rate Reduction (p),Selective Cost (USD),w/o Entropy Filter Cost (USD),Cost Reduction (USD),Interpretation
+cost,0.0825 ± 0.0000,0.2525 ± 0.0000,0.1700,0.0088 ± 0.0000,0.0271 ± 0.0000,0.0182,Entropy filter removes low-risk gray-zone samples before LLM escalation.
+main,0.0621 ± 0.0075,0.3075 ± 0.0091,0.2453,0.0667 ± 0.0081,0.3292 ± 0.0098,0.2626,Entropy filter removes low-risk gray-zone samples before LLM escalation.

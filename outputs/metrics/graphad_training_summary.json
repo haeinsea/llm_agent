@@ -1,0 +1,8 @@
+{
+  "n_rows": 49780,
+  "n_features": 52,
+  "edge_count": 14,
+  "mean_degree": 0.5384615384615384,
+  "median_degree": 0.0,
+  "max_degree": 3
+}

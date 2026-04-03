@@ -71,6 +71,17 @@ def instability_score(p: np.ndarray, run_ids: np.ndarray, phases: Optional[np.nd
 
 
 def worst_case_recall(y_true: np.ndarray, p: np.ndarray, run_ids: np.ndarray, tau: float = 0.5, window: int = 50) -> float:
+    return low_tail_recall(y_true, p, run_ids, tau=tau, window=window, quantile=0.05)
+
+
+def low_tail_recall(
+    y_true: np.ndarray,
+    p: np.ndarray,
+    run_ids: np.ndarray,
+    tau: float = 0.5,
+    window: int = 50,
+    quantile: float = 0.05,
+) -> float:
     y_true = np.asarray(y_true).astype(int)
     p = np.asarray(p).astype(float)
     run_ids = np.asarray(run_ids)
@@ -91,7 +102,7 @@ def worst_case_recall(y_true: np.ndarray, p: np.ndarray, run_ids: np.ndarray, ta
             recalls.append(rec)
     if not recalls:
         return np.nan
-    return float(np.min(recalls))
+    return float(np.quantile(recalls, quantile))
 
 
 def prr(base_recall: float, utar_recall: float) -> float:

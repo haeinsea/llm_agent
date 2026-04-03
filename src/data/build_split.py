@@ -49,7 +49,7 @@ class SplitConfig:
     test_main_post_ratio: float = 0.50
 
     # cost test from main test
-    test_cost_total: int = 500
+    test_cost_total: int = 400
     test_cost_normal_ratio: float = 0.30
     test_cost_transition_ratio: float = 0.35
     test_cost_post_ratio: float = 0.35
@@ -566,12 +566,6 @@ def main() -> None:
     # pre 포함 유지
     df_test_full_tcn = df_test_sampled.copy()
     df_test_full_tcn["split_group"] = "test_full_tcn"
-
-    # 공통 평가용 row-level main/cost subsets
-    # 여기서만 pre 제거
-    df_test_eval_source = build_shift_test(df_test_sampled, split_name="test_eval_source")
-    df_test_main = compact_main_test(df_test_eval_source.copy(), cfg)
-    df_test_cost = sample_cost_test_from_main(df_test_main, cfg)
 
     # 공통 평가용 row-level main/cost subsets
     # 중요: 공통 평가셋만 pre를 제외한다

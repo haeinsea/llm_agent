@@ -1,0 +1,5 @@
+Method,Category,Rationale for Selection,Key Hyperparameters
+Base Model(ModernTCN),Static,Serves as the primary temporal baseline without explicit temporal-shift adaptation.,"Channels: [64, 96, 128], Dilations: [1, 2, 4], Kernel size: 3, Dropout: 0.1"
+AdapTable (2024),TTA,An AdapTable-inspired test-time adaptation baseline adapted to the ModernTCN backbone for temporal shift handling.,"Learning rate: 1e-04, Update steps: 1"
+Cao et al. (2023),Invariant,An ICCV 2023-style shift-robust baseline approximated here with phase-aware invariant feature regularization over temporal environments.,"Penalty weight: 0.1, Domain count: 3"
+UTAR (Ours),Hybrid,The proposed framework integrating gray-zone isolation and selective LLM routing.,"Margin (q=0.40): 0.2282, Sigmoid gain: 5.0, Entropy/Discrepancy quantile: 0.8"

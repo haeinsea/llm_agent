@@ -1,5 +1,6 @@
 .env
 *.docx
+*.pptx
 .DS_Store
 data/raw/
 data/raw2/
@@ -7,3 +8,6 @@ data/미확인*
 *.crdownload
 data/processed/*windows*.csv
 outputs/models/
+te_dashboard_full_graphad/
+outputs/predictions/utar_q_sweep.csv
+outputs/predictions/utar_q_sweep_no_llm.csv

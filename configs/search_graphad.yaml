@@ -1,0 +1,16 @@
+selection_metric: stability_score
+bootstrap_repeats: 5
+noise_std: 0.01
+eval_samples: 32
+score_weights:
+  auc: 0.40
+  f1: 0.20
+  run_consistency: 0.20
+  noise_consistency: 0.15
+  top1_gap: 0.05
+top_k: [5]
+corr_threshold: [0.6, 0.7, 0.8]
+alpha: [0.2, 0.3]
+lambda_z: [0.4, 0.6]
+lambda_tr: [0.2, 0.3]
+lambda_fl: [0.1, 0.2]

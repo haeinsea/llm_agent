@@ -1,0 +1,11 @@
+Variable,Column,Description
+rf / xgb / temporal,p_rf / p_xgb / p_tcn,Detector probabilities used by UTAR
+utar_base,p_utar_base,Risk-dominant base routing score
+temporal_weight,temporal_weight,Relative temporal-model influence inside UTAR routing
+ensemble_entropy,ensemble_entropy,Gray-zone shortcut confidence cue
+model_discrepancy,model_discrepancy,Detector disagreement cue
+utar_side / detector_anomaly_votes,derived from p_utar_base and detector scores,Categorical routing cues exposed in the prompt header
+graphad_score,graphad_score,Structure-aware anomaly concentration
+top1_z / top1_trend / top1_fluct,graphad_top1_z / graphad_top1_trend / graphad_top1_fluct,Primary sensor evidence for the leading GraphAD+ candidate
+candidate_sensors,graphad_topk_sensors,Top-K GraphAD+ candidate sensors
+candidate_topology,graphad_topology,Adjacency trace among candidate sensors

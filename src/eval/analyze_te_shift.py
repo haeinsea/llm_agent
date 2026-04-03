@@ -212,7 +212,10 @@ def plot_kde_grid(
     top_k: int = 12,
     compare_mode: str = "normal_vs_shift",
 ) -> None:
-    import seaborn as sns
+    try:
+        import seaborn as sns
+    except Exception:
+        sns = None
 
     if compare_mode == "normal_vs_shift":
         plot_df = df[df["phase"].isin(["normal", "transition", "post_shift"])].copy()
@@ -237,7 +240,10 @@ def plot_kde_grid(
             sub = plot_df.loc[plot_df["plot_group"] == grp, feat].astype(float).replace([np.inf, -np.inf], np.nan).dropna()
             if len(sub) < 2:
                 continue
-            sns.kdeplot(sub, ax=ax, label=grp, fill=False, common_norm=False)
+            if sns is not None:
+                sns.kdeplot(sub, ax=ax, label=grp, fill=False, common_norm=False)
+            else:
+                ax.hist(sub, bins=40, density=True, histtype="step", linewidth=1.6, label=grp)
         ax.set_title(feat)
         ax.legend()
 

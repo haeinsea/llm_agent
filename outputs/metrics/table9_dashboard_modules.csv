@@ -1,0 +1,5 @@
+Feature,Description,Expected Benefit
+Decision Source Transparency,"Displays whether the final decision came from direct UTAR routing, entropy shortcut, or LLM escalation.",Improves auditability and operator trust.
+Structural Root-Cause Ranking,Lists GraphAD+ top sensors and topology-aware neighbors to support traceable maintenance decisions.,Reduces diagnosis search time and prioritizes inspections.
+Contextual LLM Explanation,Summarizes why ambiguous gray-zone samples were escalated and how the final probability was refined.,Improves actionability for non-expert operators.
+Interactive Q&A / Drill-down,"Supports follow-up inspection of score traces, routing metrics, and candidate-variable context.",Turns the framework into an operator-facing DSS rather than a raw score feed.

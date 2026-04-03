@@ -1,0 +1,434 @@
+{
+  "device_info": {
+    "selected_device": "mps",
+    "cuda_available": false,
+    "mps_built": true,
+    "mps_available": true
+  },
+  "records": {
+    "cost": {
+      "Avg. Ensemble Stack": {
+        "n_samples": 400,
+        "n_measurements": 10,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "total_latency_ms": 326.24376875483966,
+        "total_latency_ms_std": 75.05764978067822,
+        "avg_latency_ms_per_sample": 0.8156094218870994,
+        "avg_latency_ms_per_sample_std": 0.18764412445169554,
+        "device": "cpu+mps",
+        "measured_on_split": "cost",
+        "notes": "rf+xgb+temporal"
+      },
+      "GraphAD+": {
+        "n_samples": 400,
+        "n_measurements": 1,
+        "seeds": [],
+        "total_latency_ms": 16.52949652776038,
+        "total_latency_ms_std": 0.0,
+        "avg_latency_ms_per_sample": 0.04132374131940095,
+        "avg_latency_ms_per_sample_std": 0.0,
+        "device": "cpu",
+        "measured_on_split": "test_full",
+        "notes": "allocated from test_full per-sample average"
+      },
+      "ModernTCN Ensemble (10 seeds)": {
+        "n_samples": 400,
+        "n_measurements": 10,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "total_latency_ms": 26.138197950977663,
+        "total_latency_ms_std": 1.9928574602066447,
+        "avg_latency_ms_per_sample": 0.06534549487744415,
+        "avg_latency_ms_per_sample_std": 0.004982143650516611,
+        "device": "mps",
+        "measured_on_split": "test_full",
+        "notes": "allocated from test_full per-sample average"
+      },
+      "RF Ensemble (10 seeds)": {
+        "n_samples": 400,
+        "n_measurements": 10,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "total_latency_ms": 293.24666669999715,
+        "total_latency_ms_std": 73.65756477369426,
+        "avg_latency_ms_per_sample": 0.7331166667499929,
+        "avg_latency_ms_per_sample_std": 0.18414391193423565,
+        "device": "cpu",
+        "measured_on_split": "cost",
+        "notes": ""
+      },
+      "UTAR Base Stack": {
+        "n_samples": 400,
+        "n_measurements": 10,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "total_latency_ms": 342.7732652826001,
+        "total_latency_ms_std": 75.05764978067819,
+        "avg_latency_ms_per_sample": 0.8569331632065001,
+        "avg_latency_ms_per_sample_std": 0.18764412445169548,
+        "device": "cpu+mps",
+        "measured_on_split": "cost",
+        "notes": "rf+xgb+temporal+graphad"
+      },
+      "XGB Ensemble (10 seeds)": {
+        "n_samples": 400,
+        "n_measurements": 10,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "total_latency_ms": 6.858904103864916,
+        "total_latency_ms_std": 0.33522481742363097,
+        "avg_latency_ms_per_sample": 0.01714726025966229,
+        "avg_latency_ms_per_sample_std": 0.0008380620435590774,
+        "device": "cpu",
+        "measured_on_split": "cost",
+        "notes": ""
+      }
+    },
+    "main": {
+      "Avg. Ensemble Stack": {
+        "n_samples": 4000,
+        "n_measurements": 10,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "total_latency_ms": 609.1723752110805,
+        "total_latency_ms_std": 85.14677946047821,
+        "avg_latency_ms_per_sample": 0.15229309380277017,
+        "avg_latency_ms_per_sample_std": 0.021286694865119544,
+        "device": "cpu+mps",
+        "measured_on_split": "main",
+        "notes": "rf+xgb+temporal"
+      },
+      "GraphAD+": {
+        "n_samples": 4000,
+        "n_measurements": 1,
+        "seeds": [],
+        "total_latency_ms": 165.29496527760378,
+        "total_latency_ms_std": 0.0,
+        "avg_latency_ms_per_sample": 0.04132374131940095,
+        "avg_latency_ms_per_sample_std": 0.0,
+        "device": "cpu",
+        "measured_on_split": "test_full",
+        "notes": "allocated from test_full per-sample average"
+      },
+      "ModernTCN Ensemble (10 seeds)": {
+        "n_samples": 4000,
+        "n_measurements": 10,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "total_latency_ms": 261.3819795097766,
+        "total_latency_ms_std": 19.928574602066444,
+        "avg_latency_ms_per_sample": 0.06534549487744415,
+        "avg_latency_ms_per_sample_std": 0.004982143650516612,
+        "device": "mps",
+        "measured_on_split": "test_full",
+        "notes": "allocated from test_full per-sample average"
+      },
+      "RF Ensemble (10 seeds)": {
+        "n_samples": 4000,
+        "n_measurements": 10,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "total_latency_ms": 332.20534170104656,
+        "total_latency_ms_std": 79.94324106258462,
+        "avg_latency_ms_per_sample": 0.08305133542526164,
+        "avg_latency_ms_per_sample_std": 0.019985810265646154,
+        "device": "cpu",
+        "measured_on_split": "main",
+        "notes": ""
+      },
+      "UTAR Base Stack": {
+        "n_samples": 4000,
+        "n_measurements": 10,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "total_latency_ms": 774.4673404886846,
+        "total_latency_ms_std": 85.14677946047823,
+        "avg_latency_ms_per_sample": 0.19361683512217115,
+        "avg_latency_ms_per_sample_std": 0.021286694865119554,
+        "device": "cpu+mps",
+        "measured_on_split": "main",
+        "notes": "rf+xgb+temporal+graphad"
+      },
+      "XGB Ensemble (10 seeds)": {
+        "n_samples": 4000,
+        "n_measurements": 10,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "total_latency_ms": 15.585054000257514,
+        "total_latency_ms_std": 10.05322567249108,
+        "avg_latency_ms_per_sample": 0.0038962635000643784,
+        "avg_latency_ms_per_sample_std": 0.00251330641812277,
+        "device": "cpu",
+        "measured_on_split": "main",
+        "notes": ""
+      }
+    },
+    "test_full": {
+      "GraphAD+": {
+        "n_samples": 115200,
+        "n_measurements": 1,
+        "seeds": [],
+        "total_latency_ms": 4760.4949999949895,
+        "total_latency_ms_std": 0.0,
+        "avg_latency_ms_per_sample": 0.04132374131940095,
+        "avg_latency_ms_per_sample_std": 0.0,
+        "device": "cpu",
+        "measured_on_split": "test_full",
+        "notes": ""
+      },
+      "ModernTCN Ensemble (10 seeds)": {
+        "n_samples": 109320,
+        "n_measurements": 10,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "total_latency_ms": 7143.569500002195,
+        "total_latency_ms_std": 544.647943874476,
+        "avg_latency_ms_per_sample": 0.06534549487744415,
+        "avg_latency_ms_per_sample_std": 0.004982143650516612,
+        "device": "mps",
+        "measured_on_split": "test_full",
+        "notes": ""
+      }
+    },
+    "val": {
+      "Avg. Ensemble Stack": {
+        "n_samples": 12628,
+        "n_measurements": 10,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "total_latency_ms": 1410.9384749957826,
+        "total_latency_ms_std": 658.395296629047,
+        "avg_latency_ms_per_sample": 0.11173095304052763,
+        "avg_latency_ms_per_sample_std": 0.05213773334091282,
+        "device": "cpu+mps",
+        "measured_on_split": "val",
+        "notes": "rf+xgb+temporal"
+      },
+      "GraphAD+": {
+        "n_samples": 14000,
+        "n_measurements": 1,
+        "seeds": [],
+        "total_latency_ms": 1178.445041005034,
+        "total_latency_ms_std": 0.0,
+        "avg_latency_ms_per_sample": 0.08417464578607385,
+        "avg_latency_ms_per_sample_std": 0.0,
+        "device": "cpu",
+        "measured_on_split": "val",
+        "notes": ""
+      },
+      "ModernTCN Ensemble (10 seeds)": {
+        "n_samples": 12628,
+        "n_measurements": 10,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "total_latency_ms": 789.6474627021234,
+        "total_latency_ms_std": 92.76688375352454,
+        "avg_latency_ms_per_sample": 0.06253147471508738,
+        "avg_latency_ms_per_sample_std": 0.007346126366291143,
+        "device": "mps",
+        "measured_on_split": "val",
+        "notes": ""
+      },
+      "RF Ensemble (10 seeds)": {
+        "n_samples": 14000,
+        "n_measurements": 10,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "total_latency_ms": 588.9034540945431,
+        "total_latency_ms_std": 563.7628563824096,
+        "avg_latency_ms_per_sample": 0.042064532435324514,
+        "avg_latency_ms_per_sample_std": 0.040268775455886405,
+        "device": "cpu",
+        "measured_on_split": "val",
+        "notes": ""
+      },
+      "UTAR Base Stack": {
+        "n_samples": 12628,
+        "n_measurements": 10,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "total_latency_ms": 2589.3835160008166,
+        "total_latency_ms_std": 658.395296629047,
+        "avg_latency_ms_per_sample": 0.2050509594552436,
+        "avg_latency_ms_per_sample_std": 0.05213773334091281,
+        "device": "cpu+mps",
+        "measured_on_split": "val",
+        "notes": "rf+xgb+temporal+graphad"
+      },
+      "XGB Ensemble (10 seeds)": {
+        "n_samples": 14000,
+        "n_measurements": 10,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "total_latency_ms": 32.38755819911603,
+        "total_latency_ms_std": 10.425514325652601,
+        "avg_latency_ms_per_sample": 0.0023133970142225737,
+        "avg_latency_ms_per_sample_std": 0.0007446795946894714,
+        "device": "cpu",
+        "measured_on_split": "val",
+        "notes": ""
+      }
+    }
+  }
+}

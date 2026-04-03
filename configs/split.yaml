@@ -19,7 +19,7 @@ test_main_normal_ratio: 0.30
 test_main_transition_ratio: 0.20
 test_main_post_ratio: 0.50
 
-test_cost_total: 500
+test_cost_total: 400
 test_cost_normal_ratio: 0.30
 test_cost_transition_ratio: 0.35
 test_cost_post_ratio: 0.35
