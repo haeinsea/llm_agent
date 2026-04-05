@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TE UTAR Dashboard</title>
+
+  <!-- Shared styles -->
+  <link rel="stylesheet" href="/static/css/style.css">
+
+  <!-- Cytoscape -->
+  <script src="https://unpkg.com/cytoscape@3.28.1/dist/cytoscape.min.js"></script>
+
+  <!-- layout-base UMD -->
+  <script src="https://unpkg.com/layout-base/layout-base.js"></script>
+  <script src="https://unpkg.com/cose-base/cose-base.js"></script>
+  <script src="https://unpkg.com/cytoscape-fcose/cytoscape-fcose.js"></script>
+
+  <!-- Chart.js + zoom + annotation for Q&A plots -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.4.0"></script>
+</head>
+
+<body>
+  <div id="app-container">
+
+    <!-- Header -->
+    <header>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <h1 style="margin:0;">TE Graph-aware Anomaly Dashboard</h1>
+
+        <button
+          id="btn-open-diagram-modal"
+          class="secondary"
+          style="margin-top:0; font-size:11px; padding:4px 8px;"
+        >
+          Process Diagram / Variable Map
+        </button>
+      </div>
+
+      <div class="badge">
+        UTAR Base (RF/XGB/ModernTCN) + GraphAD+ + Selective LLM Routing
+      </div>
+    </header>
+
+    <!-- Left panel -->
+    <section id="left-panel" class="panel">
+      <h2>1. Upload Data</h2>
+      <small>Upload a TE sample CSV</small>
+      <input type="file" id="file-input" accept=".csv" />
+      <button class="secondary" id="reload-button">Re-upload</button>
+
+      <div class="panel-inner-scroll" id="sample-table-container">
+        <h2>Sample List</h2>
+        <small>Click a row to inspect the sample in detail</small>
+        <table id="sample-table">
+          <thead>
+            <tr><th>idx</th><th>final_prob</th><th>decision</th><th>label</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Center panel -->
+    <section id="center-panel" class="panel">
+      <h2>2. Process Graph / GraphAD+ Top-K</h2>
+      <small>Node size and color indicate GraphAD+-based structural anomaly impact</small>
+
+      <div class="graph-mode-toggle">
+        <button id="btn-sample" class="primary small active">Sample</button>
+      </div>
+
+      <div id="graph-container"></div>
+    </section>
+
+    <!-- Right panel -->
+    <section id="right-panel" class="panel">
+      <h2>3️⃣ UTAR Scores & Top Variables</h2>
+      <small>RF/XGB/ModernTCN/UTAR base scores and the final selective routing decision</small>
+
+      <div class="panel-inner-scroll">
+        <div class="scores-grid" id="scores-grid"></div>
+
+        <h2>Top-K Variables (GraphAD+)</h2>
+        <div id="topk-tags"></div>
+        <table id="topk-table">
+          <thead>
+            <tr><th>var</th><th>score</th><th>dir</th><th>process</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Bottom-left panel -->
+    <section id="bottom-left-panel" class="panel">
+      <h2>4. LLM Explanation (UTAR + GraphAD+)</h2>
+      <small>Sample-level anomaly cause, propagation path, and routing rationale</small>
+      <button class="primary" id="explain-button">Generate Explanation for Current Sample</button>
+      <div class="panel-inner-scroll" id="explanation-output"></div>
+    </section>
+
+    <!-- Bottom-right panel -->
+    <section id="bottom-right-panel" class="panel">
+      <h2>5. LLM Q&A</h2>
+      <small>Ask questions grounded in the selected sample context</small>
+
+      <textarea
+        id="qa-input"
+        rows="2"
+        placeholder="Example: What is the likely cause of the reactor-related anomaly?"
+      ></textarea>
+      <button class="primary" id="qa-button">Send Question</button>
+
+      <div class="panel-inner-scroll" id="qa-panel-scroll">
+        <div id="qa-answer-text" class="qa-output-box"></div>
+
+        <div id="qa-plot-container" style="margin-top:8px;">
+          <canvas id="qa-line-plot" height="140"></canvas>
+        </div>
+
+        <div id="qa-heatmap-container" style="margin-top:8px;"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- TE process diagram / variable-process mapping modal -->
+  <div id="diagram-modal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>TE Process Diagram & Variable-Process Mapping</h3>
+        <button class="modal-close-btn" id="diagram-modal-close">&times;</button>
+      </div>
+
+      <div class="modal-tabs">
+        <button class="modal-tab-btn active" data-tab="layout">Process Diagram</button>
+        <button class="modal-tab-btn" data-tab="mapping">Variable Mapping</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Tab 1: process diagram image -->
+        <div id="modal-pane-layout" class="modal-pane active">
+          <img
+            id="te-layout-img"
+            src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*OC6s0YDZcQxACUAJ.jpg"
+            alt="TE process diagram"
+            style="max-width:100%; height:auto;"
+          />
+        </div>
+
+        <!-- Tab 2: variable-process mapping table -->
+        <div id="modal-pane-mapping" class="modal-pane">
+          <div id="mapping-table-container">
+            <table id="mapping-table">
+              <thead>
+                <tr>
+                  <th>var</th>
+                  <th>process</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Filled from CSV via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dashboard JavaScript -->
+  <script src="/static/js/app.js"></script>
+
+  <!-- Modal behavior + tabs + CSV loading -->
+  <script>
+    window.addEventListener("DOMContentLoaded", function () {
+      const openBtn = document.getElementById("btn-open-diagram-modal");
+      const modal = document.getElementById("diagram-modal");
+      const closeBtn = document.getElementById("diagram-modal-close");
+      const tabButtons = document.querySelectorAll(".modal-tab-btn");
+      const paneLayout = document.getElementById("modal-pane-layout");
+      const paneMapping = document.getElementById("modal-pane-mapping");
+      const mappingTableBody = document.querySelector("#mapping-table tbody");
+
+      if (!openBtn || !modal) {
+        console.warn("diagram modal elements not found");
+        return;
+      }
+
+      function openModal() {
+        modal.classList.add("active");
+      }
+      function closeModal() {
+        modal.classList.remove("active");
+      }
+
+      openBtn.addEventListener("click", openModal);
+      closeBtn.addEventListener("click", closeModal);
+
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+
+      // CSV loading helper
+      function loadMappingCsv() {
+        if (!mappingTableBody) {
+          console.warn("mapping-table tbody not found");
+          return;
+        }
+
+        fetch("/static/data/TE_variable_process_map.csv")
+          .then((res) => {
+            if (!res.ok) throw new Error("CSV load error");
+            return res.text();
+          })
+          .then((text) => {
+            const lines = text.trim().split(/\r?\n/);
+            const dataLines = lines.slice(1);
+
+            dataLines.forEach((line) => {
+              if (!line.trim()) return;
+              const [v, process, ...koParts] = line.split(",");
+              const ko = koParts.join(",");
+
+              const tr = document.createElement("tr");
+
+              const tdVar = document.createElement("td");
+              tdVar.textContent = v || "";
+              const tdProc = document.createElement("td");
+              tdProc.textContent = process || "";
+              const tdKo = document.createElement("td");
+              tdKo.textContent = ko || "";
+
+              tr.appendChild(tdVar);
+              tr.appendChild(tdProc);
+              tr.appendChild(tdKo);
+              mappingTableBody.appendChild(tr);
+            });
+
+            mappingTableBody.dataset.loaded = "1";
+          })
+          .catch((err) => {
+            console.error(err);
+            if (!mappingTableBody) return;
+            const tr = document.createElement("tr");
+            const td = document.createElement("td");
+            td.colSpan = 3;
+            td.textContent = "An error occurred while loading the CSV file.";
+            tr.appendChild(td);
+            mappingTableBody.appendChild(tr);
+          });
+      }
+
+      // Tab click handler
+      tabButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Toggle active tab button
+          tabButtons.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          const tab = btn.getAttribute("data-tab");
+
+          if (tab === "layout") {
+            // Process diagram tab
+            paneLayout.classList.add("active");
+            paneMapping.classList.remove("active");
+          } else if (tab === "mapping") {
+            // Variable mapping tab
+            paneLayout.classList.remove("active");
+            paneMapping.classList.add("active");
+
+            // Load the CSV only once
+            if (mappingTableBody && !mappingTableBody.dataset.loaded) {
+              loadMappingCsv();
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

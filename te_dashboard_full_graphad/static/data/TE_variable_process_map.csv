@@ -1,0 +1,53 @@
+var,process,ko
+xmeas_1,Feed System,A feed flow (stream 1)
+xmeas_2,Feed System,D feed flow (stream 2)
+xmeas_3,Feed System,E feed flow (stream 3)
+xmeas_4,Feed System,A + C feed flow (stream 4)
+xmeas_5,Recycle/Compressor,Recycle flow (stream 8)
+xmeas_6,Reactor,Reactor feed flow (stream 6)
+xmeas_7,Reactor,Reactor pressure
+xmeas_8,Reactor,Reactor level
+xmeas_9,Reactor,Reactor temperature
+xmeas_10,Purge/Compressor,Purge flow (stream 9)
+xmeas_11,Separator,Separator temperature
+xmeas_12,Separator,Separator level
+xmeas_13,Separator,Separator pressure
+xmeas_14,Separator,Separator underflow (stream 10)
+xmeas_15,Stripper,Stripper level
+xmeas_16,Stripper,Stripper pressure
+xmeas_17,Stripper,Stripper underflow (stream 11)
+xmeas_18,Stripper,Stripper temperature
+xmeas_19,Stripper,Stripper steam flow
+xmeas_20,Compressor,Compressor work
+xmeas_21,Reactor Cooling,Reactor cooling water outlet temperature
+xmeas_22,Separator Cooling,Separator cooling water outlet temperature
+xmeas_23,Reactor Feed Analysis,Component A (stream 6 analysis)
+xmeas_24,Reactor Feed Analysis,Component B (stream 6 analysis)
+xmeas_25,Reactor Feed Analysis,Component C (stream 6 analysis)
+xmeas_26,Reactor Feed Analysis,Component D (stream 6 analysis)
+xmeas_27,Reactor Feed Analysis,Component E (stream 6 analysis)
+xmeas_28,Reactor Feed Analysis,Component F (stream 6 analysis)
+xmeas_29,Purge Gas Analysis,Component A (purge stream 9 analysis)
+xmeas_30,Purge Gas Analysis,Component B (purge stream 9 analysis)
+xmeas_31,Purge Gas Analysis,Component C (purge stream 9 analysis)
+xmeas_32,Purge Gas Analysis,Component D (purge stream 9 analysis)
+xmeas_33,Purge Gas Analysis,Component E (purge stream 9 analysis)
+xmeas_34,Purge Gas Analysis,Component F (purge stream 9 analysis)
+xmeas_35,Purge Gas Analysis,Component G (purge stream 9 analysis)
+xmeas_36,Purge Gas Analysis,Component H (purge stream 9 analysis)
+xmeas_37,Product Analysis,Component D (product stream 11 analysis)
+xmeas_38,Product Analysis,Component E (product stream 11 analysis)
+xmeas_39,Product Analysis,Component F (product stream 11 analysis)
+xmeas_40,Product Analysis,Component G (product stream 11 analysis)
+xmeas_41,Product Analysis,Component H (product stream 11 analysis)
+xmv_1,Manipulator/Feed,D feed flow manipulation
+xmv_2,Manipulator/Feed,E feed flow manipulation
+xmv_3,Manipulator/Feed,A feed flow manipulation
+xmv_4,Manipulator/Feed,A + C feed flow manipulation
+xmv_5,Manipulator/Recycle/Compressor,Compressor recycle valve manipulation
+xmv_6,Manipulator/Purge,Purge valve manipulation (stream 9)
+xmv_7,Manipulator/Separator,Separator liquid flow manipulation (stream 10)
+xmv_8,Manipulator/Stripper,Stripper liquid product flow manipulation (stream 11)
+xmv_9,Manipulator/Stripper,Stripper steam valve manipulation
+xmv_10,Manipulator/Reactor Cooling,Reactor cooling water flow manipulation
+xmv_11,Manipulator/Condenser Cooling,Condenser cooling water flow manipulation
