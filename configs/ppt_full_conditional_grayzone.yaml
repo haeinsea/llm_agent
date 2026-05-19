@@ -1,0 +1,34 @@
+fusion:
+  method: conditional_grayzone_soft_fusion
+
+boundary_soft_fusion:
+  s_base_source: local_avg
+  s_utar_source: routing_base
+  thresholds_path: outputs/metrics/thresholds.json
+  grayzone_defaults_path: outputs/metrics/grayzone_defaults.json
+  routing_config_path: configs/routing.yaml
+  default_q: 0.80
+  llm_score_source: prompt_policy_stub
+  calibrate_llm_score: false
+  calibration:
+    raw_min: 0.0
+    raw_max: 1.0
+    a: 4.0
+    b: -2.0
+    clip_min: 0.0
+    clip_max: 1.0
+
+prompt_policy:
+  modern_tcn_priority_threshold: 0.90
+  graphad_z_threshold: 2.0
+  graphad_gap_concentrated_threshold: 0.5
+  graphad_concentration_values: [concentrated, high]
+  entropy_anomaly_threshold: 0.9
+
+llm_raw:
+  method: ppt_policy_stub
+  modern_tcn_gain: 0.03
+  graphad_base_score: 0.78
+  graphad_gain: 0.12
+  entropy_base_score: 0.62
+  entropy_gain: 0.22

@@ -1,0 +1,63 @@
+fusion:
+  method: conditional_grayzone_soft_fusion
+
+boundary_soft_fusion:
+  s_base_source: local_avg
+  s_utar_source: routing_base
+  thresholds_path: outputs/metrics/thresholds.json
+  grayzone_defaults_path: outputs/metrics/grayzone_defaults.json
+  routing_config_path: configs/routing.yaml
+  default_q: 0.80
+  llm_score_source: prompt_policy_stub
+  calibrate_llm_score: false
+  decision_threshold: 0.5
+  calibration:
+    method: scale_clip
+    factor: 1.0
+    clip_min: 0.0
+    clip_max: 1.0
+
+uncertainty_reference:
+  enabled: true
+  tau: 0.2
+  k: 15.0
+  calibration:
+    method: scale_clip
+    factor: 1.0
+    clip_min: 0.0
+    clip_max: 1.0
+
+prompt_spec:
+  name: ppt_complete_conditional_grayzone_v1
+  system: |
+    Expert TEP Engineer. Resolve Gray-Zone samples.
+  output_schema: |
+    Output JSON only: {"decision": "normal" | "anomaly"}
+  decision_logic:
+    - 'AUC Boost: If SOTA(ModernTCN) > 0.90, prioritize as "anomaly" (Ranking stability).'
+    - "PRR Boost: Anomaly if GraphAD+ Z-score > 2.0 AND Concentration is 'concentrated'."
+    - 'F1 Boost: If Entropy > 0.9 (Uncertainty), lean toward "anomaly" to minimize miss-rate (Safety-first).'
+  few_shot_examples:
+    - "Ex1 (Normal): RF:0.1, XGB:0.1, MTCN:0.2, Z:0.5, Conc:Diffuse -> normal"
+    - "Ex2 (Anomaly/AUC): RF:0.2, XGB:0.3, MTCN:0.95, Z:1.8, Conc:Mid -> anomaly"
+    - "Ex3 (Anomaly/PRR): RF:0.4, XGB:0.4, MTCN:0.5, Z:2.8, Conc:High -> anomaly"
+  sample_fields:
+    - Metadata: Near_Tau, Entropy, Discrepancy
+    - Detectors: RF, XGB, ModernTCN, Mean
+    - GraphAD+: Sensor, Z-score, Trend, Concentration
+
+prompt_policy:
+  modern_tcn_priority_threshold: 0.90
+  graphad_z_threshold: 2.0
+  graphad_gap_concentrated_threshold: 0.5
+  graphad_concentration_values: [concentrated, high]
+  entropy_anomaly_threshold: 0.9
+
+llm_raw:
+  method: ppt_prompt_rules_stub
+  modern_tcn_floor_score: 0.95
+  modern_tcn_gain: 0.03
+  graphad_base_score: 0.78
+  graphad_gain: 0.12
+  entropy_base_score: 0.62
+  entropy_gain: 0.22

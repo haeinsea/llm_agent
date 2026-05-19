@@ -1,0 +1,16 @@
+search_seeds: [0, 1]
+selection_metric: auc_priority
+entropy_floor: 0.9
+gray_margin: 0.1
+score_weights:
+  auc: 0.60
+  f1: 0.15
+  recall: 0.10
+  high_entropy_recall: 0.10
+  grayzone_recall: 0.05
+n_estimators: [300, 450]
+max_depth: [4, 6]
+learning_rate: [0.03, 0.05]
+subsample: [0.8]
+colsample_bytree: [0.8, 1.0]
+reg_lambda: [1.0, 2.0]

@@ -98,6 +98,7 @@ def main() -> None:
                 "q": row["q"],
                 "Call Rate": fmt(row["llm_call_rate_mean"], pick_std(row, "llm_call_rate")),
                 "F1-Score": fmt(row["f1_mean"], pick_std(row, "f1")),
+                "AUC": fmt(row["roc_auc_mean"], pick_std(row, "roc_auc")) if not pd.isna(row["roc_auc_mean"]) else "NA",
                 "Recall": fmt(row["recall_mean"], pick_std(row, "recall")),
                 "PRR": fmt(row["prr_mean"], pick_std(row, "prr")),
                 "Worst-Case Recall (P5)": fmt(row["worst_case_recall_mean"], pick_std(row, "worst_case_recall")),

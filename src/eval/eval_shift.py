@@ -213,6 +213,7 @@ def main() -> None:
                 "PRR": fmt(row["prr_mean"], pick_std(row, "prr")),
                 "Worst-Case Recall (P5)": fmt(row["worst_case_recall_mean"], pick_std(row, "worst_case_recall")),
                 "Instability": fmt(row["instability_mean"], pick_std(row, "instability")),
+                "AUC": fmt(row["roc_auc_mean"], pick_std(row, "roc_auc")) if not pd.isna(row["roc_auc_mean"]) else "NA",
                 "Inference Cost": fmt(row["cost_usd_mean"], pick_std(row, "cost_usd")),
                 "Inference Time (s)": fmt(row["total_latency_ms_mean"] / 1000.0, pick_std(row, "total_latency_ms") / 1000.0),
                 "Inference Time / Sample (ms)": fmt(row["avg_latency_ms_per_sample_mean"], pick_std(row, "avg_latency_ms_per_sample")),

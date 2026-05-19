@@ -138,17 +138,17 @@ def _build_table1() -> pd.DataFrame:
 
 def _build_table2(selected_q: float) -> pd.DataFrame:
     base = read_csv(METRIC_DIR / "table2_robustness.csv").copy()
-    return base[["Method", "Ave. F1", "PRR", "Worst-Case Recall (P5)", "Instability", "Inference Time (s)", "Inference Time / Sample (ms)"]]
+    return base[["Method", "Ave. F1", "PRR", "Worst-Case Recall (P5)", "Instability", "AUC", "Inference Time (s)", "Inference Time / Sample (ms)"]]
 
 
 def _build_table3() -> pd.DataFrame:
     df = read_csv(METRIC_DIR / "table3_q_sweep.csv").copy()
-    return df[["Strategy", "Call Rate", "F1-Score", "Cost (USD)", "Inference Time (s)"]]
+    return df[["Strategy", "Call Rate", "F1-Score", "AUC", "Cost (USD)", "Inference Time (s)"]]
 
 
 def _build_table5(selected_q: float) -> pd.DataFrame:
     df = read_csv(METRIC_DIR / "table5_ablation.csv").copy()
-    return df[["Configuration", "Ave. F1", "PRR", "Worst-Case Recall (P5)", "Instability", "Inference Time (s)", "Inference Time / Sample (ms)"]]
+    return df[["Configuration", "Ave. F1", "PRR", "Worst-Case Recall (P5)", "Instability", "AUC", "Inference Time (s)", "Inference Time / Sample (ms)"]]
 
 
 def _build_table6() -> pd.DataFrame:
@@ -202,10 +202,10 @@ def _build_appendix_e_distribution_table() -> pd.DataFrame:
 
 def _build_appendix_g_seed_detail_table() -> pd.DataFrame:
     df = read_csv(APPENDIX_DIR / "table_g1_seed_variation_detail.csv").copy()
-    for col in ["Ave. F1", "PRR", "Worst-Case Recall (P5)", "Instability (Var)"]:
+    for col in ["Ave. F1", "PRR", "AUC", "Worst-Case Recall (P5)", "Instability (Var)"]:
         df[col] = df[col].map(lambda x: f"{float(x):.4f}")
     df["Seed Number"] = df["Seed Number"].astype(int).astype(str)
-    return df[["Seed Number", "Method", "Ave. F1", "PRR", "Worst-Case Recall (P5)", "Instability (Var)"]]
+    return df[["Seed Number", "Method", "Ave. F1", "PRR", "AUC", "Worst-Case Recall (P5)", "Instability (Var)"]]
 
 
 def _maybe_write_table(table, builder) -> None:

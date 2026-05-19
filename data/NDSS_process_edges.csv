@@ -1,0 +1,67 @@
+﻿src,tgt,corr
+A Feed,A Feed (MV),0.9941535180494403
+Reactor Pressure,Product Sep Pressure,0.9953410623012395
+Reactor Pressure,Stripper Pressure,0.996209279305966
+Purge Rate,Purge (MV),0.9974028200595328
+Product Sep Temp,Stripper Temp,0.9391147497067319
+Product Sep Temp,Separator Coolant Temp,0.85841969734875
+Product Sep Temp,Comp G in Purge,0.6715691979588444
+Product Sep Temp,Separator (MV),-0.643696166343504
+Product Sep Level,Separator (MV),0.7528073584005943
+Product Sep Pressure,Reactor Pressure,0.9953410623012395
+Product Sep Pressure,Stripper Pressure,0.9962765312307829
+Product Sep Underflow,Separator (MV),0.7785639718970155
+Stripper Level,Stripper (MV),0.8561167205904711
+Stripper Pressure,Reactor Pressure,0.996209279305966
+Stripper Pressure,Product Sep Pressure,0.9962765312307829
+Stripper Temp,Product Sep Temp,0.9391147497067319
+Stripper Temp,Separator Coolant Temp,0.8584661287328358
+Stripper Temp,Comp G in Purge,0.7148499768516892
+Stripper Temp,Comp E in Product,-0.6402077075234174
+Stripper Temp,Separator (MV),-0.6523043345037168
+Compressor Work,Separator Coolant Temp,0.7268010229398489
+Compressor Work,Comp A to Reactor,0.6013390969856857
+Compressor Work,Comp A in Purge,0.6879224333500408
+Compressor Work,Comp E in Purge,-0.7006035891397127
+Compressor Work,Comp E in Product,-0.7039975560791012
+Reactor Coolant Temp,Reactor Coolant (MV),-0.6231553714024465
+Separator Coolant Temp,Product Sep Temp,0.85841969734875
+Separator Coolant Temp,Stripper Temp,0.8584661287328358
+Separator Coolant Temp,Compressor Work,0.7268010229398489
+Separator Coolant Temp,Comp E in Purge,-0.6266754184836854
+Separator Coolant Temp,Comp E in Product,-0.6377239252607735
+Comp A to Reactor,Compressor Work,0.6013390969856857
+Comp B to Reactor,Comp F to Reactor,0.6209663694254183
+Comp B to Reactor,Comp B in Purge,0.7141606240320219
+Comp B to Reactor,Comp F in Purge,0.6549694559997398
+Comp F to Reactor,Comp B to Reactor,0.6209663694254183
+Comp F to Reactor,Comp B in Purge,0.6656028140068604
+Comp F to Reactor,Comp F in Purge,0.8209745955495509
+Comp A in Purge,Compressor Work,0.6879224333500408
+Comp B in Purge,Comp B to Reactor,0.7141606240320219
+Comp B in Purge,Comp F to Reactor,0.6656028140068604
+Comp B in Purge,Comp F in Purge,0.710530814804611
+Comp E in Purge,Compressor Work,-0.7006035891397127
+Comp E in Purge,Separator Coolant Temp,-0.6266754184836854
+Comp E in Purge,Comp E in Product,0.6124687147015198
+Comp F in Purge,Comp B to Reactor,0.6549694559997398
+Comp F in Purge,Comp F to Reactor,0.8209745955495509
+Comp F in Purge,Comp B in Purge,0.710530814804611
+Comp G in Purge,Product Sep Temp,0.6715691979588444
+Comp G in Purge,Stripper Temp,0.7148499768516892
+Comp G in Purge,Separator (MV),-0.6498075168497018
+Comp E in Product,Stripper Temp,-0.6402077075234174
+Comp E in Product,Compressor Work,-0.7039975560791012
+Comp E in Product,Separator Coolant Temp,-0.6377239252607735
+Comp E in Product,Comp E in Purge,0.6124687147015198
+Comp E in Product,Separator (MV),0.6850992671063845
+A Feed (MV),A Feed,0.9941535180494403
+Purge (MV),Purge Rate,0.9974028200595328
+Separator (MV),Product Sep Temp,-0.643696166343504
+Separator (MV),Product Sep Level,0.7528073584005943
+Separator (MV),Product Sep Underflow,0.7785639718970155
+Separator (MV),Stripper Temp,-0.6523043345037168
+Separator (MV),Comp G in Purge,-0.6498075168497018
+Separator (MV),Comp E in Product,0.6850992671063845
+Stripper (MV),Stripper Level,0.8561167205904711
+Reactor Coolant (MV),Reactor Coolant Temp,-0.6231553714024465

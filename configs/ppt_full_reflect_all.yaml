@@ -1,0 +1,40 @@
+discrepancy:
+  method: std3
+  model_order: [rf, xgb, moderntcn]
+
+uncertainty:
+  entropy_method: mean_binary_entropy
+  combine_rule: discrepancy_x_mean_entropy
+  high_entropy_threshold: 0.9
+
+mixing_weight:
+  tau: 0.2
+  k: 15.0
+
+calibration:
+  method: platt_like
+  raw_min: 0.0
+  raw_max: 1.0
+  a: 4.0
+  b: -2.0
+  clip_min: 0.0
+  clip_max: 1.0
+
+soft_fusion:
+  enabled: true
+  decision_threshold: 0.5
+
+prompt_policy:
+  modern_tcn_priority_threshold: 0.90
+  graphad_z_threshold: 2.0
+  graphad_gap_concentrated_threshold: 0.5
+  graphad_concentration_values: [concentrated, high]
+  entropy_anomaly_threshold: 0.9
+
+llm_raw:
+  method: ppt_policy_stub
+  modern_tcn_gain: 0.03
+  graphad_base_score: 0.78
+  graphad_gain: 0.12
+  entropy_base_score: 0.62
+  entropy_gain: 0.22

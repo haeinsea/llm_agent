@@ -1,0 +1,34 @@
+search_seeds: [0]
+selection_metric: auc_priority
+trial_sample_seed: 19
+max_trials: 16
+train_sample_frac: 0.10
+train_sample_seed: 109
+entropy_floor: 0.9
+gray_margin: 0.1
+score_weights:
+  auc: 0.45
+  post_shift_recall: 0.20
+  f1: 0.15
+  recall: 0.10
+  high_entropy_recall: 0.05
+  grayzone_recall: 0.05
+architecture: [modern_tcn]
+channels:
+  - [64, 96, 128]
+  - [96, 128, 128]
+dilations:
+  - [1, 2, 4]
+  - [1, 2, 8]
+kernel_size: [3, 5]
+dropout: [0.05, 0.1]
+expansion_ratio: [2, 3]
+pool: [avg, last]
+batch_size: [64]
+inference_batch_size: [2048]
+epochs: [3, 4]
+lr: [0.0005, 0.001]
+weight_decay: [0.00001, 0.0001]
+adaptation_lr: [0.00003, 0.00005, 0.0001, 0.0002]
+adaptation_steps: [1, 2, 3]
+

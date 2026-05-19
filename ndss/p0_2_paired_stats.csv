@@ -1,0 +1,7 @@
+group,metric,N,mean(diff=filter-no_llm),t,p,Cohen_dz
+sensor_only,ACT@5,102,0.029,1.749,0.0832,0.173
+sensor_only,Recall@5,102,0.029,1.749,0.0832,0.173
+sensor+actuator,ACT@5,184,0.000,inf,0,0.000
+sensor+actuator,Recall@5,184,-0.038,-3.882,0.000144,-0.286
+ALL,ACT@5,286,0.010,1.738,0.0833,0.103
+ALL,Recall@5,286,-0.014,-1.573,0.117,-0.093

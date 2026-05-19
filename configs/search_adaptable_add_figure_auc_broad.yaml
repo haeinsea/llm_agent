@@ -1,0 +1,28 @@
+search_seeds: [0]
+selection_metric: auc_priority
+entropy_floor: 0.9
+gray_margin: 0.1
+score_weights:
+  auc: 0.45
+  post_shift_recall: 0.20
+  f1: 0.15
+  recall: 0.10
+  high_entropy_recall: 0.05
+  grayzone_recall: 0.05
+architecture: [modern_tcn]
+channels:
+  - [64, 96, 128]
+  - [96, 128, 128]
+dilations:
+  - [1, 2, 4]
+kernel_size: [3, 5]
+dropout: [0.05, 0.1]
+expansion_ratio: [2]
+pool: [avg]
+batch_size: [64]
+inference_batch_size: [512]
+epochs: [6]
+lr: [0.0007]
+weight_decay: [0.0001]
+adaptation_lr: [0.00005, 0.0001, 0.0002]
+adaptation_steps: [1, 3]

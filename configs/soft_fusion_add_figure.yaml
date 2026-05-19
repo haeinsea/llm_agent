@@ -1,0 +1,12 @@
+discrepancy_measure: std3
+discrepancy_models: [rf, xgb, moderntcn]
+grayzone_metric: u_total
+u_total_formula: discrepancy_x_mean_binary_entropy
+entropy_measure: mean_binary_entropy
+soft_fusion_enabled: true
+final_scoring_formula: weighted_soft_fusion
+mixing_tau: 0.2
+mixing_k: 15
+calibration_method: platt_like_clip
+calibration_factor: 1.0
+llm_score_range: [0.0, 1.0]

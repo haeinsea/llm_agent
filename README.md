@@ -73,7 +73,7 @@ Auto-generated TE artifacts now cover:
 Manual or excluded items:
 - framework illustration `Figure 1`
 - dashboard mockup figure
-- NDSS-only figures / tables
+- NDSS diagnosis figures / tables outside the Appendix H hyperparameter evidence bundle
 
 ## 4. Key outputs
 
@@ -115,6 +115,17 @@ Main generated files:
 - `outputs/appendix/table_g1_seed_variation_detail.csv`
 - `outputs/appendix/table_g2_seed_variation_summary.csv`
 - `outputs/appendix/table_h1_hyperparameter_rationale.csv`
+- `outputs/appendix/table_h2_graphad_lambda_selection.csv`
+- `outputs/appendix/table_h2_graphad_lambda_grid_detail.csv`
+- `outputs/appendix/table_h2_graphad_lambda_selection_ndss.csv`
+- `outputs/appendix/table_h2_graphad_lambda_grid_detail_ndss.csv`
+- `outputs/appendix/figure_h2_graphad_lambda_sensitivity_ndss.png`
+- `outputs/appendix/table_h6_graphad_alpha_selection_ndss.csv`
+- `outputs/appendix/table_h6_graphad_alpha_grid_detail_ndss.csv`
+- `outputs/appendix/table_h7_graphad_alpha_protocol_ndss.csv`
+- `outputs/appendix/table_h8_graphad_alpha_reproducibility_ndss.csv`
+- `outputs/appendix/table_h9_graphad_alpha_current_vs_best_ndss.csv`
+- `outputs/appendix/figure_h3_graphad_alpha_sensitivity_ndss.png`
 
 ## 5. Recommended execution order
 
@@ -425,7 +436,7 @@ python -m src.eval.build_appendix_te
 | Appendix E | `outputs/appendix/table_e1_distribution_shift_summary.csv`, `outputs/appendix/appendix_e_artifact_manifest.csv` | `src.eval.build_appendix_te` |
 | Appendix F | `outputs/appendix/table_f1_graphad_rank_trace.csv`, `outputs/appendix/figure_f1_graphad_visual_proof.png` | `src.eval.build_appendix_te` |
 | Appendix G | `outputs/appendix/table_g1_seed_variation_detail.csv`, `outputs/appendix/table_g2_seed_variation_summary.csv` | `src.eval.build_appendix_te` |
-| Appendix H | `outputs/appendix/table_h1_hyperparameter_rationale.csv` | `src.eval.build_appendix_te` |
+| Appendix H | `outputs/appendix/table_h1_hyperparameter_rationale.csv`, `outputs/appendix/table_h2_graphad_lambda_selection.csv`, `outputs/appendix/table_h2_graphad_lambda_grid_detail.csv`, `outputs/appendix/table_h2_graphad_lambda_selection_ndss.csv`, `outputs/appendix/table_h2_graphad_lambda_grid_detail_ndss.csv`, `outputs/appendix/table_h3_graphad_lambda_protocol_ndss.csv`, `outputs/appendix/table_h4_graphad_lambda_reproducibility_ndss.csv`, `outputs/appendix/figure_h2_graphad_lambda_sensitivity_ndss.png` | `src.eval.build_appendix_te`, `ndss.tune_graphad_weights` |
 
 ## 8. Environment
 

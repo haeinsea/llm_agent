@@ -1,0 +1,26 @@
+search_seeds: [0, 1, 2, 3, 4]
+selection_metric: auc_priority
+entropy_floor: 0.9
+gray_margin: 0.1
+score_weights:
+  auc: 0.45
+  post_shift_recall: 0.20
+  f1: 0.15
+  recall: 0.10
+  high_entropy_recall: 0.05
+  grayzone_recall: 0.05
+architecture: [modern_tcn]
+channels:
+  - [64, 96, 128]
+dilations:
+  - [1, 2, 4]
+kernel_size: [3]
+dropout: [0.05]
+expansion_ratio: [4]
+pool: [last]
+batch_size: [64]
+inference_batch_size: [2048]
+epochs: [3]
+lr: [0.0005]
+weight_decay: [0.0001]
+penalty_weight: [0.1]

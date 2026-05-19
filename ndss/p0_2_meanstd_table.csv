@@ -1,0 +1,4 @@
+group,N,ACT@5 no_llm (mean±std),ACT@5 filter (mean±std),Recall@5 no_llm (mean±std),Recall@5 filter (mean±std)
+sensor_only,102,0.451 ± 0.500,0.480 ± 0.502,0.451 ± 0.500,0.480 ± 0.502
+sensor+actuator,184,0.815 ± 0.389,0.815 ± 0.389,0.560 ± 0.345,0.522 ± 0.321
+ALL,286,0.685 ± 0.465,0.696 ± 0.461,0.521 ± 0.410,0.507 ± 0.395

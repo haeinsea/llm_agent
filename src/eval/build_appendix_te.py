@@ -12,11 +12,14 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 import numpy as np
 import pandas as pd
+from sklearn.metrics import roc_auc_score
 
 from src.eval.plot_style import PAPER_COLORS, add_panel_label, save_figure, set_paper_style, style_axes
-from src.models.graphad import graphad_score_matrices, load_graphad_artifact
+from src.models.graphad import fit_graphad, graphad_score_matrices, infer_graphad, load_graphad_artifact
 from src.models.temporal_backbone import temporal_model_display_name
 from src.routing.selective_llm_eval import DEFAULT_Q, build_llm_prompt, read_selected_q
+from src.tuning.common import best_threshold, load_feature_cols, read_rows, weighted_objective
+from src.tuning.optimize_graphad import _noise_consistency, _run_consistency
 from src.utils.experiment import ensemble_component_label, get_seed_list
 from src.utils.io import ensure_dir, read_csv, read_json, read_yaml, write_csv
 from src.utils.metrics import binary_metrics, gray_ratio, instability_score, low_tail_recall, prr
@@ -310,7 +313,13 @@ def build_appendix_d_parameter_sensitivity(tau: float) -> None:
                     score = base_cost[f"{col_prefix}_seed{seed}"].to_numpy(dtype=float)
                 margin = float(gray_seed[(gray_seed["seed"] == seed) & (np.isclose(gray_seed["q"], q))]["gray_margin"].iloc[0])
                 m = binary_metrics(base_cost["y_true"], score, tau=tau)
-                seed_metrics.append({"gray_ratio": gray_ratio(score, tau=tau, margin=margin), "f1": m["f1"]})
+                seed_metrics.append(
+                    {
+                        "gray_ratio": gray_ratio(score, tau=tau, margin=margin),
+                        "f1": m["f1"],
+                        "auc": m["roc_auc"],
+                    }
+                )
             metrics_df = pd.DataFrame(seed_metrics)
             rows.append(
                 {
@@ -318,6 +327,7 @@ def build_appendix_d_parameter_sensitivity(tau: float) -> None:
                     "Model": model_name,
                     "Gray Ratio": fmt(metrics_df["gray_ratio"].mean(), metrics_df["gray_ratio"].std(ddof=1)),
                     "F1": fmt(metrics_df["f1"].mean(), metrics_df["f1"].std(ddof=1)),
+                    "AUC": fmt(metrics_df["auc"].mean(), metrics_df["auc"].std(ddof=1)) if metrics_df["auc"].notna().any() else "NA",
                 }
             )
         rows.append(
@@ -326,6 +336,7 @@ def build_appendix_d_parameter_sensitivity(tau: float) -> None:
                 "Model": "UTAR (Proposed)",
                 "Gray Ratio": fmt(utar_row["gray_ratio_mean"], pick_std(utar_row, "gray_ratio")),
                 "F1": fmt(utar_row["f1_mean"], pick_std(utar_row, "f1")),
+                "AUC": fmt(utar_row["roc_auc_mean"], pick_std(utar_row, "roc_auc")) if not pd.isna(utar_row["roc_auc_mean"]) else "NA",
             }
         )
 
@@ -629,6 +640,7 @@ def build_appendix_g_seed_variation() -> None:
                 "Method": label,
                 "Ave. F1": float(test_metrics["f1"]),
                 "PRR": float(prr(val_metrics["recall"], test_metrics["recall"])),
+                "AUC": float(test_metrics["roc_auc"]) if test_metrics["roc_auc"] is not None else np.nan,
                 "Worst-Case Recall (P5)": float(low_tail_recall(test_pred["y_true"], p_test, test_pred["run_id"], tau=tau, window=50, quantile=0.05)),
                 "Instability (Var)": float(instability_score(p_test, test_pred["run_id"], test_pred["phase"])),
             }
@@ -637,6 +649,7 @@ def build_appendix_g_seed_variation() -> None:
                 {
                     "f1": row["Ave. F1"],
                     "prr": row["PRR"],
+                    "auc": row["AUC"],
                     "worst_case_recall": row["Worst-Case Recall (P5)"],
                     "instability": row["Instability (Var)"],
                 }
@@ -655,6 +668,7 @@ def build_appendix_g_seed_variation() -> None:
                 "Method": "UTAR (Proposed)",
                 "Ave. F1": float(row["f1"]),
                 "PRR": float(row["prr"]),
+                "AUC": float(row["roc_auc"]) if not pd.isna(row["roc_auc"]) else np.nan,
                 "Worst-Case Recall (P5)": float(row["worst_case_recall"]),
                 "Instability (Var)": float(row["instability"]),
             }
@@ -670,6 +684,7 @@ def build_appendix_g_seed_variation() -> None:
                 "Method": method,
                 "Ave. F1": fmt(group["Ave. F1"].mean(), group["Ave. F1"].std(ddof=1) if len(group) > 1 else 0.0),
                 "PRR": fmt(group["PRR"].mean(), group["PRR"].std(ddof=1) if len(group) > 1 else 0.0),
+                "AUC": fmt(group["AUC"].mean(), group["AUC"].std(ddof=1) if len(group) > 1 else 0.0) if group["AUC"].notna().any() else "NA",
                 "Worst-Case Recall (P5)": fmt(group["Worst-Case Recall (P5)"].mean(), group["Worst-Case Recall (P5)"].std(ddof=1) if len(group) > 1 else 0.0),
                 "Instability (Var)": fmt(group["Instability (Var)"].mean(), group["Instability (Var)"].std(ddof=1) if len(group) > 1 else 0.0),
             }
@@ -686,6 +701,228 @@ def _tuning_summary(tool_name: str) -> tuple[dict, str]:
     return read_json(json_path), "tuning_search"
 
 
+def _graphad_ndss_current_summary() -> dict | None:
+    path = APPENDIX_DIR / "table_h2_graphad_lambda_selection_ndss.csv"
+    if not path.exists():
+        return None
+    df = pd.read_csv(path)
+    cur = df[df["Selection"] == "Current manuscript setting"]
+    if cur.empty:
+        return None
+    row = cur.iloc[0]
+    return {
+        "selection_rank": int(row["selection_rank"]),
+        "n_candidates": 36,
+        "top1_mean": float(row["Top1_recall_mean"]),
+        "top1_std": float(row["Top1_recall_std"]),
+        "top3_mean": float(row["Top3_recall_mean"]),
+        "top3_std": float(row["Top3_recall_std"]),
+        "kconcord_mean": float(row["K-Concord_mean"]),
+        "kconcord_std": float(row["K-Concord_std"]),
+        "sgr_mean": float(row["SGR_mean"]),
+        "sgr_std": float(row["SGR_std"]),
+    }
+
+
+def _graphad_ndss_alpha_summary() -> dict | None:
+    path = APPENDIX_DIR / "table_h6_graphad_alpha_selection_ndss.csv"
+    if not path.exists():
+        return None
+    df = pd.read_csv(path)
+    cur = df[df["Selection"] == "Current manuscript alpha"]
+    if cur.empty:
+        return None
+    row = cur.iloc[0]
+    return {
+        "selection_rank": int(row["selection_rank"]),
+        "n_candidates": int(len(_safe_read_csv(APPENDIX_DIR / "table_h6_graphad_alpha_grid_detail_ndss.csv")) or 0),
+        "top1_mean": float(row["Top1_recall_mean"]),
+        "top1_std": float(row["Top1_recall_std"]),
+        "top3_mean": float(row["Top3_recall_mean"]),
+        "top3_std": float(row["Top3_recall_std"]),
+        "top5_mean": float(row["Top5_recall_mean"]),
+        "top5_std": float(row["Top5_recall_std"]),
+        "kconcord_mean": float(row["K-Concord_mean"]),
+        "kconcord_std": float(row["K-Concord_std"]),
+        "sgr_mean": float(row["SGR_mean"]),
+        "sgr_std": float(row["SGR_std"]),
+    }
+
+
+def _graphad_lambda_grid(*, step: float = 0.1, min_weight: float = 0.1) -> list[tuple[float, float, float]]:
+    total_units = int(round(1.0 / step))
+    min_units = int(round(min_weight / step))
+    candidates = []
+    for z_units in range(min_units, total_units - 2 * min_units + 1):
+        for tr_units in range(min_units, total_units - z_units - min_units + 1):
+            fl_units = total_units - z_units - tr_units
+            if fl_units < min_units:
+                continue
+            candidates.append(
+                (
+                    round(z_units * step, 2),
+                    round(tr_units * step, 2),
+                    round(fl_units * step, 2),
+                )
+            )
+    return candidates
+
+
+def _lambda_match(df: pd.DataFrame, lam: tuple[float, float, float]) -> pd.Series:
+    return (
+        np.isclose(df["lambda_z"], lam[0])
+        & np.isclose(df["lambda_tr"], lam[1])
+        & np.isclose(df["lambda_fl"], lam[2])
+    )
+
+
+def _graphad_top1_gap(y_true: np.ndarray, pred: pd.DataFrame) -> float:
+    anomaly_mask = y_true == 1
+    normal_mask = y_true == 0
+    top1_gap_anom = float(pred.loc[anomaly_mask, "graphad_top1_gap"].mean()) if anomaly_mask.any() else 0.0
+    top1_gap_norm = float(pred.loc[normal_mask, "graphad_top1_gap"].mean()) if normal_mask.any() else 0.0
+    return top1_gap_anom - top1_gap_norm
+
+
+def build_appendix_h_graphad_lambda_selection() -> None:
+    graphad_cfg = _safe_read_yaml(CONFIG_DIR / "train_graphad.yaml")
+    search_cfg = _safe_read_yaml(CONFIG_DIR / "search_graphad.yaml")
+    weights = search_cfg.get(
+        "score_weights",
+        {
+            "auc": 0.40,
+            "f1": 0.20,
+            "run_consistency": 0.20,
+            "noise_consistency": 0.15,
+            "top1_gap": 0.05,
+        },
+    )
+    bootstrap_repeats = int(search_cfg.get("bootstrap_repeats", 5))
+    noise_std = float(search_cfg.get("noise_std", 0.01))
+    eval_samples = int(search_cfg.get("eval_samples", 32))
+
+    feature_cols = load_feature_cols()
+    train_df = read_rows("te_train_rows.csv")
+    val_df = read_rows("te_val_rows.csv")
+    y_true = val_df["y"].to_numpy(dtype=int)
+
+    base_cfg = {
+        "normal_only": bool(graphad_cfg.get("normal_only", True)),
+        "corr_threshold": float(graphad_cfg.get("corr_threshold", 0.7)),
+        "alpha": float(graphad_cfg.get("alpha", 0.3)),
+        "top_k": int(graphad_cfg.get("top_k", 5)),
+        "score_clip": float(graphad_cfg.get("score_clip", 12.0)),
+        "eps": float(graphad_cfg.get("eps", 1.0e-6)),
+    }
+    current_lambda = (
+        round(float(graphad_cfg.get("lambda_z", 0.4)), 2),
+        round(float(graphad_cfg.get("lambda_tr", 0.3)), 2),
+        round(float(graphad_cfg.get("lambda_fl", 0.3)), 2),
+    )
+
+    rows = []
+    for lambda_z, lambda_tr, lambda_fl in _graphad_lambda_grid():
+        cfg = {
+            **base_cfg,
+            "lambda_z": lambda_z,
+            "lambda_tr": lambda_tr,
+            "lambda_fl": lambda_fl,
+        }
+        artifact = fit_graphad(train_df=train_df, feature_cols=feature_cols, cfg=cfg)
+        pred = infer_graphad(val_df, artifact)
+        score = pred["graphad_score"].to_numpy(dtype=float)
+        tau, f1 = best_threshold(y_true, score)
+        try:
+            auc = float(roc_auc_score(y_true, score))
+        except Exception:
+            auc = float("nan")
+        run_consistency = _run_consistency(val_df, pred)
+        noise_consistency = _noise_consistency(
+            val_df,
+            feature_cols,
+            artifact,
+            bootstrap_repeats=bootstrap_repeats,
+            noise_std=noise_std,
+            eval_samples=eval_samples,
+        )
+        top1_gap = _graphad_top1_gap(y_true, pred)
+        objective = weighted_objective(
+            {
+                "auc": np.nan_to_num(auc, nan=0.0),
+                "f1": f1,
+                "run_consistency": run_consistency,
+                "noise_consistency": noise_consistency,
+                "top1_gap": top1_gap,
+            },
+            weights,
+        )
+        rows.append(
+            {
+                "lambda_z": lambda_z,
+                "lambda_tr": lambda_tr,
+                "lambda_fl": lambda_fl,
+                "threshold": float(tau),
+                "val_auc": float(auc),
+                "val_f1": float(f1),
+                "run_consistency": float(run_consistency),
+                "noise_consistency": float(noise_consistency),
+                "top1_gap": float(top1_gap),
+                "objective": float(objective),
+            }
+        )
+
+    grid_df = pd.DataFrame(rows).sort_values(
+        ["objective", "val_auc", "run_consistency", "noise_consistency"],
+        ascending=[False, False, False, False],
+    ).reset_index(drop=True)
+    grid_df["rank"] = np.arange(1, len(grid_df) + 1)
+    grid_df["is_current_config"] = _lambda_match(grid_df, current_lambda)
+    write_csv(APPENDIX_DIR / "table_h2_graphad_lambda_grid_detail.csv", grid_df)
+
+    best_lambda = tuple(grid_df.iloc[0][["lambda_z", "lambda_tr", "lambda_fl"]].tolist())
+    candidate_labels: dict[tuple[float, float, float], list[str]] = {}
+    for lam, label in [
+        (current_lambda, "Current manuscript setting"),
+        (best_lambda, "Best validation objective"),
+        ((0.6, 0.2, 0.2), "Strong z emphasis"),
+        ((0.5, 0.3, 0.2), "Moderate z emphasis"),
+        ((0.3, 0.4, 0.3), "Trend emphasis"),
+        ((0.3, 0.3, 0.4), "Fluctuation emphasis"),
+        ((0.4, 0.4, 0.2), "Trend-skewed alternative"),
+        ((0.4, 0.2, 0.4), "Fluctuation-skewed alternative"),
+    ]:
+        candidate_labels.setdefault(lam, []).append(label)
+
+    compact_rows = []
+    for lam, labels in candidate_labels.items():
+        matched = grid_df[_lambda_match(grid_df, lam)]
+        if matched.empty:
+            continue
+        row = matched.iloc[0].copy()
+        compact_rows.append(
+            {
+                "Candidate": " / ".join(labels),
+                "lambda_z": float(row["lambda_z"]),
+                "lambda_tr": float(row["lambda_tr"]),
+                "lambda_fl": float(row["lambda_fl"]),
+                "Rank": int(row["rank"]),
+                "Val AUC": float(row["val_auc"]),
+                "Val F1": float(row["val_f1"]),
+                "Threshold": float(row["threshold"]),
+                "Run Consistency": float(row["run_consistency"]),
+                "Noise Consistency": float(row["noise_consistency"]),
+                "Top1 Gap": float(row["top1_gap"]),
+                "Composite Objective": float(row["objective"]),
+                "Selection Note": (
+                    "Current pipeline setting" if bool(row["is_current_config"]) else "Validation comparison candidate"
+                ),
+            }
+        )
+
+    compact_df = pd.DataFrame(compact_rows).sort_values(["Rank", "Composite Objective"]).reset_index(drop=True)
+    write_csv(APPENDIX_DIR / "table_h2_graphad_lambda_selection.csv", compact_df)
+
+
 def build_appendix_h_hyperparameter_rationale() -> None:
     rf_cfg = _safe_read_yaml(CONFIG_DIR / "train_rf.yaml")
     xgb_cfg = _safe_read_yaml(CONFIG_DIR / "train_xgb.yaml")
@@ -699,6 +936,8 @@ def build_appendix_h_hyperparameter_rationale() -> None:
         "routing": _safe_read_yaml(CONFIG_DIR / "search_routing.yaml"),
         "graphad": _safe_read_yaml(CONFIG_DIR / "search_graphad.yaml"),
     }
+    graphad_ndss_meta = _graphad_ndss_current_summary()
+    graphad_alpha_meta = _graphad_ndss_alpha_summary()
 
     rows = []
     for tool_name, component, params, rationale_map in [
@@ -744,11 +983,11 @@ def build_appendix_h_hyperparameter_rationale() -> None:
             {"corr_threshold": graphad_cfg.get("corr_threshold"), "alpha": graphad_cfg.get("alpha"), "top_k": graphad_cfg.get("top_k"), "lambda_z": graphad_cfg.get("lambda_z"), "lambda_tr": graphad_cfg.get("lambda_tr"), "lambda_fl": graphad_cfg.get("lambda_fl")},
             {
                 "corr_threshold": "Defines data-driven topology edges used for structure-aware smoothing.",
-                "alpha": "Balances local anomaly evidence with neighborhood support.",
+                "alpha": "NDSS alpha sensitivity retained moderate graph smoothing as a balanced operating point between Top-1 precision loss and Top-3/Top-5 coverage gain.",
                 "top_k": "Sets the number of GraphAD+ candidate sensors exposed to the downstream prompt.",
-                "lambda_z": "Prioritizes instantaneous deviation.",
-                "lambda_tr": "Captures monotonic directional change.",
-                "lambda_fl": "Captures fluctuation and non-monotonic turbulence.",
+                "lambda_z": "NDSS sensitivity analysis kept the deviation term active while preserving near-best Top-1/Top-3 diagnosis recall.",
+                "lambda_tr": "NDSS sensitivity analysis retained a dedicated trend term to capture directional attacks without collapsing into a single-score heuristic.",
+                "lambda_fl": "NDSS sensitivity analysis preserved a nonzero fluctuation term for freeze/oscillation signatures while maintaining stable ranking quality.",
             },
         ),
         (
@@ -772,14 +1011,36 @@ def build_appendix_h_hyperparameter_rationale() -> None:
             selected_value = best_params.get(param, value)
             if selected_value is None or (isinstance(selected_value, float) and np.isnan(selected_value)):
                 continue
+            candidate_space = json.dumps(search_space.get(param, []), ensure_ascii=False) if param in search_space else ""
+            row_source = source
+            row_objective = objective
+            if tool_name == "graphad" and param in {"lambda_z", "lambda_tr", "lambda_fl"}:
+                candidate_space = "See Table H2 NDSS sensitivity grid"
+                if graphad_ndss_meta is not None:
+                    row_source = "ndss_lambda_sweep"
+                    row_objective = (
+                        f"rank={graphad_ndss_meta['selection_rank']}/{graphad_ndss_meta['n_candidates']}; "
+                        f"Top1={graphad_ndss_meta['top1_mean']:.4f}±{graphad_ndss_meta['top1_std']:.4f}; "
+                        f"Top3={graphad_ndss_meta['top3_mean']:.4f}±{graphad_ndss_meta['top3_std']:.4f}"
+                    )
+            if tool_name == "graphad" and param == "alpha":
+                candidate_space = "See Table H6 NDSS alpha sensitivity"
+                if graphad_alpha_meta is not None:
+                    row_source = "ndss_alpha_sweep"
+                    row_objective = (
+                        f"rank={graphad_alpha_meta['selection_rank']}/{graphad_alpha_meta['n_candidates']}; "
+                        f"Top1={graphad_alpha_meta['top1_mean']:.4f}±{graphad_alpha_meta['top1_std']:.4f}; "
+                        f"Top3={graphad_alpha_meta['top3_mean']:.4f}±{graphad_alpha_meta['top3_std']:.4f}; "
+                        f"Top5={graphad_alpha_meta['top5_mean']:.4f}±{graphad_alpha_meta['top5_std']:.4f}"
+                    )
             rows.append(
                 {
                     "Component": component,
                     "Parameter": param,
                     "Selected Value": selected_value,
-                    "Candidate Space": json.dumps(search_space.get(param, []), ensure_ascii=False) if param in search_space else "",
-                    "Evidence Source": source,
-                    "Objective Score": objective,
+                    "Candidate Space": candidate_space,
+                    "Evidence Source": row_source,
+                    "Objective Score": row_objective,
                     "Rationale": rationale_map.get(param, ""),
                 }
             )
@@ -800,6 +1061,7 @@ def main() -> None:
     build_appendix_f_graphad_visual()
     build_appendix_g_seed_variation()
     build_appendix_h_hyperparameter_rationale()
+    build_appendix_h_graphad_lambda_selection()
     print(f"Saved TE appendix artifacts to {APPENDIX_DIR}")
 
 

@@ -136,6 +136,7 @@ def summarize_method_rows(detail_df: pd.DataFrame, method_name: str) -> dict:
         "Method": method_name,
         "F1-Score (IID)": fmt(group["f1_iid"].mean(), group["f1_iid"].std(ddof=1) if len(group) > 1 else 0.0),
         "F1-Score (TDS)": fmt(group["f1_tds"].mean(), group["f1_tds"].std(ddof=1) if len(group) > 1 else 0.0),
+        "AUC (TDS)": fmt(group["auc_tds"].mean(), group["auc_tds"].std(ddof=1) if len(group) > 1 else 0.0) if group["auc_tds"].notna().any() else "NA",
         "Performance Drop(Δ)": fmt(group["performance_drop"].mean(), group["performance_drop"].std(ddof=1) if len(group) > 1 else 0.0),
         "Worst-Case Recall (P5)": fmt(group["worst_case_recall"].mean(), group["worst_case_recall"].std(ddof=1) if len(group) > 1 else 0.0),
         "Instability(Var)": fmt(group["instability"].mean(), group["instability"].std(ddof=1) if len(group) > 1 else 0.0),

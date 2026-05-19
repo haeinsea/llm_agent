@@ -1,0 +1,5334 @@
+[
+  {
+    "attack_id": "TEP_test_cons_m2s_a1",
+    "true_var": [
+      "D feed (MV)",
+      "D Feed"
+    ],
+    "window": 400,
+    "top5": [
+      "Separator (MV)",
+      "Stripper Temp",
+      "Comp C to Reactor",
+      "Product Sep Temp",
+      "Stripper (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.42203586000127274,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_a10",
+    "true_var": [
+      "Reactor Coolant (MV)",
+      "Reactor Coolant Temp"
+    ],
+    "window": 400,
+    "top5": [
+      "Product Sep Temp",
+      "Stripper Temp",
+      "Comp F in Purge",
+      "Comp F to Reactor",
+      "Separator Coolant Temp"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.13217512179073448,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_a11",
+    "true_var": [
+      "Condenser Coolant (MV)",
+      "Separator Coolant Temp"
+    ],
+    "window": 100,
+    "top5": [
+      "Purge (MV)",
+      "Purge Rate",
+      "Reactor Level",
+      "Stripper (MV)",
+      "Comp B in Purge"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.2744685095398756,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_a2",
+    "true_var": [
+      "E Feed (MV)",
+      "E Feed"
+    ],
+    "window": 300,
+    "top5": [
+      "Separator (MV)",
+      "Stripper Temp",
+      "Comp C to Reactor",
+      "Product Sep Temp",
+      "A and C Feed (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.4652347096285578,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_a3",
+    "true_var": [
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "window": 400,
+    "top5": [
+      "Comp C to Reactor",
+      "Purge Rate",
+      "Purge (MV)",
+      "Compressor Work",
+      "Stripper Temp"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.4988396048717311,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_a4",
+    "true_var": [
+      "A and C Feed (MV)",
+      "A and C Feed"
+    ],
+    "window": 100,
+    "top5": [
+      "Separator (MV)",
+      "Comp B to Reactor",
+      "Compressor Work",
+      "Stripper Temp",
+      "Comp A to Reactor"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.2069985098921406,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_a6",
+    "true_var": [
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "window": 100,
+    "top5": [
+      "Product Sep Pressure",
+      "Reactor Pressure",
+      "Stripper Pressure",
+      "A and C Feed (MV)",
+      "Separator (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.2031388371732707,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_a7",
+    "true_var": [
+      "Separator (MV)",
+      "Product Sep Level"
+    ],
+    "window": 500,
+    "top5": [
+      "Comp C to Reactor",
+      "Stripper (MV)",
+      "Comp E in Product",
+      "Comp D to Reactor",
+      "A and C Feed (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.3932973192404092,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_a8",
+    "true_var": [
+      "Stripper (MV)",
+      "Stripper Level"
+    ],
+    "window": 300,
+    "top5": [
+      "Comp C to Reactor",
+      "D feed (MV)",
+      "Stripper Level",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.3333333333333333,
+    "SGR": 0.6933174819850392,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_s1",
+    "true_var": [
+      "A Feed",
+      "A Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "A Feed (MV)",
+      "Product Sep Temp",
+      "Compressor Work",
+      "Stripper Temp",
+      "Reactor Coolant Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_s10",
+    "true_var": [
+      "Purge Rate",
+      "Purge (MV)"
+    ],
+    "window": 300,
+    "top5": [
+      "Comp C to Reactor",
+      "Purge Rate",
+      "A and C Feed (MV)",
+      "Comp D to Reactor",
+      "A Feed (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.5,
+    "SGR": 0.8500977236701631,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_s11",
+    "true_var": [
+      "Product Sep Temp"
+    ],
+    "window": 400,
+    "top5": [
+      "Stripper Temp",
+      "Product Sep Pressure",
+      "Stripper Pressure",
+      "Reactor Coolant Temp",
+      "Reactor Pressure"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.16667942701199445,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_s12",
+    "true_var": [
+      "Product Sep Level",
+      "Separator (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper (MV)",
+      "Separator (MV)",
+      "Stripper Level",
+      "Reactor Coolant Temp",
+      "D feed (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.5,
+    "SGR": 0.7565365908830213,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_s14",
+    "true_var": [
+      "Product Sep Underflow"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper (MV)",
+      "Stripper Temp",
+      "Product Sep Level",
+      "Stripper Level",
+      "A and C Feed (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.19865653249622336,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_s15",
+    "true_var": [
+      "Stripper Level",
+      "Stripper (MV)"
+    ],
+    "window": 200,
+    "top5": [
+      "Stripper (MV)",
+      "Comp C to Reactor",
+      "Reactor Coolant Temp",
+      "Stripper Level",
+      "D feed (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_s17",
+    "true_var": [
+      "Stripper Underflow"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper (MV)",
+      "Stripper Level",
+      "Reactor Coolant Temp",
+      "D feed (MV)",
+      "Reactor Coolant (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.053852456954748634,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_s2",
+    "true_var": [
+      "D Feed",
+      "D feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "D feed (MV)",
+      "Reactor Coolant Temp",
+      "Product Sep Pressure",
+      "Reactor Coolant (MV)",
+      "Reactor Pressure"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_s23",
+    "true_var": [
+      "Comp A to Reactor"
+    ],
+    "window": 400,
+    "top5": [
+      "A Feed (MV)",
+      "A Feed",
+      "Comp C to Reactor",
+      "Comp A to Reactor",
+      "Reactor Coolant Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.25,
+    "SGR": 0.4666020954344921,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_s25",
+    "true_var": [
+      "Comp C to Reactor"
+    ],
+    "window": 300,
+    "top5": [
+      "A and C Feed (MV)",
+      "A Feed (MV)",
+      "A Feed",
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.3921750416694925,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_s3",
+    "true_var": [
+      "E Feed",
+      "E Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "E Feed (MV)",
+      "Product Sep Temp",
+      "Separator Coolant Temp",
+      "Stripper Temp",
+      "Reactor Level"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_s4",
+    "true_var": [
+      "A and C Feed",
+      "A and C Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Reactor Coolant (MV)",
+      "Reactor Coolant Temp",
+      "Stripper Pressure",
+      "Product Sep Pressure"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_s40",
+    "true_var": [
+      "Comp G in Product"
+    ],
+    "window": 200,
+    "top5": [
+      "E Feed (MV)",
+      "D feed (MV)",
+      "A and C Feed (MV)",
+      "Comp G in Product",
+      "Comp C to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.25,
+    "SGR": 0.49701557150014175,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_s7",
+    "true_var": [
+      "Reactor Pressure"
+    ],
+    "window": 500,
+    "top5": [
+      "Product Sep Pressure",
+      "Stripper Pressure",
+      "Purge (MV)",
+      "Purge Rate",
+      "Compressor Work"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.0913761306735926,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_s8",
+    "true_var": [
+      "Reactor Level"
+    ],
+    "window": 400,
+    "top5": [
+      "Purge (MV)",
+      "Purge Rate",
+      "Stripper (MV)",
+      "Separator (MV)",
+      "Comp G in Purge"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.1929725438351456,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_m2s_s9",
+    "true_var": [
+      "Reactor Temperature"
+    ],
+    "window": 100,
+    "top5": [
+      "Reactor Coolant Temp",
+      "Product Sep Temp",
+      "Stripper Temp",
+      "Comp H in Purge",
+      "Comp G in Purge"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.005460034981013517,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p2s_a1",
+    "true_var": [
+      "D feed (MV)",
+      "D Feed"
+    ],
+    "window": 300,
+    "top5": [
+      "Separator (MV)",
+      "Stripper Temp",
+      "Comp C to Reactor",
+      "D feed (MV)",
+      "A and C Feed (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.25,
+    "SGR": 0.4808932728677938,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p2s_a10",
+    "true_var": [
+      "Reactor Coolant (MV)",
+      "Reactor Coolant Temp"
+    ],
+    "window": 500,
+    "top5": [
+      "Product Sep Temp",
+      "Stripper Temp",
+      "Comp F in Purge",
+      "Comp B in Purge",
+      "Separator Coolant Temp"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.29576909360818193,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p2s_a2",
+    "true_var": [
+      "E Feed (MV)",
+      "E Feed"
+    ],
+    "window": 400,
+    "top5": [
+      "Stripper Temp",
+      "Separator (MV)",
+      "Comp C to Reactor",
+      "Product Sep Temp",
+      "Purge Rate"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.3428286550241171,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p2s_a3",
+    "true_var": [
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "window": 300,
+    "top5": [
+      "Stripper Temp",
+      "Compressor Work",
+      "Product Sep Temp",
+      "Comp C to Reactor",
+      "Comp E in Product"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.36916463870562877,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p2s_a4",
+    "true_var": [
+      "A and C Feed (MV)",
+      "A and C Feed"
+    ],
+    "window": 100,
+    "top5": [
+      "Product Sep Temp",
+      "Comp C to Reactor",
+      "Stripper Temp",
+      "Separator Coolant Temp",
+      "Reactor Coolant Temp"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.18792666047909298,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p2s_a6",
+    "true_var": [
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper Pressure",
+      "Reactor Pressure",
+      "Product Sep Pressure",
+      "Product Sep Temp",
+      "Stripper Temp"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.2262416397353841,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p2s_a7",
+    "true_var": [
+      "Separator (MV)",
+      "Product Sep Level"
+    ],
+    "window": 500,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Purge (MV)",
+      "Purge Rate",
+      "Comp D to Reactor"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.45190490129473354,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p2s_a8",
+    "true_var": [
+      "Stripper (MV)",
+      "Stripper Level"
+    ],
+    "window": 300,
+    "top5": [
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Separator (MV)",
+      "E Feed (MV)",
+      "Stripper Level"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.2,
+    "SGR": 0.5894341850956645,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p2s_s1",
+    "true_var": [
+      "A Feed",
+      "A Feed (MV)"
+    ],
+    "window": 500,
+    "top5": [
+      "Compressor Work",
+      "Stripper Temp",
+      "Purge Rate",
+      "Product Sep Temp",
+      "Purge (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.44618252206995457,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p2s_s10",
+    "true_var": [
+      "Purge Rate",
+      "Purge (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Purge (MV)",
+      "Product Sep Pressure",
+      "Reactor Pressure",
+      "Stripper Pressure",
+      "Reactor Coolant Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p2s_s11",
+    "true_var": [
+      "Product Sep Temp"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper Temp",
+      "Reactor Coolant Temp",
+      "Product Sep Pressure",
+      "Stripper Pressure",
+      "Reactor Pressure"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.16469493833804416,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p2s_s12",
+    "true_var": [
+      "Product Sep Level",
+      "Separator (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper (MV)",
+      "Separator (MV)",
+      "A and C Feed (MV)",
+      "Stripper Level",
+      "E Feed (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.5,
+    "SGR": 0.7194618790144752,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p2s_s14",
+    "true_var": [
+      "Product Sep Underflow"
+    ],
+    "window": 500,
+    "top5": [
+      "Stripper (MV)",
+      "Separator (MV)",
+      "Stripper Temp",
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.1749426493283959,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p2s_s15",
+    "true_var": [
+      "Stripper Level",
+      "Stripper (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Stripper (MV)",
+      "Product Sep Temp",
+      "Stripper Temp",
+      "Comp C to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.5,
+    "SGR": 0.9805195619921249,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p2s_s17",
+    "true_var": [
+      "Stripper Underflow"
+    ],
+    "window": 300,
+    "top5": [
+      "Stripper (MV)",
+      "Stripper Level",
+      "A and C Feed (MV)",
+      "E Feed (MV)",
+      "D feed (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.05821754789932128,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p2s_s2",
+    "true_var": [
+      "D Feed",
+      "D feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "D feed (MV)",
+      "Reactor Coolant Temp",
+      "Reactor Coolant (MV)",
+      "Purge Rate",
+      "Purge (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p2s_s23",
+    "true_var": [
+      "Comp A to Reactor"
+    ],
+    "window": 100,
+    "top5": [
+      "Purge Rate",
+      "Purge (MV)",
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "A Feed (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.7103879367134012,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p2s_s25",
+    "true_var": [
+      "Comp C to Reactor"
+    ],
+    "window": 500,
+    "top5": [
+      "Purge (MV)",
+      "A and C Feed (MV)",
+      "Purge Rate",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.4475292235413816,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p2s_s3",
+    "true_var": [
+      "E Feed",
+      "E Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "E Feed (MV)",
+      "Product Sep Temp",
+      "Separator Coolant Temp",
+      "Stripper Temp",
+      "Reactor Level"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p2s_s40",
+    "true_var": [
+      "Comp G in Product"
+    ],
+    "window": 300,
+    "top5": [
+      "E Feed (MV)",
+      "D feed (MV)",
+      "Comp C to Reactor",
+      "Comp G in Product",
+      "A and C Feed (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.25,
+    "SGR": 0.5196811117971931,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p2s_s7",
+    "true_var": [
+      "Reactor Pressure"
+    ],
+    "window": 200,
+    "top5": [
+      "Product Sep Pressure",
+      "Stripper Pressure",
+      "Purge (MV)",
+      "Purge Rate",
+      "Product Sep Temp"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.08570987844984408,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p2s_s8",
+    "true_var": [
+      "Reactor Level"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper (MV)",
+      "Purge Rate",
+      "Separator (MV)",
+      "Purge (MV)",
+      "Comp B to Reactor"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.18745157726877976,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p3s_a1",
+    "true_var": [
+      "D feed (MV)",
+      "D Feed"
+    ],
+    "window": 200,
+    "top5": [
+      "Separator (MV)",
+      "Stripper Temp",
+      "Stripper (MV)",
+      "Comp B to Reactor",
+      "D feed (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.2,
+    "SGR": 0.4094025956670921,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p3s_a10",
+    "true_var": [
+      "Reactor Coolant (MV)",
+      "Reactor Coolant Temp"
+    ],
+    "window": 200,
+    "top5": [
+      "Product Sep Temp",
+      "Stripper Temp",
+      "Reactor Temperature",
+      "Reactor Coolant Temp",
+      "Comp H in Purge"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.25,
+    "SGR": 0.5232816883438595,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p3s_a2",
+    "true_var": [
+      "E Feed (MV)",
+      "E Feed"
+    ],
+    "window": 400,
+    "top5": [
+      "Stripper Temp",
+      "Separator (MV)",
+      "Product Sep Temp",
+      "Comp C to Reactor",
+      "Compressor Work"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.29760386720168214,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p3s_a3",
+    "true_var": [
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "window": 400,
+    "top5": [
+      "Compressor Work",
+      "Stripper Temp",
+      "Product Sep Temp",
+      "Separator Coolant Temp",
+      "Separator (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.34361709465140877,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p3s_a4",
+    "true_var": [
+      "A and C Feed (MV)",
+      "A and C Feed"
+    ],
+    "window": 100,
+    "top5": [
+      "Product Sep Temp",
+      "Separator Coolant Temp",
+      "Comp B in Purge",
+      "Comp C to Reactor",
+      "Compressor Work"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.15902254094067564,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p3s_a6",
+    "true_var": [
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "window": 500,
+    "top5": [
+      "Stripper Pressure",
+      "Reactor Pressure",
+      "Product Sep Pressure",
+      "Separator (MV)",
+      "Comp C to Reactor"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.21305451292632285,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p3s_a7",
+    "true_var": [
+      "Separator (MV)",
+      "Product Sep Level"
+    ],
+    "window": 400,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Stripper (MV)",
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.5258100988222953,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p3s_a8",
+    "true_var": [
+      "Stripper (MV)",
+      "Stripper Level"
+    ],
+    "window": 200,
+    "top5": [
+      "A and C Feed (MV)",
+      "Stripper Level",
+      "Comp C to Reactor",
+      "Product Sep Temp",
+      "Stripper Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.5,
+    "SGR": 0.6969017145283449,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p3s_s1",
+    "true_var": [
+      "A Feed",
+      "A Feed (MV)"
+    ],
+    "window": 500,
+    "top5": [
+      "Compressor Work",
+      "Stripper Temp",
+      "Purge Rate",
+      "Reactor Coolant Temp",
+      "Separator Coolant Temp"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.5359636580019069,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p3s_s10",
+    "true_var": [
+      "Purge Rate",
+      "Purge (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Purge (MV)",
+      "Product Sep Pressure",
+      "Reactor Pressure",
+      "Stripper Pressure",
+      "Reactor Coolant Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p3s_s11",
+    "true_var": [
+      "Product Sep Temp"
+    ],
+    "window": 200,
+    "top5": [
+      "Stripper Temp",
+      "Reactor Coolant Temp",
+      "Stripper Pressure",
+      "Product Sep Pressure",
+      "Reactor Pressure"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.1944764969261429,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p3s_s12",
+    "true_var": [
+      "Product Sep Level",
+      "Separator (MV)"
+    ],
+    "window": 300,
+    "top5": [
+      "Stripper (MV)",
+      "Stripper Level",
+      "Separator (MV)",
+      "A and C Feed (MV)",
+      "E Feed (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.3333333333333333,
+    "SGR": 0.734839530230712,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p3s_s14",
+    "true_var": [
+      "Product Sep Underflow"
+    ],
+    "window": 400,
+    "top5": [
+      "Stripper (MV)",
+      "Stripper Temp",
+      "Separator (MV)",
+      "Product Sep Level",
+      "Purge (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.21770097377310957,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p3s_s15",
+    "true_var": [
+      "Stripper Level",
+      "Stripper (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper (MV)",
+      "A and C Feed (MV)",
+      "Product Sep Temp",
+      "Stripper Temp",
+      "Separator (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p3s_s17",
+    "true_var": [
+      "Stripper Underflow"
+    ],
+    "window": 500,
+    "top5": [
+      "Stripper (MV)",
+      "Stripper Level",
+      "A and C Feed (MV)",
+      "E Feed (MV)",
+      "D feed (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.07795117585529773,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p3s_s2",
+    "true_var": [
+      "D Feed",
+      "D feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "D feed (MV)",
+      "Reactor Coolant Temp",
+      "Reactor Coolant (MV)",
+      "Comp D to Reactor",
+      "Purge Rate"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p3s_s23",
+    "true_var": [
+      "Comp A to Reactor"
+    ],
+    "window": 300,
+    "top5": [
+      "A Feed (MV)",
+      "A Feed",
+      "Purge Rate",
+      "Purge (MV)",
+      "Comp A to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.2,
+    "SGR": 0.7530867232100014,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p3s_s25",
+    "true_var": [
+      "Comp C to Reactor"
+    ],
+    "window": 400,
+    "top5": [
+      "A and C Feed (MV)",
+      "Purge (MV)",
+      "Purge Rate",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.45873075061252144,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p3s_s3",
+    "true_var": [
+      "E Feed",
+      "E Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "E Feed (MV)",
+      "Reactor Level",
+      "Product Sep Temp",
+      "Purge Rate",
+      "Purge (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p3s_s40",
+    "true_var": [
+      "Comp G in Product"
+    ],
+    "window": 100,
+    "top5": [
+      "E Feed (MV)",
+      "D feed (MV)",
+      "Comp G in Product",
+      "A and C Feed (MV)",
+      "Comp C to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.3333333333333333,
+    "SGR": 0.5659195268940233,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p3s_s7",
+    "true_var": [
+      "Reactor Pressure"
+    ],
+    "window": 200,
+    "top5": [
+      "Product Sep Pressure",
+      "Stripper Pressure",
+      "Purge (MV)",
+      "Purge Rate",
+      "Compressor Work"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.09058597121091362,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p3s_s8",
+    "true_var": [
+      "Reactor Level"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper Pressure",
+      "Reactor Pressure",
+      "Product Sep Pressure",
+      "Stripper (MV)",
+      "Comp B to Reactor"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.09003801215092193,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p5s_a1",
+    "true_var": [
+      "D feed (MV)",
+      "D Feed"
+    ],
+    "window": 100,
+    "top5": [
+      "Separator (MV)",
+      "Stripper Temp",
+      "Stripper (MV)",
+      "Compressor Work",
+      "Comp B to Reactor"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.35695697571125024,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p5s_a10",
+    "true_var": [
+      "Reactor Coolant (MV)",
+      "Reactor Coolant Temp"
+    ],
+    "window": 100,
+    "top5": [
+      "Reactor Temperature",
+      "Reactor Coolant Temp",
+      "Product Sep Temp",
+      "Stripper Temp",
+      "Comp H in Purge"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.5,
+    "SGR": 0.33770558264758516,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p5s_a2",
+    "true_var": [
+      "E Feed (MV)",
+      "E Feed"
+    ],
+    "window": 300,
+    "top5": [
+      "Stripper Temp",
+      "Separator (MV)",
+      "Product Sep Temp",
+      "Compressor Work",
+      "Separator Coolant Temp"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.25179351012881446,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p5s_a3",
+    "true_var": [
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "window": 300,
+    "top5": [
+      "Compressor Work",
+      "Stripper Temp",
+      "Product Sep Temp",
+      "Separator Coolant Temp",
+      "Reactor Coolant Temp"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.3399855633904158,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p5s_a4",
+    "true_var": [
+      "A and C Feed (MV)",
+      "A and C Feed"
+    ],
+    "window": 100,
+    "top5": [
+      "Comp B in Purge",
+      "Product Sep Temp",
+      "Separator Coolant Temp",
+      "Comp F in Purge",
+      "Comp C to Reactor"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.14232063031778253,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p5s_a6",
+    "true_var": [
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "window": 200,
+    "top5": [
+      "Stripper Pressure",
+      "Product Sep Pressure",
+      "Reactor Pressure",
+      "Product Sep Temp",
+      "Compressor Work"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.20134281949810917,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p5s_a7",
+    "true_var": [
+      "Separator (MV)",
+      "Product Sep Level"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Stripper (MV)",
+      "Comp C to Reactor",
+      "Stripper Level",
+      "Product Sep Level"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.2,
+    "SGR": 0.6032135591993799,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p5s_a8",
+    "true_var": [
+      "Stripper (MV)",
+      "Stripper Level"
+    ],
+    "window": 200,
+    "top5": [
+      "Stripper Level",
+      "A and C Feed (MV)",
+      "Stripper Temp",
+      "Product Sep Temp",
+      "E Feed (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p5s_s1",
+    "true_var": [
+      "A Feed",
+      "A Feed (MV)"
+    ],
+    "window": 500,
+    "top5": [
+      "Reactor Coolant Temp",
+      "Compressor Work",
+      "Stripper Temp",
+      "Separator Coolant Temp",
+      "Comp A to Reactor"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.5120069252995781,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p5s_s10",
+    "true_var": [
+      "Purge Rate",
+      "Purge (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Purge (MV)",
+      "Product Sep Pressure",
+      "Reactor Pressure",
+      "Stripper Pressure",
+      "Reactor Coolant Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p5s_s11",
+    "true_var": [
+      "Product Sep Temp"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper Temp",
+      "Reactor Coolant Temp",
+      "Separator (MV)",
+      "Purge (MV)",
+      "Stripper Pressure"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.20638120966016527,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p5s_s12",
+    "true_var": [
+      "Product Sep Level",
+      "Separator (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper (MV)",
+      "A and C Feed (MV)",
+      "Stripper Level",
+      "Separator (MV)",
+      "Comp F in Purge"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.25,
+    "SGR": 0.6854301633232387,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p5s_s14",
+    "true_var": [
+      "Product Sep Underflow"
+    ],
+    "window": 500,
+    "top5": [
+      "Stripper Temp",
+      "Stripper (MV)",
+      "Separator (MV)",
+      "Product Sep Level",
+      "Purge (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.23463952496169527,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p5s_s15",
+    "true_var": [
+      "Stripper Level",
+      "Stripper (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Stripper (MV)",
+      "Separator (MV)",
+      "Stripper Temp",
+      "Product Sep Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.5,
+    "SGR": 0.9897719066595642,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p5s_s2",
+    "true_var": [
+      "D Feed",
+      "D feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "D feed (MV)",
+      "Reactor Coolant Temp",
+      "Reactor Coolant (MV)",
+      "Comp D to Reactor",
+      "Reactor Level"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p5s_s23",
+    "true_var": [
+      "Comp A to Reactor"
+    ],
+    "window": 100,
+    "top5": [
+      "A Feed (MV)",
+      "A Feed",
+      "Purge Rate",
+      "Purge (MV)",
+      "Comp A to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.2,
+    "SGR": 0.8214063914398153,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p5s_s25",
+    "true_var": [
+      "Comp C to Reactor"
+    ],
+    "window": 300,
+    "top5": [
+      "A and C Feed (MV)",
+      "Purge (MV)",
+      "Purge Rate",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.4644984503261515,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p5s_s40",
+    "true_var": [
+      "Comp G in Product"
+    ],
+    "window": 100,
+    "top5": [
+      "E Feed (MV)",
+      "D feed (MV)",
+      "Comp G in Product",
+      "E Feed",
+      "Reactor Coolant Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.3333333333333333,
+    "SGR": 0.7186744856156712,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p5s_s7",
+    "true_var": [
+      "Reactor Pressure"
+    ],
+    "window": 200,
+    "top5": [
+      "Purge (MV)",
+      "Product Sep Pressure",
+      "Stripper Pressure",
+      "Purge Rate",
+      "Compressor Work"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.09638075440690941,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_cons_p5s_s8",
+    "true_var": [
+      "Reactor Level"
+    ],
+    "window": 100,
+    "top5": [
+      "Product Sep Pressure",
+      "Stripper Pressure",
+      "Reactor Pressure",
+      "Reactor Coolant Temp",
+      "Stripper (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.046905060655140475,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_a1",
+    "true_var": [
+      "D feed (MV)",
+      "D Feed"
+    ],
+    "window": 500,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Comp E in Product",
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.38065961702412016,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_a10",
+    "true_var": [
+      "Reactor Coolant (MV)",
+      "Reactor Coolant Temp"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Product Sep Temp",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.46960006488413003,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_a11",
+    "true_var": [
+      "Condenser Coolant (MV)",
+      "Separator Coolant Temp"
+    ],
+    "window": 300,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "A Feed (MV)",
+      "Comp D to Reactor",
+      "A Feed"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.4010167694122255,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_a2",
+    "true_var": [
+      "E Feed (MV)",
+      "E Feed"
+    ],
+    "window": 500,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Comp E in Product",
+      "Comp D to Reactor",
+      "Purge (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.3914845287719023,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_a3",
+    "true_var": [
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "window": 200,
+    "top5": [
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "A Feed (MV)",
+      "Comp D to Reactor",
+      "A Feed"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.3333333333333333,
+    "SGR": 0.7550861224448653,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_a4",
+    "true_var": [
+      "A and C Feed (MV)",
+      "A and C Feed"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Product Sep Temp",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_a6",
+    "true_var": [
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "window": 400,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Purge (MV)",
+      "Purge Rate",
+      "Comp E in Product"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.3333333333333333,
+    "SGR": 0.5681261784714979,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_a7",
+    "true_var": [
+      "Separator (MV)",
+      "Product Sep Level"
+    ],
+    "window": 500,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Comp D to Reactor",
+      "Comp E in Product",
+      "Purge (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.36652237378964636,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_a8",
+    "true_var": [
+      "Stripper (MV)",
+      "Stripper Level"
+    ],
+    "window": 500,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Comp D to Reactor",
+      "Comp E in Product",
+      "Purge (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.42472446680555986,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_s1",
+    "true_var": [
+      "A Feed",
+      "A Feed (MV)"
+    ],
+    "window": 200,
+    "top5": [
+      "Stripper Temp",
+      "A Feed (MV)",
+      "Product Sep Temp",
+      "Compressor Work",
+      "A and C Feed (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.5,
+    "SGR": 0.9369723155591557,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_s10",
+    "true_var": [
+      "Purge Rate",
+      "Purge (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Purge Rate",
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "A Feed (MV)",
+      "Product Sep Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_s11",
+    "true_var": [
+      "Product Sep Temp"
+    ],
+    "window": 300,
+    "top5": [
+      "Comp C to Reactor",
+      "Product Sep Temp",
+      "A and C Feed (MV)",
+      "A Feed (MV)",
+      "Comp D to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.5,
+    "SGR": 0.7850112200132886,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_s12",
+    "true_var": [
+      "Product Sep Level",
+      "Separator (MV)"
+    ],
+    "window": 400,
+    "top5": [
+      "Stripper (MV)",
+      "Comp C to Reactor",
+      "Stripper Level",
+      "D feed (MV)",
+      "Comp F in Purge"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.37492037215773294,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_s14",
+    "true_var": [
+      "Product Sep Underflow"
+    ],
+    "window": 200,
+    "top5": [
+      "A and C Feed (MV)",
+      "Product Sep Underflow",
+      "Comp C to Reactor",
+      "Product Sep Level",
+      "Comp D to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.5,
+    "SGR": 0.7417628413691879,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_s15",
+    "true_var": [
+      "Stripper Level",
+      "Stripper (MV)"
+    ],
+    "window": 400,
+    "top5": [
+      "Comp C to Reactor",
+      "Stripper (MV)",
+      "D feed (MV)",
+      "Reactor Coolant Temp",
+      "Purge (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.5,
+    "SGR": 0.7235177926429945,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_s17",
+    "true_var": [
+      "Stripper Underflow"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper (MV)",
+      "Stripper Level",
+      "Reactor Coolant Temp",
+      "D feed (MV)",
+      "Comp C to Reactor"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.13689256150982423,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_s2",
+    "true_var": [
+      "D Feed",
+      "D feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "D feed (MV)",
+      "Separator (MV)",
+      "Stripper Temp",
+      "Reactor Coolant Temp",
+      "Stripper (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_s23",
+    "true_var": [
+      "Comp A to Reactor"
+    ],
+    "window": 200,
+    "top5": [
+      "A Feed (MV)",
+      "A Feed",
+      "Comp A to Reactor",
+      "Product Sep Temp",
+      "Stripper Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.3333333333333333,
+    "SGR": 0.5883841427164206,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_s25",
+    "true_var": [
+      "Comp C to Reactor"
+    ],
+    "window": 300,
+    "top5": [
+      "Separator (MV)",
+      "A Feed (MV)",
+      "A Feed",
+      "Stripper (MV)",
+      "Comp E in Product"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.6047198781988333,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_s3",
+    "true_var": [
+      "E Feed",
+      "E Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "E Feed (MV)",
+      "Stripper Temp",
+      "Separator (MV)",
+      "Purge Rate",
+      "Purge (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_s4",
+    "true_var": [
+      "A and C Feed",
+      "A and C Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Reactor Coolant Temp",
+      "Comp C to Reactor",
+      "Product Sep Temp",
+      "Comp B in Purge",
+      "Separator (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.3935102614074898,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_s40",
+    "true_var": [
+      "Comp G in Product"
+    ],
+    "window": 300,
+    "top5": [
+      "E Feed (MV)",
+      "D feed (MV)",
+      "Comp C to Reactor",
+      "Reactor Coolant Temp",
+      "Comp G in Product"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.2,
+    "SGR": 0.46176256578100744,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_s7",
+    "true_var": [
+      "Reactor Pressure"
+    ],
+    "window": 100,
+    "top5": [
+      "Product Sep Pressure",
+      "Stripper Pressure",
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Product Sep Temp"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.19609932766395569,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_s8",
+    "true_var": [
+      "Reactor Level"
+    ],
+    "window": 400,
+    "top5": [
+      "Stripper (MV)",
+      "Stripper Level",
+      "Comp F in Purge",
+      "Comp C to Reactor",
+      "Comp B in Purge"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.19016371742304147,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_m2s_s9",
+    "true_var": [
+      "Reactor Temperature"
+    ],
+    "window": 300,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Stripper Temp",
+      "Comp D to Reactor",
+      "Comp E in Product"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.37442679405826224,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_a1",
+    "true_var": [
+      "D feed (MV)",
+      "D Feed"
+    ],
+    "window": 500,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Comp D to Reactor",
+      "Comp E in Product",
+      "Comp A to Reactor"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.34694105228004396,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_a10",
+    "true_var": [
+      "Reactor Coolant (MV)",
+      "Reactor Coolant Temp"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Product Sep Temp",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.48429081365535936,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_a11",
+    "true_var": [
+      "Condenser Coolant (MV)",
+      "Separator Coolant Temp"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Product Sep Temp",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.4330147105609222,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_a2",
+    "true_var": [
+      "E Feed (MV)",
+      "E Feed"
+    ],
+    "window": 500,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Comp D to Reactor",
+      "Purge (MV)",
+      "Comp E in Product"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.4044501337079842,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_a3",
+    "true_var": [
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Product Sep Temp",
+      "A Feed (MV)",
+      "Comp D to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.25,
+    "SGR": 0.7138370599045526,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_a4",
+    "true_var": [
+      "A and C Feed (MV)",
+      "A and C Feed"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Product Sep Temp",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_a6",
+    "true_var": [
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "window": 400,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Comp D to Reactor",
+      "Comp E in Product",
+      "Comp A to Reactor"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.43802249818073263,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_a7",
+    "true_var": [
+      "Separator (MV)",
+      "Product Sep Level"
+    ],
+    "window": 500,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Comp D to Reactor",
+      "Comp E in Product",
+      "Purge (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.3796620786951808,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_a8",
+    "true_var": [
+      "Stripper (MV)",
+      "Stripper Level"
+    ],
+    "window": 500,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Comp D to Reactor",
+      "Comp E in Product",
+      "Purge (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.4474558754869725,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_s1",
+    "true_var": [
+      "A Feed",
+      "A Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "A Feed",
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Comp A to Reactor",
+      "Compressor Work"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_s10",
+    "true_var": [
+      "Purge Rate",
+      "Purge (MV)"
+    ],
+    "window": 400,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Comp E in Product",
+      "Comp D to Reactor",
+      "Comp A to Reactor"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.4660038467392339,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_s11",
+    "true_var": [
+      "Product Sep Temp"
+    ],
+    "window": 100,
+    "top5": [
+      "Product Sep Temp",
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "A Feed (MV)",
+      "Comp D to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_s12",
+    "true_var": [
+      "Product Sep Level",
+      "Separator (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper (MV)",
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Product Sep Temp",
+      "Stripper Level"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.31017533992759166,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_s14",
+    "true_var": [
+      "Product Sep Underflow"
+    ],
+    "window": 100,
+    "top5": [
+      "Comp C to Reactor",
+      "Reactor Coolant Temp",
+      "Product Sep Underflow",
+      "A Feed (MV)",
+      "Product Sep Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.3333333333333333,
+    "SGR": 0.91736284308872,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_s15",
+    "true_var": [
+      "Stripper Level",
+      "Stripper (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Product Sep Temp",
+      "Comp C to Reactor",
+      "Stripper Temp",
+      "Stripper (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.2,
+    "SGR": 0.5937126682119457,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_s17",
+    "true_var": [
+      "Stripper Underflow"
+    ],
+    "window": 300,
+    "top5": [
+      "Stripper (MV)",
+      "Stripper Level",
+      "A and C Feed (MV)",
+      "E Feed (MV)",
+      "Purge (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.11942054399126079,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_s2",
+    "true_var": [
+      "D Feed",
+      "D feed (MV)"
+    ],
+    "window": 300,
+    "top5": [
+      "D feed (MV)",
+      "Separator (MV)",
+      "Product Sep Temp",
+      "Stripper Temp",
+      "Comp C to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_s23",
+    "true_var": [
+      "Comp A to Reactor"
+    ],
+    "window": 400,
+    "top5": [
+      "Comp C to Reactor",
+      "Purge Rate",
+      "Purge (MV)",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.4784818237492179,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_s25",
+    "true_var": [
+      "Comp C to Reactor"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "A Feed (MV)",
+      "A Feed",
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.5357599458556659,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_s3",
+    "true_var": [
+      "E Feed",
+      "E Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "E Feed (MV)",
+      "Product Sep Temp",
+      "Stripper Temp",
+      "Separator Coolant Temp",
+      "Separator (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_s4",
+    "true_var": [
+      "A and C Feed",
+      "A and C Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Comp B to Reactor",
+      "A and C Feed (MV)",
+      "Separator (MV)",
+      "Comp F in Purge",
+      "Comp B in Purge"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.5,
+    "SGR": 0.9359113046851613,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_s40",
+    "true_var": [
+      "Comp G in Product"
+    ],
+    "window": 400,
+    "top5": [
+      "E Feed (MV)",
+      "D feed (MV)",
+      "Comp C to Reactor",
+      "Stripper (MV)",
+      "A and C Feed (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.5187591973422292,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_s7",
+    "true_var": [
+      "Reactor Pressure"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Product Sep Temp",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.24909635745018296,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_s8",
+    "true_var": [
+      "Reactor Level"
+    ],
+    "window": 400,
+    "top5": [
+      "Stripper (MV)",
+      "Stripper Level",
+      "A and C Feed (MV)",
+      "E Feed (MV)",
+      "Comp F to Reactor"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.26509402817621636,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p2s_s9",
+    "true_var": [
+      "Reactor Temperature"
+    ],
+    "window": 300,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Reactor Coolant Temp",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.36304621058479214,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_a1",
+    "true_var": [
+      "D feed (MV)",
+      "D Feed"
+    ],
+    "window": 200,
+    "top5": [
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Comp D to Reactor",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.35405250582227404,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_a10",
+    "true_var": [
+      "Reactor Coolant (MV)",
+      "Reactor Coolant Temp"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Product Sep Temp",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.487120948083347,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_a11",
+    "true_var": [
+      "Condenser Coolant (MV)",
+      "Separator Coolant Temp"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "A Feed (MV)",
+      "Product Sep Temp",
+      "A Feed"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.41135568857593136,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_a2",
+    "true_var": [
+      "E Feed (MV)",
+      "E Feed"
+    ],
+    "window": 500,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Comp D to Reactor",
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.40626999914917744,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_a3",
+    "true_var": [
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "window": 200,
+    "top5": [
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Comp D to Reactor",
+      "A Feed (MV)",
+      "Product Sep Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.25,
+    "SGR": 0.6513328220615595,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_a4",
+    "true_var": [
+      "A and C Feed (MV)",
+      "A and C Feed"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Product Sep Temp",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_a6",
+    "true_var": [
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "window": 300,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Comp D to Reactor",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.425625227824644,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_a7",
+    "true_var": [
+      "Separator (MV)",
+      "Product Sep Level"
+    ],
+    "window": 500,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Comp D to Reactor",
+      "Comp E in Product",
+      "Purge (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.3823460037053933,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_a8",
+    "true_var": [
+      "Stripper (MV)",
+      "Stripper Level"
+    ],
+    "window": 500,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Comp D to Reactor",
+      "Comp E in Product",
+      "Purge (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.45225792054661934,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_s1",
+    "true_var": [
+      "A Feed",
+      "A Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "A Feed",
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Compressor Work",
+      "Comp A to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_s10",
+    "true_var": [
+      "Purge Rate",
+      "Purge (MV)"
+    ],
+    "window": 300,
+    "top5": [
+      "Comp C to Reactor",
+      "Purge Rate",
+      "A and C Feed (MV)",
+      "Comp D to Reactor",
+      "A Feed (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.5,
+    "SGR": 0.8900949779627526,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_s11",
+    "true_var": [
+      "Product Sep Temp"
+    ],
+    "window": 100,
+    "top5": [
+      "Product Sep Temp",
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Stripper Temp",
+      "A Feed (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_s12",
+    "true_var": [
+      "Product Sep Level",
+      "Separator (MV)"
+    ],
+    "window": 400,
+    "top5": [
+      "Stripper (MV)",
+      "A and C Feed (MV)",
+      "Stripper Level",
+      "Comp C to Reactor",
+      "E Feed (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.28094853500183364,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_s14",
+    "true_var": [
+      "Product Sep Underflow"
+    ],
+    "window": 100,
+    "top5": [
+      "Product Sep Underflow",
+      "Reactor Coolant Temp",
+      "Product Sep Level",
+      "Comp C to Reactor",
+      "D feed (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_s15",
+    "true_var": [
+      "Stripper Level",
+      "Stripper (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Product Sep Temp",
+      "Stripper Temp",
+      "Comp C to Reactor",
+      "Stripper (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.2,
+    "SGR": 0.6664682501176495,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_s17",
+    "true_var": [
+      "Stripper Underflow"
+    ],
+    "window": 500,
+    "top5": [
+      "Stripper (MV)",
+      "Stripper Level",
+      "A and C Feed (MV)",
+      "E Feed (MV)",
+      "Purge (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.13119617456908775,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_s2",
+    "true_var": [
+      "D Feed",
+      "D feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "D feed (MV)",
+      "Product Sep Temp",
+      "Stripper Temp",
+      "Separator (MV)",
+      "Separator Coolant Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_s23",
+    "true_var": [
+      "Comp A to Reactor"
+    ],
+    "window": 400,
+    "top5": [
+      "A Feed (MV)",
+      "A Feed",
+      "Purge Rate",
+      "Purge (MV)",
+      "Comp C to Reactor"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.5276426957925768,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_s25",
+    "true_var": [
+      "Comp C to Reactor"
+    ],
+    "window": 200,
+    "top5": [
+      "A and C Feed (MV)",
+      "Purge (MV)",
+      "Purge Rate",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.4769678568448522,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_s3",
+    "true_var": [
+      "E Feed",
+      "E Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "E Feed (MV)",
+      "Product Sep Temp",
+      "Stripper Temp",
+      "Separator Coolant Temp",
+      "Separator (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_s4",
+    "true_var": [
+      "A and C Feed",
+      "A and C Feed (MV)"
+    ],
+    "window": 200,
+    "top5": [
+      "Reactor Coolant Temp",
+      "Comp B to Reactor",
+      "Comp F in Purge",
+      "Comp B in Purge",
+      "A and C Feed (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.2,
+    "SGR": 0.7936201722787098,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_s40",
+    "true_var": [
+      "Comp G in Product"
+    ],
+    "window": 100,
+    "top5": [
+      "E Feed (MV)",
+      "D feed (MV)",
+      "Comp G in Product",
+      "A and C Feed (MV)",
+      "Comp C to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.3333333333333333,
+    "SGR": 0.5221200792039885,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_s7",
+    "true_var": [
+      "Reactor Pressure"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper Pressure",
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Product Sep Pressure",
+      "Product Sep Temp"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.25322916244612204,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_s8",
+    "true_var": [
+      "Reactor Level"
+    ],
+    "window": 300,
+    "top5": [
+      "Stripper (MV)",
+      "Stripper Level",
+      "A and C Feed (MV)",
+      "Comp B to Reactor",
+      "Comp F in Purge"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.2378119207587042,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p3s_s9",
+    "true_var": [
+      "Reactor Temperature"
+    ],
+    "window": 100,
+    "top5": [
+      "Reactor Coolant Temp",
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.30280243917147437,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_a1",
+    "true_var": [
+      "D feed (MV)",
+      "D Feed"
+    ],
+    "window": 200,
+    "top5": [
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Comp D to Reactor",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.35721881788795984,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_a10",
+    "true_var": [
+      "Reactor Coolant (MV)",
+      "Reactor Coolant Temp"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Product Sep Temp",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.49184460783185996,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_a11",
+    "true_var": [
+      "Condenser Coolant (MV)",
+      "Separator Coolant Temp"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Separator (MV)",
+      "Comp C to Reactor",
+      "Comp E in Product",
+      "Product Sep Temp"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.5288563044253412,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_a2",
+    "true_var": [
+      "E Feed (MV)",
+      "E Feed"
+    ],
+    "window": 500,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Comp D to Reactor",
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.4086689876368893,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_a3",
+    "true_var": [
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Product Sep Temp",
+      "Comp C to Reactor",
+      "Comp D to Reactor",
+      "A Feed (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.2,
+    "SGR": 0.6381856600928129,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_a4",
+    "true_var": [
+      "A and C Feed (MV)",
+      "A and C Feed"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Product Sep Temp",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_a6",
+    "true_var": [
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "window": 200,
+    "top5": [
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Comp D to Reactor",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.38903824410985555,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_a7",
+    "true_var": [
+      "Separator (MV)",
+      "Product Sep Level"
+    ],
+    "window": 500,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Comp D to Reactor",
+      "Comp E in Product",
+      "Purge (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.38699454311369674,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_a8",
+    "true_var": [
+      "Stripper (MV)",
+      "Stripper Level"
+    ],
+    "window": 400,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Comp D to Reactor",
+      "Comp E in Product",
+      "Comp A to Reactor"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.44020240135665595,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_s1",
+    "true_var": [
+      "A Feed",
+      "A Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "A Feed",
+      "Compressor Work",
+      "Stripper Temp",
+      "Comp C to Reactor",
+      "A and C Feed (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_s10",
+    "true_var": [
+      "Purge Rate",
+      "Purge (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Purge Rate",
+      "Product Sep Temp",
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Stripper Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_s11",
+    "true_var": [
+      "Product Sep Temp"
+    ],
+    "window": 100,
+    "top5": [
+      "Product Sep Temp",
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Stripper Temp",
+      "Comp D to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_s12",
+    "true_var": [
+      "Product Sep Level",
+      "Separator (MV)"
+    ],
+    "window": 400,
+    "top5": [
+      "Stripper (MV)",
+      "A and C Feed (MV)",
+      "Stripper Level",
+      "E Feed (MV)",
+      "Comp F to Reactor"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.2684405196218016,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_s14",
+    "true_var": [
+      "Product Sep Underflow"
+    ],
+    "window": 100,
+    "top5": [
+      "Product Sep Underflow",
+      "Product Sep Level",
+      "Reactor Coolant Temp",
+      "D feed (MV)",
+      "Comp F in Purge"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_s15",
+    "true_var": [
+      "Stripper Level",
+      "Stripper (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Product Sep Temp",
+      "Stripper Temp",
+      "Separator (MV)",
+      "Stripper (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.2,
+    "SGR": 0.7079951657126939,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_s17",
+    "true_var": [
+      "Stripper Underflow"
+    ],
+    "window": 500,
+    "top5": [
+      "Stripper (MV)",
+      "Stripper Level",
+      "A and C Feed (MV)",
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.18063306202650212,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_s2",
+    "true_var": [
+      "D Feed",
+      "D feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "D feed (MV)",
+      "Product Sep Temp",
+      "Separator (MV)",
+      "Stripper Temp",
+      "Separator Coolant Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_s23",
+    "true_var": [
+      "Comp A to Reactor"
+    ],
+    "window": 400,
+    "top5": [
+      "A Feed (MV)",
+      "A Feed",
+      "Purge Rate",
+      "Purge (MV)",
+      "Comp A to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.2,
+    "SGR": 0.5519392239483814,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_s25",
+    "true_var": [
+      "Comp C to Reactor"
+    ],
+    "window": 400,
+    "top5": [
+      "A and C Feed (MV)",
+      "Purge (MV)",
+      "Purge Rate",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.464160846005338,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_s3",
+    "true_var": [
+      "E Feed",
+      "E Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "E Feed (MV)",
+      "Product Sep Temp",
+      "Stripper Temp",
+      "Separator Coolant Temp",
+      "Purge Rate"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_s4",
+    "true_var": [
+      "A and C Feed",
+      "A and C Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Reactor Coolant Temp",
+      "Comp B to Reactor",
+      "Comp C in Purge",
+      "Comp F in Purge",
+      "Comp B in Purge"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.6878901326025384,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_s40",
+    "true_var": [
+      "Comp G in Product"
+    ],
+    "window": 100,
+    "top5": [
+      "E Feed (MV)",
+      "D feed (MV)",
+      "Comp G in Product",
+      "E Feed",
+      "Reactor Coolant Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.3333333333333333,
+    "SGR": 0.6467141375947617,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_s7",
+    "true_var": [
+      "Reactor Pressure"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper Pressure",
+      "Product Sep Pressure",
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "A Feed (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.15852589491928387,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_s8",
+    "true_var": [
+      "Reactor Level"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper (MV)",
+      "A and C Feed (MV)",
+      "Comp B to Reactor",
+      "Comp F in Purge",
+      "Stripper Level"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.24660030885587433,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_csum_p5s_s9",
+    "true_var": [
+      "Reactor Temperature"
+    ],
+    "window": 300,
+    "top5": [
+      "Reactor Coolant Temp",
+      "Comp C to Reactor",
+      "Stripper Temp",
+      "A and C Feed (MV)",
+      "A Feed (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.25125911071780227,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_a1",
+    "true_var": [
+      "D feed (MV)",
+      "D Feed"
+    ],
+    "window": 500,
+    "top5": [
+      "Comp C to Reactor",
+      "Separator (MV)",
+      "D feed (MV)",
+      "Stripper Temp",
+      "A and C Feed (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.3333333333333333,
+    "SGR": 0.6902678202686463,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_a10",
+    "true_var": [
+      "Reactor Coolant (MV)",
+      "Reactor Coolant Temp"
+    ],
+    "window": 500,
+    "top5": [
+      "Product Sep Temp",
+      "Stripper Temp",
+      "Comp F in Purge",
+      "Reactor Temperature",
+      "Comp G in Purge"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.3535653653670434,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_a11",
+    "true_var": [
+      "Condenser Coolant (MV)",
+      "Separator Coolant Temp"
+    ],
+    "window": 100,
+    "top5": [
+      "Purge (MV)",
+      "Reactor Level",
+      "Purge Rate",
+      "Stripper (MV)",
+      "Separator (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.396336470229366,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_a2",
+    "true_var": [
+      "E Feed (MV)",
+      "E Feed"
+    ],
+    "window": 300,
+    "top5": [
+      "Comp C to Reactor",
+      "E Feed (MV)",
+      "A and C Feed (MV)",
+      "Stripper Temp",
+      "Separator (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.5,
+    "SGR": 0.8141623174632666,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_a3",
+    "true_var": [
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "window": 400,
+    "top5": [
+      "Comp C to Reactor",
+      "Purge (MV)",
+      "Purge Rate",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.25,
+    "SGR": 0.7187952624108801,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_a4",
+    "true_var": [
+      "A and C Feed (MV)",
+      "A and C Feed"
+    ],
+    "window": 400,
+    "top5": [
+      "Purge (MV)",
+      "Purge Rate",
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Comp D to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.25,
+    "SGR": 0.4346309894381983,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_a6",
+    "true_var": [
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Product Sep Pressure",
+      "Reactor Pressure",
+      "Stripper Pressure"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.2689870143236964,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_a7",
+    "true_var": [
+      "Separator (MV)",
+      "Product Sep Level"
+    ],
+    "window": 500,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Stripper (MV)",
+      "Comp E in Product",
+      "Comp D to Reactor"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.49662626479675387,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_a8",
+    "true_var": [
+      "Stripper (MV)",
+      "Stripper Level"
+    ],
+    "window": 500,
+    "top5": [
+      "Comp C to Reactor",
+      "D feed (MV)",
+      "Comp D to Reactor",
+      "Reactor Coolant Temp",
+      "Comp E in Product"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.43710212858679476,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_s1",
+    "true_var": [
+      "A Feed",
+      "A Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "A Feed (MV)",
+      "Reactor Pressure",
+      "Product Sep Pressure",
+      "Stripper Pressure",
+      "Reactor Coolant Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_s10",
+    "true_var": [
+      "Purge Rate",
+      "Purge (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Purge (MV)",
+      "Product Sep Pressure",
+      "Reactor Pressure",
+      "Stripper Pressure",
+      "A and C Feed (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_s11",
+    "true_var": [
+      "Product Sep Temp"
+    ],
+    "window": 300,
+    "top5": [
+      "Stripper Temp",
+      "Separator Coolant Temp",
+      "Comp C to Reactor",
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.7295830245870131,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_s12",
+    "true_var": [
+      "Product Sep Level",
+      "Separator (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Separator (MV)",
+      "Stripper (MV)",
+      "Stripper Level",
+      "Product Sep Temp",
+      "Comp C to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_s14",
+    "true_var": [
+      "Product Sep Underflow"
+    ],
+    "window": 400,
+    "top5": [
+      "Separator (MV)",
+      "Product Sep Underflow",
+      "Stripper (MV)",
+      "Stripper Temp",
+      "Product Sep Level"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.5,
+    "SGR": 0.4914814281097259,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_s15",
+    "true_var": [
+      "Stripper Level",
+      "Stripper (MV)"
+    ],
+    "window": 200,
+    "top5": [
+      "Stripper (MV)",
+      "Comp C to Reactor",
+      "Stripper Level",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_s17",
+    "true_var": [
+      "Stripper Underflow"
+    ],
+    "window": 500,
+    "top5": [
+      "Stripper (MV)",
+      "Stripper Level",
+      "Comp C to Reactor",
+      "D feed (MV)",
+      "Reactor Coolant Temp"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.14793794855173145,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_s2",
+    "true_var": [
+      "D Feed",
+      "D feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "D feed (MV)",
+      "Reactor Coolant Temp",
+      "Reactor Coolant (MV)",
+      "Purge Rate",
+      "Purge (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_s23",
+    "true_var": [
+      "Comp A to Reactor"
+    ],
+    "window": 200,
+    "top5": [
+      "A Feed (MV)",
+      "A Feed",
+      "Comp C to Reactor",
+      "Comp A to Reactor",
+      "Comp D to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.25,
+    "SGR": 0.5171783740107906,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_s25",
+    "true_var": [
+      "Comp C to Reactor"
+    ],
+    "window": 200,
+    "top5": [
+      "A Feed (MV)",
+      "A Feed",
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Stripper (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.25,
+    "SGR": 0.5687649525339785,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_s3",
+    "true_var": [
+      "E Feed",
+      "E Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "E Feed (MV)",
+      "Separator Coolant Temp",
+      "Product Sep Temp",
+      "Stripper Temp",
+      "Reactor Coolant Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_s4",
+    "true_var": [
+      "A and C Feed",
+      "A and C Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Stripper Temp",
+      "Stripper Pressure",
+      "Product Sep Pressure",
+      "Reactor Pressure"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_s40",
+    "true_var": [
+      "Comp G in Product"
+    ],
+    "window": 300,
+    "top5": [
+      "E Feed (MV)",
+      "D feed (MV)",
+      "Comp C to Reactor",
+      "Comp G in Product",
+      "A and C Feed (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.25,
+    "SGR": 0.6272317911121182,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_s7",
+    "true_var": [
+      "Reactor Pressure"
+    ],
+    "window": 400,
+    "top5": [
+      "Product Sep Pressure",
+      "Stripper Pressure",
+      "Purge (MV)",
+      "Purge Rate",
+      "Compressor Work"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.25306665641231857,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_s8",
+    "true_var": [
+      "Reactor Level"
+    ],
+    "window": 100,
+    "top5": [
+      "Purge (MV)",
+      "Purge Rate",
+      "Separator (MV)",
+      "Product Sep Temp",
+      "Stripper (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.2962091853205605,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_m2s_s9",
+    "true_var": [
+      "Reactor Temperature"
+    ],
+    "window": 100,
+    "top5": [
+      "Reactor Coolant Temp",
+      "Product Sep Pressure",
+      "Stripper Pressure",
+      "Reactor Pressure",
+      "Product Sep Temp"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.009035927947490639,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_a1",
+    "true_var": [
+      "D feed (MV)",
+      "D Feed"
+    ],
+    "window": 300,
+    "top5": [
+      "Comp C to Reactor",
+      "D feed (MV)",
+      "A and C Feed (MV)",
+      "Separator (MV)",
+      "Purge (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.5,
+    "SGR": 0.8396595399977361,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_a10",
+    "true_var": [
+      "Reactor Coolant (MV)",
+      "Reactor Coolant Temp"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper Temp",
+      "Product Sep Temp",
+      "Reactor Temperature",
+      "Comp F in Purge",
+      "Comp B in Purge"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.39765529273503697,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_a11",
+    "true_var": [
+      "Condenser Coolant (MV)",
+      "Separator Coolant Temp"
+    ],
+    "window": 500,
+    "top5": [
+      "Reactor Level",
+      "Stripper Pressure",
+      "Product Sep Pressure",
+      "Reactor Pressure",
+      "Stripper (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.5122545262445559,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_a2",
+    "true_var": [
+      "E Feed (MV)",
+      "E Feed"
+    ],
+    "window": 500,
+    "top5": [
+      "Comp C to Reactor",
+      "Stripper Temp",
+      "E Feed (MV)",
+      "A and C Feed (MV)",
+      "Comp D to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.3333333333333333,
+    "SGR": 0.646694084017571,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_a3",
+    "true_var": [
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "window": 400,
+    "top5": [
+      "Comp C to Reactor",
+      "Stripper Temp",
+      "Compressor Work",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.25,
+    "SGR": 0.7366158770039424,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_a4",
+    "true_var": [
+      "A and C Feed (MV)",
+      "A and C Feed"
+    ],
+    "window": 300,
+    "top5": [
+      "Comp C to Reactor",
+      "A Feed (MV)",
+      "A Feed",
+      "Comp E in Product",
+      "Product Sep Temp"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.42871441002413474,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_a6",
+    "true_var": [
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "window": 400,
+    "top5": [
+      "Stripper Pressure",
+      "Reactor Pressure",
+      "Product Sep Pressure",
+      "Comp C to Reactor",
+      "A and C Feed (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.36709733627304914,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_a7",
+    "true_var": [
+      "Separator (MV)",
+      "Product Sep Level"
+    ],
+    "window": 500,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Purge (MV)",
+      "Purge Rate",
+      "Comp D to Reactor"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.38266279636661304,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_a8",
+    "true_var": [
+      "Stripper (MV)",
+      "Stripper Level"
+    ],
+    "window": 200,
+    "top5": [
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Purge (MV)",
+      "Comp D to Reactor",
+      "Purge Rate"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.5491883850515322,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_s1",
+    "true_var": [
+      "A Feed",
+      "A Feed (MV)"
+    ],
+    "window": 500,
+    "top5": [
+      "A Feed (MV)",
+      "Purge Rate",
+      "Purge (MV)",
+      "Compressor Work",
+      "Stripper Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_s10",
+    "true_var": [
+      "Purge Rate",
+      "Purge (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Purge (MV)",
+      "Product Sep Pressure",
+      "Reactor Pressure",
+      "Stripper Pressure",
+      "A and C Feed (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_s11",
+    "true_var": [
+      "Product Sep Temp"
+    ],
+    "window": 400,
+    "top5": [
+      "Stripper Temp",
+      "Product Sep Pressure",
+      "Purge (MV)",
+      "Purge Rate",
+      "Reactor Coolant Temp"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.5379377760694928,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_s12",
+    "true_var": [
+      "Product Sep Level",
+      "Separator (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Separator (MV)",
+      "Stripper (MV)",
+      "A and C Feed (MV)",
+      "Stripper Level",
+      "Stripper Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_s14",
+    "true_var": [
+      "Product Sep Underflow"
+    ],
+    "window": 100,
+    "top5": [
+      "Separator (MV)",
+      "Stripper (MV)",
+      "Product Sep Underflow",
+      "Product Sep Level",
+      "Stripper Level"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.3333333333333333,
+    "SGR": 0.6189008395290417,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_s15",
+    "true_var": [
+      "Stripper Level",
+      "Stripper (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper (MV)",
+      "A and C Feed (MV)",
+      "Product Sep Temp",
+      "Comp C to Reactor",
+      "Stripper Level"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_s17",
+    "true_var": [
+      "Stripper Underflow"
+    ],
+    "window": 300,
+    "top5": [
+      "Stripper (MV)",
+      "Stripper Level",
+      "Purge Rate",
+      "Purge (MV)",
+      "A and C Feed (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.15409027623460494,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_s2",
+    "true_var": [
+      "D Feed",
+      "D feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "D feed (MV)",
+      "Reactor Coolant Temp",
+      "Reactor Coolant (MV)",
+      "Purge Rate",
+      "Purge (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_s23",
+    "true_var": [
+      "Comp A to Reactor"
+    ],
+    "window": 500,
+    "top5": [
+      "Purge (MV)",
+      "Purge Rate",
+      "Comp C to Reactor",
+      "Comp A to Reactor",
+      "A and C Feed (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.25,
+    "SGR": 0.7985763734510744,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_s25",
+    "true_var": [
+      "Comp C to Reactor"
+    ],
+    "window": 100,
+    "top5": [
+      "Purge (MV)",
+      "A Feed (MV)",
+      "Purge Rate",
+      "A Feed",
+      "A and C Feed (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.6181211773249932,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_s3",
+    "true_var": [
+      "E Feed",
+      "E Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "E Feed (MV)",
+      "Product Sep Temp",
+      "Separator Coolant Temp",
+      "Stripper Temp",
+      "Comp E to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_s4",
+    "true_var": [
+      "A and C Feed",
+      "A and C Feed (MV)"
+    ],
+    "window": 500,
+    "top5": [
+      "Reactor Pressure",
+      "Product Sep Pressure",
+      "Stripper Pressure",
+      "Reactor Coolant Temp",
+      "Purge Rate"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.09956529946792161,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_s40",
+    "true_var": [
+      "Comp G in Product"
+    ],
+    "window": 300,
+    "top5": [
+      "D feed (MV)",
+      "E Feed (MV)",
+      "Comp C to Reactor",
+      "Comp G in Product",
+      "A and C Feed (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.25,
+    "SGR": 0.6634821518386255,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_s7",
+    "true_var": [
+      "Reactor Pressure"
+    ],
+    "window": 400,
+    "top5": [
+      "Stripper Pressure",
+      "Product Sep Pressure",
+      "Purge (MV)",
+      "Purge Rate",
+      "Stripper Temp"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.20875238379972777,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_s8",
+    "true_var": [
+      "Reactor Level"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper Pressure",
+      "Product Sep Pressure",
+      "Product Sep Temp",
+      "Reactor Pressure",
+      "Purge Rate"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.2826594217012902,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p2s_s9",
+    "true_var": [
+      "Reactor Temperature"
+    ],
+    "window": 100,
+    "top5": [
+      "Reactor Coolant Temp",
+      "Product Sep Temp",
+      "Stripper Temp",
+      "Comp D in Purge",
+      "Product Sep Level"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.00620505541044696,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_a1",
+    "true_var": [
+      "D feed (MV)",
+      "D Feed"
+    ],
+    "window": 300,
+    "top5": [
+      "D feed (MV)",
+      "Separator (MV)",
+      "Comp C to Reactor",
+      "Stripper Temp",
+      "Purge (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_a10",
+    "true_var": [
+      "Reactor Coolant (MV)",
+      "Reactor Coolant Temp"
+    ],
+    "window": 100,
+    "top5": [
+      "Reactor Temperature",
+      "Product Sep Temp",
+      "Stripper Temp",
+      "Reactor Coolant Temp",
+      "Comp F in Purge"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.25,
+    "SGR": 0.5865155189436352,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_a11",
+    "true_var": [
+      "Condenser Coolant (MV)",
+      "Separator Coolant Temp"
+    ],
+    "window": 100,
+    "top5": [
+      "Reactor Pressure",
+      "Stripper Pressure",
+      "Product Sep Pressure",
+      "Reactor Level",
+      "Stripper (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.33015508307462094,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_a2",
+    "true_var": [
+      "E Feed (MV)",
+      "E Feed"
+    ],
+    "window": 300,
+    "top5": [
+      "Stripper Temp",
+      "Comp C to Reactor",
+      "E Feed (MV)",
+      "A and C Feed (MV)",
+      "Separator (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.3333333333333333,
+    "SGR": 0.721931333623948,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_a3",
+    "true_var": [
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "window": 300,
+    "top5": [
+      "Stripper Temp",
+      "Compressor Work",
+      "A Feed (MV)",
+      "A Feed",
+      "Comp C to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.3333333333333333,
+    "SGR": 0.822143990620109,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_a4",
+    "true_var": [
+      "A and C Feed (MV)",
+      "A and C Feed"
+    ],
+    "window": 500,
+    "top5": [
+      "Comp C to Reactor",
+      "Purge Rate",
+      "Purge (MV)",
+      "Stripper (MV)",
+      "Separator (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.4484123185412243,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_a6",
+    "true_var": [
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "window": 400,
+    "top5": [
+      "Stripper Pressure",
+      "Reactor Pressure",
+      "Product Sep Pressure",
+      "Comp C to Reactor",
+      "Stripper Temp"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.3654444804512045,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_a7",
+    "true_var": [
+      "Separator (MV)",
+      "Product Sep Level"
+    ],
+    "window": 500,
+    "top5": [
+      "Comp C to Reactor",
+      "A and C Feed (MV)",
+      "Purge (MV)",
+      "Purge Rate",
+      "Comp D to Reactor"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.41934339460031606,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_a8",
+    "true_var": [
+      "Stripper (MV)",
+      "Stripper Level"
+    ],
+    "window": 300,
+    "top5": [
+      "A and C Feed (MV)",
+      "Comp C to Reactor",
+      "Separator (MV)",
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.6060616016076842,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_s1",
+    "true_var": [
+      "A Feed",
+      "A Feed (MV)"
+    ],
+    "window": 200,
+    "top5": [
+      "A Feed (MV)",
+      "Purge Rate",
+      "Purge (MV)",
+      "Compressor Work",
+      "Stripper Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_s10",
+    "true_var": [
+      "Purge Rate",
+      "Purge (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Purge (MV)",
+      "Product Sep Pressure",
+      "Reactor Pressure",
+      "Stripper Pressure",
+      "Purge Rate"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_s11",
+    "true_var": [
+      "Product Sep Temp"
+    ],
+    "window": 400,
+    "top5": [
+      "Stripper Temp",
+      "Product Sep Temp",
+      "Purge (MV)",
+      "Product Sep Pressure",
+      "Purge Rate"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.5,
+    "SGR": 0.7827083075471177,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_s12",
+    "true_var": [
+      "Product Sep Level",
+      "Separator (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Separator (MV)",
+      "Stripper (MV)",
+      "Stripper Level",
+      "A and C Feed (MV)",
+      "Stripper Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_s14",
+    "true_var": [
+      "Product Sep Underflow"
+    ],
+    "window": 100,
+    "top5": [
+      "Separator (MV)",
+      "Stripper (MV)",
+      "Product Sep Underflow",
+      "Stripper Level",
+      "Product Sep Level"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.3333333333333333,
+    "SGR": 0.5280539232794829,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_s15",
+    "true_var": [
+      "Stripper Level",
+      "Stripper (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper (MV)",
+      "A and C Feed (MV)",
+      "Stripper Level",
+      "Product Sep Temp",
+      "Stripper Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_s17",
+    "true_var": [
+      "Stripper Underflow"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper (MV)",
+      "Stripper Level",
+      "Purge Rate",
+      "Purge (MV)",
+      "A and C Feed (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.2276782191864978,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_s2",
+    "true_var": [
+      "D Feed",
+      "D feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "D feed (MV)",
+      "Reactor Coolant Temp",
+      "Reactor Coolant (MV)",
+      "Purge Rate",
+      "Purge (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_s23",
+    "true_var": [
+      "Comp A to Reactor"
+    ],
+    "window": 100,
+    "top5": [
+      "Purge (MV)",
+      "Purge Rate",
+      "Comp A to Reactor",
+      "A and C Feed (MV)",
+      "Comp C to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.3333333333333333,
+    "SGR": 0.9622079571152912,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_s25",
+    "true_var": [
+      "Comp C to Reactor"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Purge (MV)",
+      "Purge Rate",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.6581779108601735,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_s3",
+    "true_var": [
+      "E Feed",
+      "E Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "E Feed (MV)",
+      "Product Sep Temp",
+      "Separator Coolant Temp",
+      "Stripper Temp",
+      "Comp E to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_s4",
+    "true_var": [
+      "A and C Feed",
+      "A and C Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Reactor Pressure",
+      "Product Sep Pressure",
+      "Stripper Pressure",
+      "Reactor Temperature",
+      "Comp C in Purge"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.37413072395943814,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_s40",
+    "true_var": [
+      "Comp G in Product"
+    ],
+    "window": 100,
+    "top5": [
+      "E Feed (MV)",
+      "D feed (MV)",
+      "Comp G in Product",
+      "A and C Feed (MV)",
+      "Comp C to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.3333333333333333,
+    "SGR": 0.6833233444731346,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_s7",
+    "true_var": [
+      "Reactor Pressure"
+    ],
+    "window": 500,
+    "top5": [
+      "Product Sep Pressure",
+      "Stripper Pressure",
+      "Purge (MV)",
+      "Purge Rate",
+      "Product Sep Temp"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.2199746628862196,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p3s_s8",
+    "true_var": [
+      "Reactor Level"
+    ],
+    "window": 100,
+    "top5": [
+      "Purge Rate",
+      "Product Sep Temp",
+      "Purge (MV)",
+      "Separator (MV)",
+      "Separator Coolant Temp"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.2730103020117963,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p5s_a1",
+    "true_var": [
+      "D feed (MV)",
+      "D Feed"
+    ],
+    "window": 100,
+    "top5": [
+      "Separator (MV)",
+      "D feed (MV)",
+      "Stripper Temp",
+      "Reactor Coolant Temp",
+      "Purge (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.5,
+    "SGR": 0.8081698366300222,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p5s_a10",
+    "true_var": [
+      "Reactor Coolant (MV)",
+      "Reactor Coolant Temp"
+    ],
+    "window": 100,
+    "top5": [
+      "Reactor Temperature",
+      "Reactor Coolant Temp",
+      "Product Sep Temp",
+      "Stripper Temp",
+      "Purge Rate"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.5,
+    "SGR": 0.43745352288352,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p5s_a2",
+    "true_var": [
+      "E Feed (MV)",
+      "E Feed"
+    ],
+    "window": 400,
+    "top5": [
+      "Stripper Temp",
+      "E Feed (MV)",
+      "Product Sep Temp",
+      "Comp C to Reactor",
+      "Separator (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.5,
+    "SGR": 0.5867716087022032,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p5s_a3",
+    "true_var": [
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "window": 300,
+    "top5": [
+      "Compressor Work",
+      "Stripper Temp",
+      "A Feed (MV)",
+      "A Feed",
+      "Product Sep Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.3333333333333333,
+    "SGR": 0.7618894470932378,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p5s_a4",
+    "true_var": [
+      "A and C Feed (MV)",
+      "A and C Feed"
+    ],
+    "window": 500,
+    "top5": [
+      "Comp C to Reactor",
+      "Purge Rate",
+      "Purge (MV)",
+      "Product Sep Temp",
+      "Stripper (MV)"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.43417499101030127,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p5s_a6",
+    "true_var": [
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper Pressure",
+      "Reactor Pressure",
+      "Product Sep Pressure",
+      "Product Sep Temp",
+      "Stripper Temp"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.36849860869888446,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p5s_a7",
+    "true_var": [
+      "Separator (MV)",
+      "Product Sep Level"
+    ],
+    "window": 300,
+    "top5": [
+      "Comp C to Reactor",
+      "Stripper (MV)",
+      "A and C Feed (MV)",
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.4860432794494175,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p5s_a8",
+    "true_var": [
+      "Stripper (MV)",
+      "Stripper Level"
+    ],
+    "window": 300,
+    "top5": [
+      "A and C Feed (MV)",
+      "Separator (MV)",
+      "Comp C to Reactor",
+      "Purge (MV)",
+      "Purge Rate"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.5210872716478542,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p5s_s1",
+    "true_var": [
+      "A Feed",
+      "A Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "A Feed (MV)",
+      "Purge Rate",
+      "Purge (MV)",
+      "Compressor Work",
+      "Comp A to Reactor"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p5s_s10",
+    "true_var": [
+      "Purge Rate",
+      "Purge (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Purge Rate",
+      "Purge (MV)",
+      "Product Sep Pressure",
+      "Reactor Pressure",
+      "Stripper Pressure"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p5s_s11",
+    "true_var": [
+      "Product Sep Temp"
+    ],
+    "window": 200,
+    "top5": [
+      "Product Sep Temp",
+      "Separator Coolant Temp",
+      "Product Sep Pressure",
+      "Reactor Pressure",
+      "Reactor Coolant Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p5s_s12",
+    "true_var": [
+      "Product Sep Level",
+      "Separator (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Separator (MV)",
+      "Stripper (MV)",
+      "Stripper Level",
+      "Product Sep Level",
+      "A and C Feed (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p5s_s14",
+    "true_var": [
+      "Product Sep Underflow"
+    ],
+    "window": 100,
+    "top5": [
+      "Separator (MV)",
+      "Stripper (MV)",
+      "Product Sep Underflow",
+      "Product Sep Level",
+      "Stripper Level"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.3333333333333333,
+    "SGR": 0.7030050785729122,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p5s_s15",
+    "true_var": [
+      "Stripper Level",
+      "Stripper (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper (MV)",
+      "Stripper Level",
+      "A and C Feed (MV)",
+      "Separator (MV)",
+      "Product Sep Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p5s_s17",
+    "true_var": [
+      "Stripper Underflow"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper (MV)",
+      "Stripper Level",
+      "Purge Rate",
+      "Purge (MV)",
+      "Stripper Underflow"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.2,
+    "SGR": 0.28602320918041374,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p5s_s2",
+    "true_var": [
+      "D Feed",
+      "D feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "D feed (MV)",
+      "Reactor Coolant Temp",
+      "Reactor Coolant (MV)",
+      "Purge Rate",
+      "Purge (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p5s_s23",
+    "true_var": [
+      "Comp A to Reactor"
+    ],
+    "window": 100,
+    "top5": [
+      "Comp A to Reactor",
+      "Purge Rate",
+      "Purge (MV)",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p5s_s25",
+    "true_var": [
+      "Comp C to Reactor"
+    ],
+    "window": 100,
+    "top5": [
+      "A and C Feed (MV)",
+      "Purge (MV)",
+      "Purge Rate",
+      "A Feed (MV)",
+      "A Feed"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.6681604030282993,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p5s_s3",
+    "true_var": [
+      "E Feed",
+      "E Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "E Feed (MV)",
+      "Product Sep Temp",
+      "Separator Coolant Temp",
+      "Reactor Level",
+      "Stripper Temp"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 1.0,
+    "SGR": 1.0,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p5s_s4",
+    "true_var": [
+      "A and C Feed",
+      "A and C Feed (MV)"
+    ],
+    "window": 100,
+    "top5": [
+      "Reactor Temperature",
+      "A and C Feed (MV)",
+      "Comp C in Purge",
+      "Comp C to Reactor",
+      "Comp E in Purge"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.5,
+    "SGR": 0.7778462866236935,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p5s_s40",
+    "true_var": [
+      "Comp G in Product"
+    ],
+    "window": 100,
+    "top5": [
+      "E Feed (MV)",
+      "D feed (MV)",
+      "Comp G in Product",
+      "Reactor Coolant Temp",
+      "Purge (MV)"
+    ],
+    "ACT": 1.0,
+    "K-Concord": 0.3333333333333333,
+    "SGR": 0.7557810825083522,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p5s_s7",
+    "true_var": [
+      "Reactor Pressure"
+    ],
+    "window": 500,
+    "top5": [
+      "Product Sep Pressure",
+      "Stripper Pressure",
+      "Purge (MV)",
+      "Purge Rate",
+      "Compressor Work"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.2265817526483617,
+    "reasoning": ""
+  },
+  {
+    "attack_id": "TEP_test_line_p5s_s8",
+    "true_var": [
+      "Reactor Level"
+    ],
+    "window": 100,
+    "top5": [
+      "Stripper Pressure",
+      "Product Sep Pressure",
+      "Reactor Pressure",
+      "Product Sep Temp",
+      "Separator Coolant Temp"
+    ],
+    "ACT": 0.0,
+    "K-Concord": 0.0,
+    "SGR": 0.18760684114048257,
+    "reasoning": ""
+  }
+]
